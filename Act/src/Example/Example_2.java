@@ -1,9 +1,10 @@
 package Example;
 
-public class example_1 {
+public class Example_2 {
 
 	public static void main(String[] args) {
-		System.out.println("예시입니다.");
+		System.out.println("두 번째");
+
 	}
 
 }
