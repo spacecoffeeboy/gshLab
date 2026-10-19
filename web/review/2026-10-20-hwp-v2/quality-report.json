@@ -1,0 +1,156 @@
+{
+  "version": "hwp-everyday-review-v2",
+  "source": {
+    "filename": "부산행.hwp",
+    "sha256": "e461ec1cc29f43fbbfe1cf6731bbd35078eb94201c95c768859a45fcfa47869e",
+    "mode": "user_uploaded_screenplay_reference; original_learning_dialogue_adaptation",
+    "paragraphCount": 919,
+    "version": "hwp-everyday-review-v2"
+  },
+  "kind": "original_learning_adaptations_not_verbatim_corpus_extraction",
+  "status": "review_draft_not_integrated_into_app",
+  "targetSentences": 300,
+  "deliveredSentences": 60,
+  "shortfall": 240,
+  "levels": {
+    "하": 20,
+    "중": 20,
+    "상": 20
+  },
+  "sets": 6,
+  "sentencesPerSet": 10,
+  "answerExplanations": 116,
+  "uniqueScenarios": 60,
+  "exactTargetDuplicates": 0,
+  "exactDialogueDuplicates": 0,
+  "reusedSourceParagraphs": 0,
+  "sourceParagraphsUsed": 234,
+  "sourceSceneCount": 34,
+  "sourceSceneReuse": [
+    {
+      "scene": "S005",
+      "lessons": [
+        "hwp-beginner-002",
+        "hwp-beginner-003",
+        "hwp-beginner-004"
+      ]
+    },
+    {
+      "scene": "S006",
+      "lessons": [
+        "hwp-beginner-005",
+        "hwp-beginner-006",
+        "hwp-intermediate-007"
+      ]
+    },
+    {
+      "scene": "S008",
+      "lessons": [
+        "hwp-beginner-007",
+        "hwp-beginner-008",
+        "hwp-beginner-009"
+      ]
+    },
+    {
+      "scene": "S012",
+      "lessons": [
+        "hwp-beginner-010",
+        "hwp-beginner-013",
+        "hwp-intermediate-008"
+      ]
+    },
+    {
+      "scene": "S011",
+      "lessons": [
+        "hwp-beginner-011",
+        "hwp-beginner-012"
+      ]
+    },
+    {
+      "scene": "S019",
+      "lessons": [
+        "hwp-beginner-015",
+        "hwp-intermediate-009"
+      ]
+    },
+    {
+      "scene": "S023",
+      "lessons": [
+        "hwp-beginner-017",
+        "hwp-intermediate-010"
+      ]
+    },
+    {
+      "scene": "S039",
+      "lessons": [
+        "hwp-beginner-018",
+        "hwp-beginner-019",
+        "hwp-beginner-020",
+        "hwp-intermediate-018",
+        "hwp-intermediate-019"
+      ]
+    },
+    {
+      "scene": "S002",
+      "lessons": [
+        "hwp-intermediate-001",
+        "hwp-intermediate-002",
+        "hwp-intermediate-003",
+        "hwp-intermediate-004"
+      ]
+    },
+    {
+      "scene": "S003",
+      "lessons": [
+        "hwp-intermediate-005",
+        "hwp-intermediate-006"
+      ]
+    },
+    {
+      "scene": "S033",
+      "lessons": [
+        "hwp-intermediate-011",
+        "hwp-intermediate-012",
+        "hwp-intermediate-013",
+        "hwp-intermediate-014",
+        "hwp-intermediate-015"
+      ]
+    },
+    {
+      "scene": "S042",
+      "lessons": [
+        "hwp-advanced-002",
+        "hwp-advanced-003"
+      ]
+    },
+    {
+      "scene": "S044",
+      "lessons": [
+        "hwp-advanced-004",
+        "hwp-advanced-005",
+        "hwp-advanced-006"
+      ]
+    },
+    {
+      "scene": "S060",
+      "lessons": [
+        "hwp-advanced-008",
+        "hwp-advanced-009",
+        "hwp-advanced-010"
+      ]
+    },
+    {
+      "scene": "S063",
+      "lessons": [
+        "hwp-advanced-011",
+        "hwp-advanced-012",
+        "hwp-advanced-013"
+      ]
+    }
+  ],
+  "nearDuplicateThreshold": 0.55,
+  "nearDuplicateFindings": [],
+  "maxTargetJaccard": 0.1563,
+  "maxDialogueJaccard": 0.1556,
+  "limitation": "Some adaptations reference different non-overlapping passages in the same source scene. Topic/semantic diversity is manually drafted; string similarity is not a guarantee of semantic independence."
+}
