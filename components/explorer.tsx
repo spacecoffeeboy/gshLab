@@ -80,6 +80,10 @@ export function Explorer({
       ? saved.includes(i.id)
       : topic === "all" || i.topicTags.includes(topic),
   );
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("feed");
+    if (requested === "random") setTab("random");
+  }, []);
   const nav = (
     <nav className="feed-tabs" aria-label="Feed">
       <button
@@ -136,60 +140,45 @@ export function Explorer({
         />
       ) : (
         <main className="explorer">
-          <div className="discovery-heading">
-            <div>
-              <div className="eyebrow">YOUR DAILY DOSE OF DISCOVERY</div>
-              <h1>
-                {tab === "saved" ? (
-                  <>
-                    The ones you <em>kept.</em>
-                  </>
-                ) : tab === "random" ? (
-                  <>
-                    A little <em>serendipity.</em>
-                  </>
-                ) : (
-                  <>
-                    Where will curiosity
-                    <br />
-                    take you <em>today?</em>
-                  </>
-                )}
-              </h1>
-              <p>
-                {tab === "saved"
-                  ? "Good discoveries deserve another look."
-                  : tab === "random"
-                    ? "Skip the choosing. See where the next question takes you."
-                    : "A surprising fact. A different perspective. A little more Korea."}
-              </p>
+          {tab !== "topics" && (
+            <div className="discovery-heading">
+              <div>
+                <div className="eyebrow">YOUR DAILY DOSE OF DISCOVERY</div>
+                <h1>
+                  {tab === "saved" ? (
+                    <>
+                      The ones you <em>kept.</em>
+                    </>
+                  ) : tab === "random" ? (
+                    <>
+                      A little <em>serendipity.</em>
+                    </>
+                  ) : (
+                    <>
+                      Where will curiosity
+                      <br />
+                      take you <em>today?</em>
+                    </>
+                  )}
+                </h1>
+                <p>
+                  {tab === "saved"
+                    ? "Good discoveries deserve another look."
+                    : tab === "random"
+                      ? "Skip the choosing. See where the next question takes you."
+                      : "A surprising fact. A different perspective. A little more Korea."}
+                </p>
+              </div>
+              <span className="discovery-stamp" aria-hidden="true">
+                알<br />
+                맹이<span>A LITTLE MORE KOREA</span>
+              </span>
             </div>
-            <span className="discovery-stamp" aria-hidden="true">
-              알<br />
-              맹이<span>A LITTLE MORE KOREA</span>
-            </span>
-          </div>
+          )}
           {tab === "topics" && (
             <>
-              <section className="random-feature">
-                <div className="feature-symbol" aria-hidden="true">
-                  ✦
-                </div>
-                <div>
-                  <span className="eyebrow">FOLLOW A DIFFERENT THREAD</span>
-                  <h2>No plans? Perfect.</h2>
-                  <p>Let a random discovery find you.</p>
-                </div>
-                <button
-                  className="primary"
-                  disabled={!items.length}
-                  onClick={() => open(shuffled(items))}
-                >
-                  Surprise me <span>→</span>
-                </button>
-              </section>
               <div className="section-label">
-                <h2>Find your kind of curious</h2>
+                <h1>Find your kind of curious</h1>
                 <span>{items.length} discoveries</span>
               </div>
               <div className="category-filters" aria-label="Topics">

@@ -56,3 +56,7 @@ Reveal supports `revealMode: prediction | reflection`, optional `observedOptionI
 ## Design system
 
 `DESIGN.md` describes White & Playful: white canvas, black text and primary buttons, lime and lavender accents restricted to small labels and selection states. Locally bundled Space Grotesk, Inter and JetBrains Mono are retained. No dark mode, gradients or glass effects are used in the current interface. Content rules and responsive bottom navigation remain unchanged.
+
+## Landing / feed separation
+
+`/` has three concise sections: introduction and Start discovering CTA, Quiz/Reveal explanation, and a random-feed CTA. The main `/discover` topic view starts directly with topic filters and content. `/discover?feed=random` opens the random tab; it does not automatically start a session. Development `/preview` uses the same compact hub with unpublished fixtures. Landing and hub are responsive and retain mobile bottom navigation in the hub.
