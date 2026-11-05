@@ -11,10 +11,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <header className="masthead">
           <a href="/" className="brand" aria-label="Almengi home">
-            <span className="brand-mark" aria-hidden="true"><img src="/brand/almengi-al.svg" width="40" height="40" alt="" /></span>almengi
-            <span className="korean">알맹이</span>
+            <span className="brand-mark" aria-hidden="true"><img src="/brand/almengi-al.svg" width="40" height="40" alt="" /></span>
+            <span className="brand-copy"><span className="brand-wordmark">Almengi</span><span className="brand-tagline"><span>A</span><span>little</span><span>more</span><span>Korea</span></span></span>
           </a>
-          <span className="header-note">A little more Korea.</span>
         </header>
         {children}
         <footer>
