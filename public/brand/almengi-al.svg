@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
   <title id="title">Almengi AL mark</title>
-  <desc id="desc">Lime AL monogram on a black rounded square. Letters are independent editable vector paths.</desc>
+  <desc id="desc">Lime AL monogram on a black rounded square. Softly rounded letters are independent editable vector paths.</desc>
   <rect id="background" width="128" height="128" rx="24" fill="#111111"/>
   <g id="monogram" fill="#D8F36A">
-    <path id="letter-a" fill-rule="evenodd" d="M17 91 36 36h15l19 55H55l-3.5-12h-17L31 91Zm20-23h11L42.5 49Z"/>
-    <path id="letter-l" d="M76 36h14v42h23v13H76Z"/>
+    <path id="letter-a" fill-rule="evenodd" d="M20 91Q17 91 18 88L35 39Q36 36 39 36H48Q51 36 52 39L69 88Q70 91 67 91H58Q55 91 54 88L51.5 79H34.5L32 88Q31 91 28 91ZM39 68H46Q48 68 47.5 66L44 53Q42.5 49 41 53L37.5 66Q37 68 39 68Z"/>
+    <path id="letter-l" d="M79 36H87Q90 36 90 39V75Q90 78 93 78H110Q113 78 113 81V88Q113 91 110 91H79Q76 91 76 88V39Q76 36 79 36Z"/>
   </g>
 </svg>

@@ -31,3 +31,5 @@ Simple black line illustrations on neutral backgrounds. At most one small lime s
 - Editable master: public/brand/almengi-al.svg, with separate background, letter-a and letter-l paths.
 - Do not stretch or rotate the mark. Keep at least 1/4 mark width as surrounding clear space.
 - Header mark sizes: 40px desktop, 32px mobile. Pair with the black almengi wordmark.
+
+- AL revision: 3-unit soft corner radius on a 128-unit grid, including the inner counter and L elbow. Keep strokes bold and the square unchanged. Header uses the same SVG master as the downloadable file.
