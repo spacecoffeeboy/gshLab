@@ -1,4 +1,5 @@
 import { z } from "zod";
+import topics from "../content/topics.json";
 const text = z.string().trim().min(1);
 const source = z.object({
   sourceId: text,
@@ -35,7 +36,16 @@ const base = z.object({
   ]),
   language: z.literal("en"),
   title: text,
-  topicTags: z.array(text),
+  topicIds: z
+    .array(text)
+    .min(1)
+    .refine(
+      (ids) =>
+        new Set(ids).size === ids.length &&
+        ids.every((id) => topics.some((topic) => topic.id === id)),
+      "Topics must be unique IDs from content/topics.json",
+    ),
+  tags: z.array(text).default([]),
   audienceTags: z
     .array(z.enum(["short-trip", "long-trip", "short-stay", "long-stay"]))
     .optional(),

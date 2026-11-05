@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import type { Content } from "@/lib/content";
+import { topicLabel } from "@/lib/discovery";
 type Item = Content;
 export function Feed({
   items,
@@ -152,9 +153,7 @@ export function Feed({
                     ? "✦ REVEAL · PREDICT"
                     : "✦ REVEAL · REFLECT"}
               </span>
-              <span className="topic">
-                {item.topicTags[0]?.replaceAll("-", " ")}
-              </span>
+              <span className="topic">{topicLabel(item.topicIds[0])}</span>
             </div>
             <h2 ref={heading} tabIndex={-1}>
               {item.title}
@@ -281,6 +280,16 @@ export function Feed({
                   <span aria-hidden="true">→</span>
                 </button>
               </div>
+            )}
+            {item.tags.length > 0 && (
+              <ul
+                className="content-tags player-tags"
+                aria-label="Content tags"
+              >
+                {item.tags.map((tag) => (
+                  <li key={tag}>#{tag}</li>
+                ))}
+              </ul>
             )}
           </article>
           <p className="below-card">

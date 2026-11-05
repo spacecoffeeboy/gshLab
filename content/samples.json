@@ -7,7 +7,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "How Many Korean Households Have Just One Person?",
-    "topicTags": ["housing", "society"],
     "context": "Living alone is an increasingly visible part of life in Korea.",
     "question": "In 2024, roughly what share of South Korea's general households consisted of just one person?",
     "options": [
@@ -48,7 +47,9 @@
         "unit": "%",
         "notes": "Earlier conversation cited 36.1%; verify exact official publication URL and table before publishing."
       }
-    ]
+    ],
+    "topicIds": ["daily-life", "society"],
+    "tags": ["housing", "living-alone", "households"]
   },
   {
     "id": "reveal-0001",
@@ -58,7 +59,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "The High-Five That Didn't Happen",
-    "topicTags": ["social-etiquette", "work"],
     "context": "Someone working in Korea tried to high-five a coworker, but received a fist bump instead. Another coworker smiled rather than shaking hands.",
     "question": "What would you make of these reactions?",
     "options": [
@@ -86,6 +86,8 @@
         "url": null,
         "notes": "Earlier manually collected dataset rows R098–R100; original permalink must be recovered before publishing."
       }
-    ]
+    ],
+    "topicIds": ["work", "daily-life"],
+    "tags": ["social-etiquette", "greetings", "physical-contact"]
   }
 ]

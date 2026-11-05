@@ -59,7 +59,7 @@ test("hub filters topics and keeps saved discoveries after remount", async () =>
   dom.window.scrollTo = () => {};
   const props = { items: parseCollection(samples), preview: true };
   let view = render(createElement(Explorer, props));
-  fireEvent.click(view.getByRole("button", { name: "Home & living" }));
+  fireEvent.click(view.getByRole("button", { name: "Society" }));
   assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
   fireEvent.click(
     view.getByRole("button", { name: `Save ${samples[0].title}` }),
@@ -101,5 +101,42 @@ test("prediction requires selection and explicit reveal without grading", async 
   assert.equal(view.container.querySelectorAll(".option.correct").length, 0);
   fireEvent.click(view.getByRole("button", { name: /Next discovery/ }));
   assert.ok(view.getByRole("button", { name: /Reveal their story/ }));
+  cleanup();
+});
+
+test("topic search is explicitly submitted, intersects topics and clears empty results", async () => {
+  const { render, fireEvent, cleanup } = await import("@testing-library/react");
+  const { Explorer } = await import("../components/explorer");
+  const { default: kindness } = await import("../content/kindness.json");
+  const view = render(
+    createElement(Explorer, {
+      items: parseCollection(kindness),
+      preview: true,
+    }),
+  );
+  assert.equal(
+    view.queryByRole("button", { name: "Little kindnesses" }),
+    null,
+  );
+  fireEvent.change(view.getByRole("searchbox"), {
+    target: { value: "kindness" },
+  });
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 4);
+  fireEvent.click(view.getByRole("button", { name: "Search" }));
+  fireEvent.click(view.getByRole("button", { name: "Travel" }));
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 2);
+  assert.ok(
+    view.container
+      .querySelector(".content-tags")
+      ?.textContent?.includes("#kindness"),
+  );
+  fireEvent.change(view.getByRole("searchbox"), {
+    target: { value: "unfindable" },
+  });
+  fireEvent.click(view.getByRole("button", { name: "Search" }));
+  assert.ok(view.getByText("No discoveries found."));
+  fireEvent.click(view.getByRole("button", { name: "Clear filters" }));
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 4);
+  assert.equal((view.getByRole("searchbox") as HTMLInputElement).value, "");
   cleanup();
 });

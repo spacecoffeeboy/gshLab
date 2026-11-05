@@ -8,7 +8,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "A Taxi Stopped in the Rain. What Happened Next?",
-    "topicTags": ["kindness", "travel", "rain"],
     "audienceTags": ["short-trip", "long-trip"],
     "context": "On the way to Bulguksa Temple, a tourist was waiting for a bus when a sudden storm brought heavy rain. A taxi stopped nearby.",
     "question": "What did the taxi do?",
@@ -37,7 +36,9 @@
         "notes": "Operator-provided account. Verify permalink and whether post or comment. Do not infer taxi driver's age or identity.",
         "accessedAt": null
       }
-    ]
+    ],
+    "topicIds": ["travel"],
+    "tags": ["kindness", "rain"]
   },
   {
     "id": "reveal-kindness-0002",
@@ -48,7 +49,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "Would You Give Away Your Only Umbrella?",
-    "topicTags": ["kindness", "rain", "reciprocity"],
     "audienceTags": ["short-trip", "long-trip", "short-stay", "long-stay"],
     "context": "A foreigner saw another foreigner running through heavy rain. They were about 200 yards from their own front door and had an umbrella.",
     "question": "Would you offer your umbrella, even if it meant getting soaked?",
@@ -77,7 +77,9 @@
         "notes": "Operator-provided account. Recipient's acceptance is unknown; author's residency duration is unknown.",
         "accessedAt": null
       }
-    ]
+    ],
+    "topicIds": ["daily-life"],
+    "tags": ["kindness", "rain", "reciprocity"]
   },
   {
     "id": "reveal-kindness-0003",
@@ -88,7 +90,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "Lost Wallet. No Shared Language. Then What?",
-    "topicTags": ["kindness", "transport", "language-barrier", "travel"],
     "audienceTags": ["short-trip", "long-trip"],
     "context": "On a first trip to Seoul, two young women helped a traveler carry luggage up subway stairs. Later, the traveler realized their wallet had been left on the train and returned to the station. The woman they spoke with didn't speak English.",
     "question": "How did she help?",
@@ -117,7 +118,9 @@
         "notes": "Operator-provided account. Woman's occupation is unknown. Don't invent recovery process.",
         "accessedAt": null
       }
-    ]
+    ],
+    "topicIds": ["travel"],
+    "tags": ["kindness", "transport", "language-barrier"]
   },
   {
     "id": "reveal-kindness-0004",
@@ -128,7 +131,6 @@
     "status": "needs_verification",
     "language": "en",
     "title": "Would You Accept a Stranger's Nice Umbrella?",
-    "topicTags": ["kindness", "rain", "generosity"],
     "audienceTags": ["short-trip", "long-trip", "short-stay"],
     "context": "During a light drizzle, a middle-aged couple offered a visitor an umbrella. It looked much nicer than a cheap convenience-store umbrella.",
     "question": "Would you feel comfortable accepting it?",
@@ -157,6 +159,8 @@
         "notes": "Operator-provided account. Whether umbrella was accepted is unknown; actual price unknown.",
         "accessedAt": null
       }
-    ]
+    ],
+    "topicIds": ["daily-life"],
+    "tags": ["kindness", "rain", "generosity"]
   }
 ]

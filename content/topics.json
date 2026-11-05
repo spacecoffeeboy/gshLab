@@ -1,0 +1,8 @@
+[
+  { "id": "travel", "label": "Travel" },
+  { "id": "daily-life", "label": "Daily life" },
+  { "id": "food", "label": "Food" },
+  { "id": "language", "label": "Language" },
+  { "id": "work", "label": "Work" },
+  { "id": "society", "label": "Society" }
+]

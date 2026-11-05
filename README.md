@@ -41,7 +41,7 @@ Source structure: `app/` routes and styles; `components/feed.tsx` interaction; `
 
 ## Discovery journey
 
-The landing page `/` has a CTA into `/discover`. The hub has By topic, Random, and Saved views. Topic filters are generated from content `topicTags`. Cards open a focused Quiz/Reveal player with Back to feed, Save/Remove, result feedback, sources and next navigation. Random uses a shuffled copy of the available collection and never repeats within a run; finishing offers an explicit restart. No timers or automatic advancement.
+The landing page `/` has a CTA into `/discover`. The hub has By topic, Random, and Saved views. Topic filters are generated from the `content/topics.json` registry. Cards open a focused Quiz/Reveal player with Back to feed, Save/Remove, result feedback, sources and next navigation. Random uses a shuffled copy of the available collection and never repeats within a run; finishing offers an explicit restart. No timers or automatic advancement.
 
 Saves use this browser's localStorage, with a separate namespace for editorial preview. They survive reloads but do not sync across devices or browsers. Storage failures fall back to this visit and show a notice. Deleted/unpublished items do not appear in Saved. Login remains undecided and is not required by this prototype.
 
@@ -60,3 +60,11 @@ Reveal supports `revealMode: prediction | reflection`, optional `observedOptionI
 ## Landing / feed separation
 
 `/` has three concise sections: introduction and Start discovering CTA, Quiz/Reveal explanation, and a random-feed CTA. The main `/discover` topic view starts directly with topic filters and content. `/discover?feed=random` opens the random tab; it does not automatically start a session. Development `/preview` uses the same compact hub with unpublished fixtures. Landing and hub are responsive and retain mobile bottom navigation in the hub.
+
+## Topics and keyword search
+
+Add broad topics to `content/topics.json` with a stable `id` and English `label`; array order is chip order. Existing initial topics are Travel, Daily life, Food, Language, Work and Society. Topics are visible even before they contain published items. Never add narrow keywords as navigation topics.
+
+Each content record uses `topicIds` (one or more registry IDs) and `tags` (fine-grained keywords, e.g. kindness, rain, generosity). Former mixed `topicTags` were migrated to these two fields. Kindness accounts use Travel or Daily life according to context; audience relevance does not establish residency.
+
+By topic search submits with Search or Enter, combines with the selected topic, ignores letter case and treats hyphens as spaces. It matches title, context, question, broad topic labels and tags; it never searches hidden answers, reveals, source notes or editorial notes. Clear search preserves the topic; Clear filters resets both. Saved and Random remain independent of topic search. Tags are shown in small type below each card and at the bottom of the player. No external search service is needed.

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import type { Content } from "@/lib/content";
 import { Feed } from "./feed";
+import { topics, topicLabel, matchesSearch } from "@/lib/discovery";
 export function shuffled<T>(items: T[], random = Math.random) {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i--) {
@@ -10,23 +11,6 @@ export function shuffled<T>(items: T[], random = Math.random) {
   }
   return result;
 }
-const labels: Record<string, string> = {
-  kindness: "Little kindnesses",
-  rain: "Rainy days",
-  reciprocity: "Paying it forward",
-  generosity: "Generosity",
-  "language-barrier": "Across languages",
-  housing: "Home & living",
-  society: "Society",
-  "social-etiquette": "Social life",
-  work: "Work life",
-  food: "Food",
-  language: "Language",
-  travel: "Travel",
-  transport: "Getting around",
-  "daily-life": "Everyday life",
-  family: "Family",
-};
 export function Explorer({
   items,
   preview = false,
@@ -36,6 +20,8 @@ export function Explorer({
 }) {
   const [tab, setTab] = useState("topics");
   const [topic, setTopic] = useState("all");
+  const [searchInput, setSearchInput] = useState("");
+  const [query, setQuery] = useState("");
   const [saved, setSaved] = useState<string[]>([]);
   const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState("");
@@ -74,12 +60,18 @@ export function Explorer({
     setQueue(collection);
     window.scrollTo({ top: 0, behavior: "instant" });
   }
-  const topics = [...new Set(items.flatMap((i) => i.topicTags))];
-  const shown = items.filter((i) =>
+  const shown = items.filter((item) =>
     tab === "saved"
-      ? saved.includes(i.id)
-      : topic === "all" || i.topicTags.includes(topic),
+      ? saved.includes(item.id)
+      : (topic === "all" || item.topicIds.includes(topic)) &&
+        matchesSearch(item, query),
   );
+  const hasFilters = query.length > 0 || topic !== "all";
+  function clearFilters() {
+    setSearchInput("");
+    setQuery("");
+    setTopic("all");
+  }
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("feed");
     if (requested === "random") setTab("random");
@@ -179,24 +171,75 @@ export function Explorer({
             <>
               <div className="section-label">
                 <h1>Find your kind of curious</h1>
-                <span>{items.length} discoveries</span>
+                <span>{shown.length} discoveries</span>
               </div>
-              <div className="category-filters" aria-label="Topics">
-                <button
-                  aria-pressed={topic === "all"}
-                  onClick={() => setTopic("all")}
-                >
-                  All topics
-                </button>
-                {topics.map((t) => (
+              <div className="topic-tools">
+                <div className="category-filters" aria-label="Topics">
                   <button
-                    key={t}
-                    aria-pressed={topic === t}
-                    onClick={() => setTopic(t)}
+                    aria-pressed={topic === "all"}
+                    onClick={() => setTopic("all")}
                   >
-                    {labels[t] || t.replaceAll("-", " ")}
+                    All topics
                   </button>
-                ))}
+                  {topics.map((t) => (
+                    <button
+                      key={t.id}
+                      aria-pressed={topic === t.id}
+                      onClick={() => setTopic(t.id)}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+                <form
+                  className="discovery-search"
+                  role="search"
+                  aria-label="Search discoveries"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    setQuery(searchInput.trim());
+                  }}
+                >
+                  <label className="sr-only" htmlFor="discovery-search-input">
+                    Search topics, stories or tags
+                  </label>
+                  <div className="search-input-wrap">
+                    <input
+                      id="discovery-search-input"
+                      type="search"
+                      placeholder="Search stories or tags…"
+                      value={searchInput}
+                      onChange={(event) => {
+                        setSearchInput(event.target.value);
+                        if (!event.target.value.trim()) setQuery("");
+                      }}
+                      maxLength={160}
+                    />
+                  </div>
+                  <button type="submit" className="primary">
+                    Search
+                  </button>
+                </form>
+              </div>
+              <div className="search-summary" role="status">
+                {query && (
+                  <>
+                    <span>
+                      {shown.length}{" "}
+                      {shown.length === 1 ? "discovery" : "discoveries"} for “
+                      {query}”
+                      {topic !== "all" ? ` in ${topicLabel(topic)}` : ""}
+                    </span>
+                    <button
+                      onClick={() => {
+                        setQuery("");
+                        setSearchInput("");
+                      }}
+                    >
+                      Clear search
+                    </button>
+                  </>
+                )}
               </div>
             </>
           )}
@@ -240,7 +283,7 @@ export function Explorer({
                     >
                       <div className="tile-art">
                         <span className="tile-category">
-                          {labels[item.topicTags[0]] || item.topicTags[0]}
+                          {topicLabel(item.topicIds[0])}
                         </span>
                         <span className="tile-number">
                           {String(n + 1).padStart(2, "0")}
@@ -248,7 +291,7 @@ export function Explorer({
                         <span className="tile-illustration" aria-hidden="true">
                           {item.kind === "quiz" ? (
                             "⅓"
-                          ) : item.topicTags.includes("rain") ? (
+                          ) : item.tags.includes("rain") ? (
                             <svg viewBox="0 0 180 140" aria-hidden="true">
                               <path
                                 d="M25 70Q90 -15 155 70Q140 55 123 70Q107 55 90 70Q73 55 57 70Q40 55 25 70Z"
@@ -304,6 +347,16 @@ export function Explorer({
                           <span aria-hidden="true">→</span>
                         </button>
                         <p>{item.context}</p>
+                        {item.tags.length > 0 && (
+                          <ul
+                            className="content-tags"
+                            aria-label="Content tags"
+                          >
+                            {item.tags.map((tag) => (
+                              <li key={tag}>#{tag}</li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </article>
                   ))}
@@ -316,13 +369,22 @@ export function Explorer({
                   <h2>
                     {tab === "saved"
                       ? "Keep a little curiosity."
-                      : "Fresh discoveries are on the way."}
+                      : items.length > 0 && hasFilters
+                        ? "No discoveries found."
+                        : "Fresh discoveries are on the way."}
                   </h2>
                   <p>
                     {tab === "saved"
                       ? "Tap Save on a Quiz or Reveal to find it here."
-                      : "We’re checking the sources before sharing our first stories."}
+                      : items.length > 0 && hasFilters
+                        ? "Try another keyword or choose a different topic."
+                        : "We’re checking the sources before sharing our first stories."}
                   </p>
+                  {tab === "topics" && items.length > 0 && hasFilters && (
+                    <button className="primary" onClick={clearFilters}>
+                      Clear filters
+                    </button>
+                  )}
                   {tab === "saved" && (
                     <button
                       className="primary"
