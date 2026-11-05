@@ -34,5 +34,5 @@ Simple black line illustrations on neutral backgrounds. At most one small lime s
 
 - AL revision: 3-unit soft corner radius on a 128-unit grid, including the inner counter and L elbow. Keep strokes bold and the square unchanged. Header uses the same SVG master as the downloadable file.
 
-- Wordmark spelling study uses `Almeng-i`, aligned slightly above the mark center. Tagline `A little more Korea` sits below it, left-aligned to the A with natural word spacing and slightly tight tracking, without stretching to the wordmark width; do not repeat it separately in the header.
+- Wordmark spelling study uses `Almeng-E`, aligned slightly above the mark center. Tagline `A little more Korea` sits below it, left-aligned to the A with natural word spacing and slightly tight tracking, without stretching to the wordmark width; do not repeat it separately in the header.
 - Browser tab icon uses the same rounded AL mark (`app/icon.svg` and multi-size `app/favicon.ico`).
