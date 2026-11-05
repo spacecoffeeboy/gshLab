@@ -7,7 +7,7 @@ White canvas, black text and black primary buttons. Inspired by bold independent
 - Background/card: #FFFFFF; subtle fill: #F6F6F6.
 - Foreground/primary action: #111111; inverse text: #FFFFFF.
 - Secondary text: #666666; borders: #E5E5E5.
-- Only two accent colors: lime #D8F36A and lavender #C9B8FF.
+- Single accent color: lime #D8F36A. Former lavender surfaces use neutral gray; do not introduce purple accents.
 - Accent colors appear only on small tags, selected options and decorative stickers. No large colored backgrounds.
 - Typography: locally bundled Space Grotesk 600 for headings; Inter 400/500/600 for body; JetBrains Mono for small indexes.
 - Heading size: 44px desktop, 30px mobile; card titles 28px/22px; body 15px with 1.6 line height.
@@ -24,4 +24,10 @@ White canvas, black text and black primary buttons. Inspired by bold independent
 - No animated decorative loops. Respect reduced motion. Visible black focus outlines.
 
 ## Imagery
-Simple black line illustrations on neutral backgrounds. At most one small lime or lavender sticker per card. No fake photos, ratings, source verification or statistics.
+Simple black line illustrations on neutral backgrounds. At most one small lime sticker per card. No fake photos, ratings, source verification or statistics.
+
+## BI — AL monogram study
+- Black rounded square (#111111) with lime AL (#D8F36A).
+- Editable master: public/brand/almengi-al.svg, with separate background, letter-a and letter-l paths.
+- Do not stretch or rotate the mark. Keep at least 1/4 mark width as surrounding clear space.
+- Header mark sizes: 40px desktop, 32px mobile. Pair with the black almengi wordmark.

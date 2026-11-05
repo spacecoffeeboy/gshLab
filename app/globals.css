@@ -2126,7 +2126,7 @@ footer {
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: 0 8px 24px #0000000a;
-  --lavender: #c9b8ff;
+  --lavender: var(--muted);
 }
 html {
   color-scheme: light;
@@ -2650,3 +2650,6 @@ body {
     justify-content: space-between;
   }
 }
+
+/* Lime-only identity: neutralize former lavender surfaces. */
+.brand-mark{padding:0;background:none;border:0;border-radius:0;overflow:visible;box-shadow:none;display:block;flex-shrink:0}.brand-mark svg{display:block;width:100%;height:100%}.welcome-tag{background:var(--muted);color:var(--foreground)}.format-label,.welcome-format-grid article:nth-child(2) .format-label{background:var(--muted);color:var(--foreground)}.kind,.tile-reveal .tile-meta>span:first-child{background:var(--muted);color:var(--foreground)}.feed-tabs small{background:var(--secondary);color:var(--foreground)}
