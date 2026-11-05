@@ -1,0 +1,91 @@
+[
+  {
+    "id": "quiz-0001",
+    "slug": "korea-single-person-households",
+    "kind": "quiz",
+    "sourceType": "official_statistics",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "How Many Korean Households Have Just One Person?",
+    "topicTags": ["housing", "society"],
+    "context": "Living alone is an increasingly visible part of life in Korea.",
+    "question": "In 2024, roughly what share of South Korea's general households consisted of just one person?",
+    "options": [
+      {
+        "id": "A",
+        "text": "About 10%"
+      },
+      {
+        "id": "B",
+        "text": "About 20%"
+      },
+      {
+        "id": "C",
+        "text": "About 36%"
+      },
+      {
+        "id": "D",
+        "text": "About 50%"
+      }
+    ],
+    "correctOptionId": "C",
+    "feedbackByOption": {
+      "A": "This is much lower than the reported share of one-person general households.",
+      "B": "This underestimates the reported share.",
+      "C": "The reported share was approximately 36.1% in 2024, subject to verification against the original official table.",
+      "D": "This is higher than the reported share."
+    },
+    "insight": "This measures households, not the share of all people living alone.",
+    "sources": [
+      {
+        "sourceId": "src-stat-0001",
+        "kind": "official_report",
+        "organizationOrCommunity": "Statistics Korea / Korean official statistics",
+        "title": "2025 Statistics on Single-Person Households (source to verify)",
+        "url": null,
+        "referencePeriod": "2024",
+        "population": "general households",
+        "unit": "%",
+        "notes": "Earlier conversation cited 36.1%; verify exact official publication URL and table before publishing."
+      }
+    ]
+  },
+  {
+    "id": "reveal-0001",
+    "slug": "korean-coworker-high-five",
+    "kind": "reveal",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "The High-Five That Didn't Happen",
+    "topicTags": ["social-etiquette", "work"],
+    "context": "Someone working in Korea tried to high-five a coworker, but received a fist bump instead. Another coworker smiled rather than shaking hands.",
+    "question": "What would you make of these reactions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "They might prefer less physical contact."
+      },
+      {
+        "id": "B",
+        "text": "Those greetings might feel out of place at work."
+      },
+      {
+        "id": "C",
+        "text": "Maybe they were uncomfortable with me personally."
+      }
+    ],
+    "correctOptionId": null,
+    "reveal": "Replies offered different interpretations: one suggested that physical greetings can feel uncomfortable between people who aren't close; another said high-fives felt childish and handshakes too formal in some casual settings. Neither coworker's actual intention was established.",
+    "insight": "A friendly gesture can carry different social meanings depending on the person and setting. These replies are individual perspectives, not universal rules.",
+    "sources": [
+      {
+        "sourceId": "src-reddit-0098",
+        "kind": "reddit_post",
+        "organizationOrCommunity": "r/korea",
+        "url": null,
+        "notes": "Earlier manually collected dataset rows R098–R100; original permalink must be recovered before publishing."
+      }
+    ]
+  }
+]

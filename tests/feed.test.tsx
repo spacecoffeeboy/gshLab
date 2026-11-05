@@ -1,0 +1,105 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { JSDOM } from "jsdom";
+import { createElement } from "react";
+import samples from "../content/samples.json";
+import { parseCollection } from "../lib/content";
+import { Feed } from "../components/feed";
+const dom = new JSDOM("<!doctype html><html><body></body></html>", {
+  url: "http://localhost",
+});
+Object.assign(globalThis, {
+  window: dom.window,
+  document: dom.window.document,
+  HTMLElement: dom.window.HTMLElement,
+  requestAnimationFrame: (fn: () => void) => {
+    fn();
+    return 0;
+  },
+});
+test("quiz feedback, next, unscored reveal and collection completion", async () => {
+  const { render, fireEvent, cleanup } = await import("@testing-library/react");
+  const view = render(
+    createElement(Feed, { items: parseCollection(samples), preview: true }),
+  );
+  assert.equal(view.queryByText(samples[0].insight), null);
+  fireEvent.click(view.getByRole("button", { name: /A About 10%/ }));
+  assert.ok(view.getByText("Now you know a little more."));
+  assert.ok(view.getByText(samples[0].feedbackByOption!.A!));
+  assert.ok(view.getByText(samples[0].insight));
+  fireEvent.click(view.getByRole("button", { name: /Next discovery/ }));
+  assert.equal(view.queryByText(samples[1].reveal!), null);
+  fireEvent.click(view.getByRole("button", { name: /A They might prefer/ }));
+  fireEvent.click(view.getByRole("button", { name: /Reveal their story/ }));
+  assert.ok(view.getByText(samples[1].reveal!));
+  assert.equal(view.queryByText("YOU GOT IT"), null);
+  assert.equal(view.queryByText("A LITTLE SURPRISE"), null);
+  fireEvent.click(view.getByRole("button", { name: /Finish this collection/ }));
+  assert.ok(view.getByText("A little more in the know."));
+  fireEvent.click(view.getByRole("button", { name: /Explore again/ }));
+  assert.ok(view.getByText(samples[0].title));
+  cleanup();
+});
+test("empty feed does not leak sample questions", async () => {
+  const { render, cleanup } = await import("@testing-library/react");
+  const view = render(createElement(Feed, { items: [] }));
+  assert.ok(view.getByText(/Something worth discovering/));
+  assert.equal(view.queryByText(samples[0].title), null);
+  cleanup();
+});
+
+test("hub filters topics and keeps saved discoveries after remount", async () => {
+  const { render, fireEvent, cleanup } = await import("@testing-library/react");
+  const { Explorer, shuffled } = await import("../components/explorer");
+  Object.defineProperty(globalThis, "localStorage", {
+    value: dom.window.localStorage,
+    configurable: true,
+  });
+  dom.window.localStorage.clear();
+  dom.window.scrollTo = () => {};
+  const props = { items: parseCollection(samples), preview: true };
+  let view = render(createElement(Explorer, props));
+  fireEvent.click(view.getByRole("button", { name: "Home & living" }));
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
+  fireEvent.click(
+    view.getByRole("button", { name: `Save ${samples[0].title}` }),
+  );
+  fireEvent.click(view.getByRole("button", { name: /Saved/ }));
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
+  cleanup();
+  view = render(createElement(Explorer, props));
+  fireEvent.click(view.getByRole("button", { name: /Saved/ }));
+  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
+  fireEvent.click(
+    view.getByRole("button", { name: `Remove ${samples[0].title} from saved` }),
+  );
+  assert.ok(view.getByText("Keep a little curiosity."));
+  const original = ["a", "b", "c", "d"];
+  const queue = shuffled(original, () => 0);
+  assert.deepEqual(original, ["a", "b", "c", "d"]);
+  assert.equal(new Set(queue).size, original.length);
+  assert.deepEqual([...queue].sort(), original);
+  cleanup();
+});
+
+test("prediction requires selection and explicit reveal without grading", async () => {
+  const { render, fireEvent, cleanup } = await import("@testing-library/react");
+  const { default: kindness } = await import("../content/kindness.json");
+  const view = render(
+    createElement(Feed, { items: parseCollection(kindness), compact: true }),
+  );
+  const reveal = view.getByRole("button", { name: /Reveal what happened/ });
+  assert.equal((reveal as HTMLButtonElement).disabled, true);
+  assert.equal(view.container.querySelectorAll(".option").length, 2);
+  fireEvent.click(view.getByRole("button", { name: /A Offered the traveler/ }));
+  assert.equal(view.queryByText("An umbrella, not a ride."), null);
+  fireEvent.click(view.getByRole("button", { name: /B Gave the traveler/ }));
+  fireEvent.click(reveal);
+  assert.ok(view.getByText("An umbrella, not a ride."));
+  assert.equal(view.queryByText("YOU GOT IT"), null);
+  assert.equal(view.queryByText("A LITTLE SURPRISE"), null);
+  assert.equal(view.container.querySelectorAll(".option.correct").length, 0);
+  fireEvent.click(view.getByRole("button", { name: /Next discovery/ }));
+  assert.ok(view.getByRole("button", { name: /Reveal their story/ }));
+  cleanup();
+});

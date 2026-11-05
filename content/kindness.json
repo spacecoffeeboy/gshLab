@@ -1,0 +1,162 @@
+[
+  {
+    "id": "reveal-kindness-0001",
+    "slug": "bulguksa-taxi-umbrella",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "A Taxi Stopped in the Rain. What Happened Next?",
+    "topicTags": ["kindness", "travel", "rain"],
+    "audienceTags": ["short-trip", "long-trip"],
+    "context": "On the way to Bulguksa Temple, a tourist was waiting for a bus when a sudden storm brought heavy rain. A taxi stopped nearby.",
+    "question": "What did the taxi do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Offered the traveler a ride."
+      },
+      {
+        "id": "B",
+        "text": "Gave the traveler an umbrella."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "B",
+    "revealHeadline": "An umbrella, not a ride.",
+    "reveal": "The traveler said the taxi stopped and someone gave them an umbrella. It was only their fourth day visiting South Korea, and the unexpected gesture stayed with them.",
+    "insight": "Sometimes the most memorable travel moments aren't attractions. They're small, unexpected acts of help.",
+    "sources": [
+      {
+        "sourceId": "src-kindness-0001",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "notes": "Operator-provided account. Verify permalink and whether post or comment. Do not infer taxi driver's age or identity.",
+        "accessedAt": null
+      }
+    ]
+  },
+  {
+    "id": "reveal-kindness-0002",
+    "slug": "umbrella-paying-it-forward",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Would You Give Away Your Only Umbrella?",
+    "topicTags": ["kindness", "rain", "reciprocity"],
+    "audienceTags": ["short-trip", "long-trip", "short-stay", "long-stay"],
+    "context": "A foreigner saw another foreigner running through heavy rain. They were about 200 yards from their own front door and had an umbrella.",
+    "question": "Would you offer your umbrella, even if it meant getting soaked?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes — I'd offer it."
+      },
+      {
+        "id": "B",
+        "text": "No — I'd keep it."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "They tried to pass the kindness on.",
+    "reveal": "The writer tried to hand over the umbrella, even though they would get wet on the way home. They remembered that someone had once given them an umbrella, too.",
+    "insight": "One act of kindness can inspire another — even between strangers.",
+    "sources": [
+      {
+        "sourceId": "src-kindness-0002",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "notes": "Operator-provided account. Recipient's acceptance is unknown; author's residency duration is unknown.",
+        "accessedAt": null
+      }
+    ]
+  },
+  {
+    "id": "reveal-kindness-0003",
+    "slug": "seoul-lost-wallet-help",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Lost Wallet. No Shared Language. Then What?",
+    "topicTags": ["kindness", "transport", "language-barrier", "travel"],
+    "audienceTags": ["short-trip", "long-trip"],
+    "context": "On a first trip to Seoul, two young women helped a traveler carry luggage up subway stairs. Later, the traveler realized their wallet had been left on the train and returned to the station. The woman they spoke with didn't speak English.",
+    "question": "How did she help?",
+    "options": [
+      {
+        "id": "A",
+        "text": "She called her son to help translate."
+      },
+      {
+        "id": "B",
+        "text": "She used a translation app."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "A",
+    "revealHeadline": "She called her son — and he came in person.",
+    "reveal": "The woman called her son so he could speak with the traveler. He then walked to the station and helped the traveler retrieve the wallet. Earlier, two other strangers had already helped with the luggage.",
+    "insight": "The surprise wasn't just finding help. It was how far people went to offer it.",
+    "sources": [
+      {
+        "sourceId": "src-kindness-0003",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "notes": "Operator-provided account. Woman's occupation is unknown. Don't invent recovery process.",
+        "accessedAt": null
+      }
+    ]
+  },
+  {
+    "id": "reveal-kindness-0004",
+    "slug": "nice-umbrella-hesitation",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Would You Accept a Stranger's Nice Umbrella?",
+    "topicTags": ["kindness", "rain", "generosity"],
+    "audienceTags": ["short-trip", "long-trip", "short-stay"],
+    "context": "During a light drizzle, a middle-aged couple offered a visitor an umbrella. It looked much nicer than a cheap convenience-store umbrella.",
+    "question": "Would you feel comfortable accepting it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes — I'd accept the kind offer."
+      },
+      {
+        "id": "B",
+        "text": "I'd hesitate — it seems too valuable."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "The offer was kind. Accepting felt complicated.",
+    "reveal": "The writer appreciated the gesture but felt uneasy about taking an umbrella that looked expensive, especially when it was only drizzling.",
+    "insight": "Even a welcome act of generosity can leave someone wondering how to respond.",
+    "sources": [
+      {
+        "sourceId": "src-kindness-0004",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "notes": "Operator-provided account. Whether umbrella was accepted is unknown; actual price unknown.",
+        "accessedAt": null
+      }
+    ]
+  }
+]
