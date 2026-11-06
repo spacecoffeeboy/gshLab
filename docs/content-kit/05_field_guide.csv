@@ -1,0 +1,41 @@
+﻿column,applies_to,requirement,description_ko
+content_id,공통/출처,필수,콘텐츠 고유 ID. 출처 파일의 content_id와 동일하게 입력. 예: quiz-draft-001. 중복/재사용 금지.
+slug,공통,변환 시 필수,소문자 영문·숫자·하이픈. 모르면 공란으로 두면 Codex가 부여.
+status,공통,필수,draft / needs_verification / approved / published / archived. 처음에는 draft. 승인과 게시는 별개.
+source_type,공통,변환 시 필수,reddit / official_statistics / mixed. mixed는 경험과 공식 통계 근거 모두 기록.
+topic_ids,공통,필수,04_topics.csv의 큰 토픽 ID. 복수는 |로 구분. 예: travel|daily-life.
+tags,공통,권장,검색용 세부 태그. 예: kindness|rain. 큰 토픽과 분리. # 없이 입력.
+audience_tags,공통,선택,short-trip|long-trip|short-stay|long-stay 중 선택. 편집상 관련성이고 작성자 체류기간을 입증하지 않음.
+title,공통,필수,콘텐츠 제목. 사용자에게 표시할 최종 원고는 영어.
+context,공통,필수,선택 전에 보여줄 상황 설명. 답이나 공개 내용을 미리 누설하지 않기.
+question,공통,필수,사용자에게 묻는 질문. Quiz는 조건·기준시점·대상을 명확히.
+option_a,공통,필수,A 선택지. 전체 선택지는 2~4개.
+option_b,공통,필수,B 선택지.
+option_c,공통,선택,C 선택지. 2개면 C/D 모두 공란.
+option_d,공통,선택,D 선택지. 사용하지 않으면 공란. A부터 연속으로 작성.
+correct_option_id,Quiz,필수,A/B/C/D 중 실제 작성한 정답 하나.
+feedback_a,Quiz,필수,A 선택에 대한 구체적인 정오 이유.
+feedback_b,Quiz,필수,B 선택에 대한 구체적인 정오 이유.
+feedback_c,Quiz,C 사용 시 필수,C 선택의 정오 이유. C가 공란이면 피드백도 공란.
+feedback_d,Quiz,D 사용 시 필수,D 선택의 정오 이유. D가 공란이면 피드백도 공란.
+insight,공통,필수,핵심 발견/짧은 해설. 근거 없는 원인 추정 금지.
+editor_notes,공통,선택,내부 편집 메모. 공개 화면에 표시하지 않음.
+reviewed_by,공통,게시 시 필수,실제로 검토한 운영자 이름 또는 편집자 식별명.
+reviewed_at,공통,게시 시 필수,실제 검토 날짜 YYYY-MM-DD. 미검토면 공란.
+answer_evidence,공통,공식 통계 Quiz 게시 시 필수,정답 근거와 원문 표/페이지/항목. 그 외에도 검토 기록으로 권장.
+published_at,공통,선택,게시 시점 ISO 날짜/시간. 미게시이면 공란.
+reveal_mode,Reveal,필수,prediction: 다음에 일어난 사실 예상 / reflection: 본인의 반응·관점 선택.
+observed_option_id,Reveal,선택,prediction에서 출처에 직접 대응하는 선택지가 있을 때만 A~D. reflection은 반드시 공란. 채점용 정답 아님.
+reveal_headline,Reveal,권장,선택 후 공개할 짧은 제목.
+reveal,Reveal,필수,원문으로 확인한 사건·경험·감정. 채점이나 문화 전체 일반화 금지.
+source_id,출처,변환 시 필수,출처 고유 ID. 모르면 Codex가 부여. 같은 출처를 여러 콘텐츠에 연결 가능.
+source_kind,출처,변환 시 필수,reddit_post / reddit_comment / official_report / statistical_table / other. 게시물/댓글 구분 미확인이면 other.
+organization_or_community,출처,필수,기관명 또는 실제 확인한 커뮤니티명. 모르면 추측하지 말고 미확인이라고 기재.
+source_title,출처,권장,원본 제목.
+source_url,출처,게시 시 필수,원문 http(s) URL. 원글/댓글은 정확한 permalink. 모르면 공란+미검증 상태 유지.
+source_published_at,출처,선택,원문 발행 날짜/시간. 통계 기준연도와 구분. 모르면 공란.
+accessed_at,출처,게시 시 필수,실제로 출처를 확인한 날짜 YYYY-MM-DD. 미확인이면 공란.
+reference_period,출처,공식 통계 Quiz 게시 시 필수,통계가 다루는 기준시점. 예: 2024.
+population,출처,공식 통계 Quiz 게시 시 필수,집계 대상/분모. 예: general households.
+unit,출처,공식 통계 Quiz 게시 시 필수,통계 단위. 예: % / households.
+source_notes,출처,권장,원문에서 확인한 범위·표 위치·주의사항. 확인하지 않은 사실/링크를 만들지 않기.

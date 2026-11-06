@@ -1,0 +1,4 @@
+﻿content_id,source_id,source_kind,organization_or_community,source_title,source_url,source_published_at,accessed_at,reference_period,population,unit,source_notes
+quiz-0001,src-stat-0001,official_report,Statistics Korea / Korean official statistics,2025 Statistics on Single-Person Households (source to verify),,,,2024,general households,%,Earlier conversation cited 36.1%; verify exact official publication URL and table before publishing.
+reveal-kindness-0001,src-kindness-0001,other,Reddit (community unverified),,,,,,,,Operator-provided account. Verify permalink and whether post or comment. Do not infer taxi driver's age or identity.
+reveal-kindness-0002,src-kindness-0002,other,Reddit (community unverified),,,,,,,,Operator-provided account. Recipient's acceptance is unknown; author's residency duration is unknown.
