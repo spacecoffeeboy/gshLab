@@ -6,13 +6,12 @@ export default function Home() {
         <div className="welcome-copy">
           <p className="eyebrow">YOUR DAILY DOSE OF DISCOVERY</p>
           <h1 id="welcome-title">
-            Where will curiosity
+            A little closer
             <br />
-            take you <em>today?</em>
+            to <em>Korea.</em>
           </h1>
           <p className="welcome-description">
-            A surprising fact. A different perspective.
-            <br />A little more Korea than you knew before.
+            Small questions. Real stories. Discover the Korea beyond the familiar.
           </p>
           <Link className="primary" href="/discover">
             Start discovering <span aria-hidden="true">→</span>
@@ -21,14 +20,8 @@ export default function Home() {
             A few minutes. A fresh perspective. No account needed.
           </p>
         </div>
-        <div className="welcome-art" aria-hidden="true">
-          <span className="welcome-orbit" />
-          <div className="welcome-sticker">
-            알<br />
-            맹이<small>A LITTLE MORE KOREA</small>
-          </div>
-          <span className="welcome-star">✦</span>
-          <span className="welcome-tag">Guess. Reveal. Repeat.</span>
+        <div className="alphabet-art">
+          <img src="/illustrations/alphabet-bridge.svg" width="520" height="380" alt="A to Z and ㄱ to ㅎ, connected by a small lime spark." />
         </div>
       </section>
       <section className="welcome-formats" aria-labelledby="formats-title">

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="380" viewBox="0 0 520 380" role="img" aria-labelledby="title desc">
+ <title id="title">A to Z meets ㄱ to ㅎ</title>
+ <desc id="desc">Two simple alphabet cards, Latin A to Z and Korean ㄱ to ㅎ, connected by a lime spark.</desc>
+ <g id="latin-card" transform="rotate(-7 210 146)">
+  <rect x="49" y="45" width="318" height="178" rx="24" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1.5"/>
+  <text x="84" y="149" font-family="Arial, sans-serif" font-size="79" font-weight="700" fill="#111111">A</text>
+  <path d="M159 122H234m-9-9 10 9-10 9" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="264" y="149" font-family="Arial, sans-serif" font-size="79" font-weight="700" fill="#111111">Z</text>
+  <text x="88" y="190" font-family="Arial, sans-serif" font-size="12" letter-spacing="8" fill="#777777">B C D · · · X Y</text>
+ </g>
+ <g id="hangul-card" transform="rotate(6 323 253)">
+  <rect x="157" y="166" width="318" height="178" rx="24" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+  <text x="193" y="274" font-family="Noto Sans CJK KR, sans-serif" font-size="77" font-weight="700" fill="#111111">ㄱ</text>
+  <path d="M269 244H344m-9-9 10 9-10 9" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="369" y="274" font-family="Noto Sans CJK KR, sans-serif" font-size="77" font-weight="700" fill="#111111">ㅎ</text>
+  <text x="196" y="310" font-family="Noto Sans CJK KR, sans-serif" font-size="12" letter-spacing="7" fill="#777777">ㄴ ㄷ ㄹ · · · ㅍ</text>
+ </g>
+ <g id="connection"><circle cx="354" cy="163" r="32" fill="#D8F36A"/><path d="M354 145Q354 163 372 163Q354 163 354 181Q354 163 336 163Q354 163 354 145Z" fill="#111111"/></g>
+ <circle cx="73" cy="286" r="5" fill="#D8F36A"/>
+</svg>
