@@ -36,3 +36,9 @@ Simple black line illustrations on neutral backgrounds. At most one small lime s
 
 - Wordmark spelling study uses `Almeng-E`, aligned slightly above the mark center. Tagline `A little more Korea` sits below it, left-aligned to the A with natural word spacing and slightly tight tracking, without stretching to the wordmark width; do not repeat it separately in the header.
 - Browser tab icon uses the same rounded AL mark (`app/icon.svg` and multi-size `app/favicon.ico`).
+
+## Current hero composition
+- Image-free vertical layout: oversized headline above a separate description/CTA row.
+- Copy: Korea, here and there / A little deeper and closer. Use outline here, lime deeper and an underline for closer.
+- Description: Get to know Korea. Have a little fun. Take a little with you.
+- On mobile the bottom row stacks and the CTA spans the available width.

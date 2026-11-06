@@ -2,26 +2,18 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="landing-v2">
-      <section className="welcome-hero" aria-labelledby="welcome-title">
-        <div className="welcome-copy">
-          <p className="eyebrow">YOUR DAILY DOSE OF DISCOVERY</p>
+      <section className="welcome-hero type-hero" aria-labelledby="welcome-title">
+        <div className="type-hero-top">
+          <p className="eyebrow">ALMENG-E / A LITTLE MORE KOREA</p>
           <h1 id="welcome-title">
-            A little closer
-            <br />
-            to <em>Korea.</em>
+            <span className="hero-line">Korea, <span className="hero-outline">here</span> and there</span>
+            <span className="hero-line">A little <em>deeper</em></span>
+            <span className="hero-line">and <span className="hero-closer">closer</span></span>
           </h1>
-          <p className="welcome-description">
-            Small questions. Real stories. Discover the Korea beyond the familiar.
-          </p>
-          <Link className="primary" href="/discover">
-            Start discovering <span aria-hidden="true">→</span>
-          </Link>
-          <p className="welcome-caption">
-            A few minutes. A fresh perspective. No account needed.
-          </p>
         </div>
-        <div className="alphabet-art">
-          <img src="/illustrations/alphabet-bridge.svg" width="520" height="380" alt="A to Z and ㄱ to ㅎ, connected by a small lime spark." />
+        <div className="type-hero-bottom">
+          <p className="welcome-description">Get to know Korea. Have a little fun.<br/>Take a little with you.</p>
+          <div className="hero-action-group"><Link className="primary" href="/discover">Start discovering <span aria-hidden="true">→</span></Link><span className="welcome-caption">No account needed. Just curiosity.</span></div>
         </div>
       </section>
       <section className="welcome-formats" aria-labelledby="formats-title">
