@@ -132,41 +132,7 @@ export function Explorer({
         />
       ) : (
         <main className="explorer">
-          {tab !== "topics" && (
-            <div className="discovery-heading">
-              <div>
-                <div className="eyebrow">YOUR DAILY DOSE OF DISCOVERY</div>
-                <h1>
-                  {tab === "saved" ? (
-                    <>
-                      The ones you <em>kept.</em>
-                    </>
-                  ) : tab === "random" ? (
-                    <>
-                      A little <em>serendipity.</em>
-                    </>
-                  ) : (
-                    <>
-                      Where will curiosity
-                      <br />
-                      take you <em>today?</em>
-                    </>
-                  )}
-                </h1>
-                <p>
-                  {tab === "saved"
-                    ? "Good discoveries deserve another look."
-                    : tab === "random"
-                      ? "Skip the choosing. See where the next question takes you."
-                      : "A surprising fact. A different perspective. A little more Korea."}
-                </p>
-              </div>
-              <span className="discovery-stamp" aria-hidden="true">
-                알<br />
-                맹이<span>A LITTLE MORE KOREA</span>
-              </span>
-            </div>
-          )}
+          {tab !== "topics" && <h1 className="sr-only">{tab === "random" ? "Random discoveries" : "Saved discoveries"}</h1>}
           {tab === "topics" && (
             <>
               <div className="section-label">
@@ -266,12 +232,6 @@ export function Explorer({
             </section>
           ) : (
             <>
-              {tab === "saved" && (
-                <p className="storage-note">
-                  Saved on this browser · No account needed · Removing a save
-                  won’t affect the content.
-                </p>
-              )}
               {tab === "saved" && !ready ? (
                 <p role="status">Loading your saved discoveries…</p>
               ) : shown.length ? (
