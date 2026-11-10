@@ -4,7 +4,7 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 
 ## Active journey
 - `/` landing → `/test` sample question → explanation and completion. `/discover` redirects to `/test`. No feed tabs or content-grid step in this journey.
-- The active first look has one English ramyeon question, two choices, explicit explanation action and a completion section. Do not show a 12-question promise, population statistics, score or earned level for this subjective dummy.
+- The active first look has one English ramyeon question, two choices, immediate answer check, inline explanation toggle and a completion section. Do not show a 12-question promise, population statistics, score or earned level for this subjective dummy.
 - Preserve the existing feed components/data for later product decisions; do not link Believe it or not in this first look.
 
 ## Brand
@@ -54,9 +54,9 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 
 ## First-look question UI
 - Main question is unboxed, within the shared 700px reading width. Heading28px desktop /24px mobile, body15px, metadata12px, options60px+, action48px+.
-- Preserve related spacing12–16px and group spacing24–32px. Select with light lime; no correctness color before explicit explanation.
-- Explain the featured pairing, include an alternative/takeaway, then a clear completion section with Home and Retry. Focus moves to the question/explanation heading. Refresh resets the answer.
+- Preserve related spacing12–16px and group spacing24–32px. Select once to immediately show a lime tick on the featured answer; only a correct choice gets a brief pop.
+- Explain the featured pairing, include an alternative/takeaway, then a clear completion section with Home and Retry. Opening the explanation retains the question and button focus; no route change or forced scroll. Retry restores question focus. Refresh resets the answer.
 
 ## Correct-answer punctuation
 - Replace the legacy visible `Correct answer` option label with a 32px lime check mark. The check has an accessible Correct label.
-- On explicit sample explanation, a correct pick gets a360ms pop with a420ms four-ray burst; no confetti overlay or looping animation. Reduced motion removes animation and sparks. Alternative picks get explanation without a success tick.
+- On immediate sample answer selection, a correct pick gets a360ms pop with a420ms four-ray burst; no confetti overlay or looping animation. Reduced motion removes animation and sparks. Alternative picks get explanation without a success tick.

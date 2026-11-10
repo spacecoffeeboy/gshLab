@@ -17,8 +17,8 @@ npm run test:browser
 ## Routes and copy
 
 - `/`: **How well do you know Korea?** CTA **Take the Korea test** → `/test`.
-- `/test`: one English ramyeon/kimchi/danmuji dummy. Choose, optionally change the choice, then **See the answer**. No automatic reveal.
-- Explanation: featured kimchi pairing, an alternative danmuji pairing, completion, **Back to home** and **Try this question again**.
+- `/test`: one English ramyeon/kimchi/danmuji dummy. Choose once to immediately check the answer. Then **View explanation** expands the explanation below the question without navigation.
+- Inline explanation: kimchi pairing, an alternative danmuji pairing, completion, **Back to home** and **Try this question again**.
 - `/discover`: redirects to `/test` for existing bookmarks.
 - `/preview`: development-only legacy editorial collections. All production preview requests remain blocked.
 

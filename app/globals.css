@@ -1454,3 +1454,9 @@ details[open] > summary::after {
   .success-tick { animation: none; }
   .tick-burst { display: none; }
 }
+
+.test-question .option.sample-correct { border-color: var(--foreground); background: var(--selection); }
+.success-tick.is-static { animation: none; }
+.inline-explanation { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+.inline-explanation h2 { font-size: 24px; line-height: 1.4; margin: 0 0 16px; }
+.test-question .option.chosen:not(.sample-correct) { background: var(--surface); }
