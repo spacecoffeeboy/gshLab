@@ -1,0 +1,20 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import drafts from '../content/reddit-drafts.json';
+import samples from '../content/samples.json';
+import kindness from '../content/kindness.json';
+import published from '../content/published.json';
+import {parseCollection,publicContent} from '../lib/content';
+test('operator material yields eight independently traceable, unscored, unpublished Reveals',()=>{
+ const items=parseCollection(drafts);
+ assert.equal(items.length,8);
+ assert.ok(items.every(i=>i.kind==='reveal'&&i.status==='needs_verification'&&i.options.length===2&&i.correctOptionId===null));
+ assert.equal(items.filter(i=>i.kind==='reveal'&&i.revealMode==='prediction').length,4);
+ assert.equal(items.filter(i=>i.kind==='reveal'&&i.revealMode==='reflection').length,4);
+ assert.equal(new Set(items.map(i=>i.sources[0].sourceId)).size,8);
+ assert.ok(items.every(i=>i.sources.every(s=>s.kind==='other'&&s.url===null&&s.accessedAt===null&&s.publishedAt===null)&&i.editorNotes?.includes('Sheet1!A')));
+ assert.ok(items.every(i=>!i.verification&&!i.publishedAt));
+ assert.equal(publicContent(drafts).length,0);
+ assert.throws(()=>parseCollection(drafts.map(i=>({...i,status:'published'}))));
+ parseCollection([...published,...samples,...kindness,...drafts]);
+});

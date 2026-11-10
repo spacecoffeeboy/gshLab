@@ -1,0 +1,396 @@
+[
+  {
+    "id": "reveal-reddit-01-001",
+    "slug": "a-crying-toddler-and-a-subway-surprise",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "A Crying Toddler. An Unexpected Response.",
+    "topicIds": [
+      "travel",
+      "daily-life"
+    ],
+    "tags": [
+      "kindness",
+      "parenting",
+      "subway"
+    ],
+    "context": "One parent remembered a subway ride home in Korea. Their one-year-old was crying, and an older couple nearby noticed.",
+    "question": "What did the couple do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Took out toys to help calm the child."
+      },
+      {
+        "id": "B",
+        "text": "Offered a few reassuring words to the parent."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "A",
+    "revealHeadline": "They had toys with them.",
+    "reveal": "The parent said the older couple took out toys they were carrying to help calm the child. What stayed with the parent was a practical gesture from strangers during a difficult ride.",
+    "insight": "A public journey can become a personal memory through one small act of help.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a015",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A15. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A15. 장난감을 꺼내 아이를 달래려 한 사실만 확인. 장난감을 선물했다고 하거나 아이가 실제로 울음을 멈췄다고 쓰지 않음. 같은 셀의 식당 사건은 이번 문항에서 제외. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인."
+  },
+  {
+    "id": "reveal-reddit-01-002",
+    "slug": "one-coastal-town-two-different-moods",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Same Town. A Completely Different Evening.",
+    "topicIds": [
+      "travel"
+    ],
+    "tags": [
+      "weekday-travel",
+      "crowds",
+      "coastal-town"
+    ],
+    "context": "A person who had lived in Korea for almost three years described an east-coast town they visited. On weekends, its restaurants were packed and its car parks overflowed.",
+    "question": "When did the same town feel quiet and relaxed to them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "On Monday night."
+      },
+      {
+        "id": "B",
+        "text": "On Saturday night."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "A",
+    "revealHeadline": "Monday changed the mood.",
+    "reveal": "The writer described Monday night as peaceful, with restaurants almost to themselves. They could not remember the town’s name. Their point was how different one place could feel depending on the day.",
+    "insight": "Where you go is only part of a trip. When you go can change the experience, too.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a019",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A19. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A19. 동해안의 이름이 기억나지 않는 한 마을에 대한 개인 관찰. 특정 지명·여행 날짜·항상 월요일이 한산하다는 규칙을 만들지 않음. 모든 해변 마을로 일반화 금지. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인.",
+    "audienceTags": [
+      "short-trip",
+      "long-trip"
+    ]
+  },
+  {
+    "id": "reveal-reddit-01-003",
+    "slug": "finding-peace-in-a-city-that-stays-awake",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Can a Busy City Feel Peaceful?",
+    "topicIds": [
+      "daily-life",
+      "travel"
+    ],
+    "tags": [
+      "night-owl",
+      "convenience-stores",
+      "city-life"
+    ],
+    "context": "One writer described feeling at home in Seoul late at night. They liked being able to go for a walk and find convenience stores and places to spend time still open.",
+    "question": "Which evening would help you unwind?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Quiet streets and an early night."
+      },
+      {
+        "id": "B",
+        "text": "A late walk with somewhere still open."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "For this night owl, activity felt comforting.",
+    "reveal": "The writer found a kind of peace in Seoul’s late-night activity. Having somewhere to go suited their social personality, even amid the lights and bustle. They also acknowledged that a similar experience could be found in other large cities.",
+    "insight": "A relaxing city does not look the same to everyone. For some people, having options is part of the comfort.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a026",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A26. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A26. 작성자 개인의 선호와 체감. 모든 편의시설의 24시간 영업, 야간 안전, 한국만의 고유 현상이라고 주장하지 않음. 국적·거주자격·거주기간 미확인. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인."
+  },
+  {
+    "id": "reveal-reddit-01-004",
+    "slug": "great-food-great-transit-still-not-your-city",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "Great Food. Great Transit. Still Not Your City?",
+    "topicIds": [
+      "travel",
+      "daily-life"
+    ],
+    "tags": [
+      "expectations",
+      "neighborhoods",
+      "city-atmosphere"
+    ],
+    "context": "After five days in Seoul, a first-time visitor to East Asia had mixed feelings. They praised the transport, restaurant meals and helpful people, but the city’s atmosphere did not click for them.",
+    "question": "What most shapes whether a city feels right to you?",
+    "options": [
+      {
+        "id": "A",
+        "text": "How convenient it is to explore and eat well."
+      },
+      {
+        "id": "B",
+        "text": "How its streets and neighborhoods make me feel."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "The good parts did not erase the feeling.",
+    "reveal": "The visitor enjoyed several parts of the trip, including a day in the mountains and a memorable Korean barbecue meal. Yet the packed buildings and the view from their accommodation left them feeling hemmed in. Useful transport and good food were not the whole experience for them.",
+    "insight": "Enjoying parts of a place and feeling at home there are different things. Both reactions can belong to the same trip.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a028",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A28. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A28. 한 여행자의 감정이며 서울의 객관적 거주성 평가가 아님. 우울증 등 의학적 진단, 시민들이 삶을 즐기지 않는다는 일반화, 재방문 의향을 만들지 않음. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인.",
+    "audienceTags": [
+      "short-trip"
+    ]
+  },
+  {
+    "id": "reveal-reddit-01-005",
+    "slug": "a-wedding-invitation-from-someone-you-barely-know",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "A Wedding Invite from Someone You Barely Know",
+    "topicIds": [
+      "work",
+      "daily-life"
+    ],
+    "tags": [
+      "wedding-invitations",
+      "social-expectations",
+      "relationships"
+    ],
+    "context": "A Korean writer had recently returned after about 16 years abroad. A coworker they had known for roughly two months sent a wedding invitation with bank details for a congratulatory gift. They mostly knew each other from the work shuttle.",
+    "question": "Which response would feel more natural to you?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Send a small gift as a friendly gesture."
+      },
+      {
+        "id": "B",
+        "text": "Offer congratulations without sending money."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "The invitation brought a question about closeness.",
+    "reveal": "The writer understood that wedding gifts could be part of social etiquette, but felt unsure about giving money to someone they barely knew. They explicitly did not claim that the invitation was sent only to collect money.",
+    "insight": "Knowing a custom does not always make the personal decision easy. The relationship can matter as much as the occasion.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a037",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A37. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A37. A37 자체만 사용. A38~A40과 동일 스레드/작성자라는 연결 미확인. 결혼식 당일 초대였다는 A38 내용이나 축의금 5만원을 일반적 의무로 추가하지 않음. 초대자의 금전적 의도 추정 금지. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인."
+  },
+  {
+    "id": "reveal-reddit-01-006",
+    "slug": "a-baby-name-that-could-travel-between-two-languages",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "One Name, Two Languages",
+    "topicIds": [
+      "language",
+      "daily-life"
+    ],
+    "tags": [
+      "baby-names",
+      "cross-cultural-family",
+      "naming"
+    ],
+    "context": "A writer asked for baby-name ideas for a relative’s daughter. The family wanted a name that would sound nice in both Korea and England. An update later shared their choice.",
+    "question": "Which name did the update say they chose?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Anna."
+      },
+      {
+        "id": "B",
+        "text": "Hanna."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "A",
+    "revealHeadline": "They chose Anna.",
+    "reveal": "The writer updated the post to say the family had picked Anna. The request began with finding a name that could feel comfortable in two places, rather than choosing a name for only one language.",
+    "insight": "For a family connected to more than one place, even a short name can carry a lot of thought.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a047",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A47. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A47. A47의 업데이트 Anna만 실제선택으로 확인. Hanna는 같은 셀의 이름 목록에서 가져온 대안. 출생신고 완료·인기순위·원어민 발음 일치·이름의 한국어 의미를 주장하지 않음. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인."
+  },
+  {
+    "id": "reveal-reddit-01-007",
+    "slug": "more-than-a-bowl-of-breakfast",
+    "kind": "reveal",
+    "revealMode": "reflection",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "More Than a Bowl of Breakfast",
+    "topicIds": [
+      "food",
+      "daily-life"
+    ],
+    "tags": [
+      "cooking-together",
+      "family",
+      "food-memories"
+    ],
+    "context": "A parent and son were trying Asian-inspired meals together. One breakfast used rice, egg, soy sauce, sesame oil and kimchi, with butter added. The parent asked others about the dish.",
+    "question": "What would you most want to keep from cooking together?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reliable recipes to make again."
+      },
+      {
+        "id": "B",
+        "text": "Memories of trying something together."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": null,
+    "revealHeadline": "A recipe collection for the next generation.",
+    "reveal": "The parent said they were collecting recipes so they could one day pass them to their son, along with the dishes they had made together. Their post was not only about getting breakfast right. It was also about giving those shared meals a future.",
+    "insight": "A recipe can keep more than a list of ingredients. It can become a way to return to a shared experience.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a050",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A50. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A50. A50만 사용. A51이 같은 질문에 대한 검증된 답변이라고 연결하지 않음. 이 요리가 대표적인 한국 아침식사라는 주장, 영양·정통성 판단, 아들의 나이·맛평가를 만들지 않음. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인."
+  },
+  {
+    "id": "reveal-reddit-01-008",
+    "slug": "the-pc-bang-challenge-that-ended-early",
+    "kind": "reveal",
+    "revealMode": "prediction",
+    "sourceType": "reddit",
+    "status": "needs_verification",
+    "language": "en",
+    "title": "A 24-Hour PC Bang Plan. How Long Did It Last?",
+    "topicIds": [
+      "travel",
+      "daily-life"
+    ],
+    "tags": [
+      "pc-bang",
+      "gaming",
+      "travel-plans"
+    ],
+    "context": "A visitor wanted experiences beyond the usual sightseeing stops. One plan was to try a 24-hour session at a PC bang, a Korean gaming café.",
+    "question": "How long did they say they actually lasted?",
+    "options": [
+      {
+        "id": "A",
+        "text": "12 hours."
+      },
+      {
+        "id": "B",
+        "text": "The full 24 hours."
+      }
+    ],
+    "correctOptionId": null,
+    "observedOptionId": "A",
+    "revealHeadline": "Halfway was enough.",
+    "reveal": "The visitor said they lasted 12 hours before getting bored. It was one of several unusual activities they remembered from their visits, but the challenge itself did not need a full day to become a story.",
+    "insight": "An ambitious travel plan can turn into a memorable experience even when you stop earlier than expected.",
+    "sources": [
+      {
+        "sourceId": "src-xlsx-sheet1-a033",
+        "kind": "other",
+        "organizationOrCommunity": "Reddit (community unverified)",
+        "url": null,
+        "publishedAt": null,
+        "accessedAt": null,
+        "notes": "Operator-provided excerpt in background_reference_forQuiz.xlsx, Sheet1!A33. Original permalink, post/comment type, date and attribution/reuse remain unverified. See editorNotes for evidence boundaries."
+      }
+    ],
+    "editorNotes": "원자료: background_reference_forQuiz.xlsx / Sheet1!A33. A33의 자가보고 게임시간일 뿐 PC방 이용자 평균이나 권장 플레이시간이 아님. 다른 활동들(담배·종교 모임 등)은 이번 문항에 끌어오지 않음. 연속 게임 도전을 권장하지 않음. 원문 permalink·게시물/댓글 구분·작성일·재이용 범위는 미확인.",
+    "audienceTags": [
+      "short-trip",
+      "long-trip"
+    ]
+  }
+]

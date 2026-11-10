@@ -76,3 +76,9 @@ By topic search submits with Search or Enter, combines with the selected topic, 
 Body copy is 15px, secondary controls 14px, captions/tags 12px; mobile form inputs and adjacent search buttons are 48px high. Card inner padding is 20px top, 24px sides/bottom on mobile. Only By topic and Random remain, with 56px mobile nav targets and safe-area clearance. The compact 10px logo tagline is an explicit branding exception. The approved large type-led landing hero and centered CTA are retained.
 
 With Chromium installed, start `npm run dev -- --port 3002`, then run `npm run test:browser`. Set `CHROMIUM_PATH` if the executable is not `/usr/bin/chromium`, and `BROWSER_BASE_URL` for another local port. Tests exercise keyboard navigation, publication isolation, search, Quiz/Reveal, random completion and viewport metrics; screenshots and metrics are written under ignored `test-results/`. Browser viewport emulation is not a claim of physical-phone testing.
+
+## Operator Reddit material — draft batch 01
+
+`content/reddit-drafts.json` contains eight newly authored Reveal drafts from the operator-provided `background_reference_forQuiz.xlsx` (71 populated cells, no Reddit permalinks). Prediction and reflection each have four drafts. These are not published or approved.
+
+Review text, CSV files, evidence boundaries and a disposition for every source row are in `docs/content-batches/reddit-01/`. The original workbook and full original quotations are not committed. Development `/preview?batch=reddit-01` loads only these eight drafts; default `/preview` still loads the original six fixtures. Every production `/preview` request, including the batch parameter, remains blocked. The public collection is unchanged.
