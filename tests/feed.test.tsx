@@ -155,3 +155,35 @@ test("Reddit Reveal attributes the account without claiming verified events or s
   assert.equal(view.queryByText("YOU GOT IT"), null);
   cleanup();
 });
+
+test("visit progress completes only visible answers, restores reviews and excludes explored items from random", async () => {
+  const { render, fireEvent, cleanup } = await import('@testing-library/react');
+  const { Explorer } = await import('../components/explorer');
+  const view = render(createElement(Explorer, { items: parseCollection(samples) }));
+  fireEvent.click(view.getByRole('button', { name: new RegExp(samples[0].title.replace(/[?]/g,'\\?')) }));
+  fireEvent.click(view.getByRole('button', { name: /A About 10%/ }));
+  fireEvent.click(view.getByRole('button', { name: /Back to feed/ }));
+  assert.ok(view.getByText(/1 of 2 explored this visit/));
+  assert.equal(view.getAllByText('✓ Explored').length, 1);
+  fireEvent.click(view.getByRole('button', { name: /^Random$/ }));
+  fireEvent.click(view.getByRole('button', { name: /Start random feed/ }));
+  assert.ok(view.getByText(samples[1].title));
+  fireEvent.click(view.getByRole('button', { name: /A They might prefer/ }));
+  fireEvent.click(view.getByRole('button', { name: /Back to feed/ }));
+  fireEvent.click(view.getByRole('button', { name: /^By topic$/ }));
+  assert.ok(view.getByText(/1 of 2 explored this visit/));
+  fireEvent.click(view.getByRole('button', { name: /The High-Five/ }));
+  fireEvent.click(view.getByRole('button', { name: /A They might prefer/ }));
+  fireEvent.click(view.getByRole('button', { name: /Reveal their story/ }));
+  fireEvent.click(view.getByRole('button', { name: /Back to feed/ }));
+  assert.ok(view.getByText(/2 of 2 explored this visit/));
+  fireEvent.click(view.getByRole('button', { name: /How Many Korean/ }));
+  assert.ok(view.getByText('Now you know a little more.'));
+  fireEvent.click(view.getByRole('button', { name: /Back to feed/ }));
+  fireEvent.click(view.getByRole('button', { name: /^Random$/ }));
+  assert.ok(view.getByRole('button', { name: /Review random feed/ }));
+  cleanup();
+  const fresh = render(createElement(Explorer, { items: parseCollection(samples) }));
+  assert.ok(fresh.getByText(/0 of 2 explored this visit/));
+  cleanup();
+});

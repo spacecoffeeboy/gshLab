@@ -86,3 +86,7 @@ Review text, CSV files, evidence boundaries and a disposition for every source r
 ## Published explanations
 
 Quiz results separate the correct answer, 15px explanation, takeaway and expandable data scope. White/black/lime, 48px actions, 60px options, 12px minimum metadata and reduced-motion behavior remain in force. Sources from supplied excerpts are labeled without fabricated links or access dates. Reddit stories use a short personal-account note. Internal source notes and evidence never enter public props.
+
+## Current-visit progress
+
+The hub keeps completed item IDs and chosen options in React memory for the current page visit. Quiz completion requires an answer; Reveal completion requires explicitly revealing the story. Cards show Explored and a counter. Topic continuation and new random queues avoid explored items. Deliberate card reviews restore the answer; after everything is explored, Review random feed explicitly revisits the collection. Refresh/full-page navigation or tab closure clears progress. Neither localStorage nor sessionStorage is used.

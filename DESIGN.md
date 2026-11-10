@@ -41,3 +41,8 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 ## Published content explanations
 - Quiz result order: outcome → correct-answer block → evidence explanation → takeaway → collapsed data scope → Next discovery. Answer block uses 16px/20px padding, 10px radius, 15px body and a lime edge; metadata remains at least12px.
 - Supplied-excerpt publications explicitly disclose their basis; never fabricate report URLs, survey dates or independent verification. Internal evidence and editorial notes are stripped from public content. Existing six fixtures remain unpublished.
+
+## Current-visit progress
+- Keep completed answers in React memory only. Refresh, full-page navigation or tab closure resets them; no browser storage or account persistence.
+- Quiz completes on answer selection; Reveal completes only after explicit reveal. Cards show a 12px lime-neutral `Explored` label and a visit count.
+- Topic queues and random starts exclude completed items, except a card deliberately reopened for review. Restore the chosen answer and explanation when reviewing. Once all items are explored, offer an explicit Review action.

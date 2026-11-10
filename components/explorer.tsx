@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Content } from "@/lib/content";
 import { topics, topicLabel, matchesSearch } from "@/lib/discovery";
 import { Feed } from "./feed";
@@ -24,6 +24,11 @@ export function Explorer({
   const [searchInput, setSearchInput] = useState("");
   const [query, setQuery] = useState("");
   const [queue, setQueue] = useState<Content[] | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const complete = useCallback((id: string, optionId: string) => {
+    setAnswers((current) => current[id] ? current : { ...current, [id]: optionId });
+  }, []);
+  const unseen = items.filter((item) => !answers[item.id]);
   const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("feed") === "random")
@@ -82,6 +87,8 @@ export function Explorer({
           key={queue.map((i) => i.id).join(",")}
           items={queue}
           compact
+          completedAnswers={answers}
+          onComplete={complete}
           onExit={() => {
             setQueue(null);
             focusHub();
@@ -97,6 +104,11 @@ export function Explorer({
                 </h1>
                 <span>{shown.length} discoveries</span>
               </div>
+              {items.length > 0 && (
+                <p className="visit-progress" role="status">
+                  {items.length - unseen.length} of {items.length} explored this visit · Resets on refresh
+                </p>
+              )}
               <div className="topic-tools">
                 <div className="category-filters" aria-label="Topics">
                   <button
@@ -210,12 +222,13 @@ export function Explorer({
                           </span>
                           <span>1 min</span>
                         </div>
+                        {answers[item.id] && <span className="explored-badge">✓ Explored</span>}
                         <button
                           className="tile-open"
                           onClick={() =>
                             open([
                               item,
-                              ...shown.filter((i) => i.id !== item.id),
+                              ...shown.filter((i) => i.id !== item.id && !answers[i.id]),
                             ])
                           }
                         >
@@ -274,15 +287,17 @@ export function Explorer({
                 </h2>
                 <p>
                   {items.length
-                    ? "Quiz or Reveal. Any topic. No repeats until you’ve seen them all."
+                    ? unseen.length
+                      ? `${unseen.length} unseen discoveries. Quiz or Reveal, any topic.`
+                      : "You’ve explored everything this visit. Revisit a story whenever you like."
                     : "Our first discoveries are being checked. Come back soon for a fresh look at Korea."}
                 </p>
                 <button
                   className="primary"
                   disabled={!items.length}
-                  onClick={() => open(shuffled(items))}
+                  onClick={() => open(shuffled(unseen.length ? unseen : items))}
                 >
-                  Start random feed
+                  {items.length && !unseen.length ? "Review random feed" : "Start random feed"}
                   <Icon name="arrow" />
                 </button>
                 <small>

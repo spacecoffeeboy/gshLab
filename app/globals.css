@@ -1317,3 +1317,21 @@ details[open] > summary::after {
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
+
+.visit-progress {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 12px 0 24px;
+}
+.explored-badge {
+  display: inline-block;
+  background: var(--selection);
+  color: var(--foreground);
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+}

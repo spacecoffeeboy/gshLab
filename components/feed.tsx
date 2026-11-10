@@ -9,16 +9,20 @@ export function Feed({
   preview = false,
   compact = false,
   onExit,
+  completedAnswers = {},
+  onComplete,
 }: {
   items: Item[];
   preview?: boolean;
   compact?: boolean;
   onExit?: () => void;
+  completedAnswers?: Record<string, string>;
+  onComplete?: (id: string, optionId: string) => void;
 }) {
   const [index, setIndex] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(completedAnswers[items[0]?.id] || null);
   const [done, setDone] = useState(false);
-  const [revealed, setRevealed] = useState(false);
+  const [revealed, setRevealed] = useState(Boolean(completedAnswers[items[0]?.id]));
   const heading = useRef<HTMLHeadingElement>(null);
   const item = items[index];
   const personalAccount = item?.kind === "reveal" && item.sourceType === "reddit";
@@ -38,13 +42,16 @@ export function Feed({
       });
     }
   }, [answerVisible, index]);
+  useEffect(() => {
+    if (answerVisible && item && selected) onComplete?.(item.id, selected);
+  }, [answerVisible, item, selected, onComplete]);
   function next() {
     if (index + 1 === items.length) {
       setDone(true);
     } else {
       setIndex(index + 1);
-      setSelected(null);
-      setRevealed(false);
+      setSelected(completedAnswers[items[index + 1]?.id] || null);
+      setRevealed(Boolean(completedAnswers[items[index + 1]?.id]));
     }
     requestAnimationFrame(() => heading.current?.focus());
   }
@@ -95,8 +102,8 @@ export function Feed({
             className="primary"
             onClick={() => {
               setIndex(0);
-              setSelected(null);
-              setRevealed(false);
+              setSelected(completedAnswers[items[0]?.id] || null);
+              setRevealed(Boolean(completedAnswers[items[0]?.id]));
               setDone(false);
             }}
           >
