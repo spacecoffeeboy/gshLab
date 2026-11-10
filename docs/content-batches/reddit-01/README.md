@@ -40,18 +40,18 @@
 
 **Context**
 
-In a personal account shared online, a parent recalled their toddler crying on a subway ride in Korea. An older couple nearby noticed.
+A parent remembers a subway ride in Korea: a crying toddler, an older couple nearby, and a small surprise.
 
 **Question**
 
-What did the parent say happened next?
+What happened next?
 
 - A. Took out toys to help calm the child.
 - B. Offered a few reassuring words to the parent.
 
 **Reveal — An unexpected toy break.**
 
-According to the parent, the couple took out toys they had with them to help calm the child. No grand gesture—just something small to try on a difficult ride.
+The couple took out toys they had with them to help calm the child. A small thing to try when a journey gets difficult.
 
 **Takeaway**
 
@@ -68,18 +68,18 @@ Sometimes a little help looks like whatever you happen to have with you.
 
 **Context**
 
-One person described two very different moods in a Korean coastal town: busy restaurants on weekends, then a surprisingly quiet evening.
+A Korean coastal town. Packed restaurants on the weekend. Come back another evening, and the mood changes completely.
 
 **Question**
 
-Which evening did they remember as the quieter one?
+Which evening brought the quieter mood?
 
 - A. On Monday night.
 - B. On Saturday night.
 
 **Reveal — Same town. Monday mood.**
 
-In their account, Monday night felt calm, with hardly anyone in the restaurants. They could not recall the town’s name, but remembered the change of pace.
+Monday night: barely anyone in the restaurants, and a much slower pace. The town’s name had slipped from memory; the contrast had not.
 
 **Takeaway**
 
@@ -96,7 +96,7 @@ A place on your itinerary might have more than one mood.
 
 **Context**
 
-In one online account, a night owl described feeling at home in Seoul: a late walk, lights still on, somewhere to go.
+A late walk. Lights still on. Somewhere to go. For one night owl, Seoul felt like home.
 
 **Question**
 
@@ -107,7 +107,7 @@ Which evening would help you unwind?
 
 **Reveal — Their kind of quiet had the lights on.**
 
-For this writer, having places to go late at night felt comforting rather than overwhelming. They liked Seoul’s energy while noting that other big cities could offer something similar.
+Places to go late at night felt comforting rather than overwhelming. The appeal was Seoul’s energy—a feeling the writer also recognized could exist in other big cities.
 
 **Takeaway**
 
@@ -124,7 +124,7 @@ What feels restful to you: fewer things happening, or more possibilities?
 
 **Context**
 
-One visitor shared mixed feelings about Seoul. They enjoyed the food and transport, yet the streets around their accommodation did not feel like their kind of place.
+Great food. Easy transport. And still, Seoul did not quite click for one visitor.
 
 **Question**
 
@@ -135,7 +135,7 @@ What most shapes whether a city feels right to you?
 
 **Reveal — A good trip can come with mixed feelings.**
 
-The visitor recalled a great barbecue meal and an enjoyable mountain outing. They also described feeling hemmed in by the buildings near their accommodation. Both impressions belonged to the same trip.
+A great barbecue meal. An enjoyable mountain outing. But around the accommodation, the buildings felt close and confining. Same trip, different feelings.
 
 **Takeaway**
 
@@ -152,7 +152,7 @@ You can enjoy parts of a city without falling in love with the whole place.
 
 **Context**
 
-In a personal account, someone returning to Korea after years abroad felt unsure about a wedding invitation. It came from a coworker they barely knew, with bank details for a congratulatory gift.
+Back in Korea after years abroad, someone gets a wedding invitation from a coworker they barely know. Included: bank details for a congratulatory gift.
 
 **Question**
 
@@ -163,7 +163,7 @@ Which response would feel more natural to you?
 
 **Reveal — An invitation—and a little hesitation.**
 
-The writer’s question was about closeness: what would feel right when they barely knew the person? The account does not tell us the coworker’s intention, or what the writer eventually decided.
+The awkward part was closeness: what feels right when you barely know each other? The story leaves the coworker’s intention—and the eventual decision—open.
 
 **Takeaway**
 
@@ -180,18 +180,18 @@ Where would you draw the line between a friendly gesture and a social obligation
 
 **Context**
 
-An online request asked for a baby name that a family would enjoy using in both Korea and England. A later update shared their pick.
+A baby name with two places in mind: Korea and England. The family has made a choice.
 
 **Question**
 
-Which name did the update say they picked?
+Which name did they pick?
 
 - A. Anna.
 - B. Hanna.
 
 **Reveal — Their pick: Anna.**
 
-The update said the family chose Anna. One short name, chosen with two places in mind.
+Anna. One short name, chosen with two places in mind.
 
 **Takeaway**
 
@@ -208,7 +208,7 @@ If a name had to travel between two languages, what would matter most to you?
 
 **Context**
 
-A parent wrote about trying new meals with their son. One breakfast brought together rice, egg, soy sauce, sesame oil and kimchi—with a little butter added.
+A parent and son try something new for breakfast: rice, egg, soy sauce, sesame oil and kimchi—with a little butter.
 
 **Question**
 
@@ -219,7 +219,7 @@ What would you most want to keep from cooking together?
 
 **Reveal — Breakfast, with something to pass on.**
 
-The parent said they were collecting the recipes to pass on to their son one day. Their take on a rice-and-egg breakfast had become part of a much bigger kitchen project.
+There was a bigger plan behind the breakfast: collecting the recipes to pass on to the son one day. A kitchen experiment with a future.
 
 **Takeaway**
 
@@ -236,18 +236,18 @@ What would you keep from a shared meal: the recipe, the memory, or a bit of both
 
 **Context**
 
-One visitor shared a travel challenge: spend a full 24 hours at a PC bang, a Korean gaming café. Their account came with an early exit.
+The travel plan: 24 hours at a PC bang, a Korean gaming café. The reality: an early exit.
 
 **Question**
 
-How long did they recall staying?
+How long did the session last?
 
 - A. 12 hours.
 - B. The full 24 hours.
 
 **Reveal — Half the plan. Still a story.**
 
-They recalled staying for 12 hours before getting bored. The full-day plan had turned into a half-day story.
+Twelve hours, before boredom set in. A full-day plan turned into a half-day story.
 
 **Takeaway**
 
@@ -268,7 +268,7 @@ SHA-256: `0aaa89013ec120154825a82e32e4b7358710154d936682621dc544afa9f877b4`
 
 ## 경험담 편집 기준 (이번 개정)
 
-- Context에서 개인의 온라인 경험담임을 밝히고 Reveal에서 `said` / `recalled` 등으로 귀속한다.
+- 경험담이라는 출처 안내는 결과 하단 한 줄에 모은다. 본문은 이야기체 재서술로 풀고 `according to` / `said`를 반복하지 않는다. 한 사례의 범위를 벗어나거나 대화·행동·결말을 추가하지 않는다.
 - 고유 신상, 불필요한 거주 기간·아이 나이·직장 이동 동선을 축약한다. 출처 셀은 내부 추적용으로 남긴다.
 - 실제 정답을 맞히는 사실 Quiz처럼 채점하지 않는다. 반대 선택지는 상상 가능한 대안이며 원문 사건의 일부로 서술하지 않는다.
 - 한국인 전체의 관습·평균·안전성·사람의 의도를 추론하지 않는다. 숫자는 해당 작성자의 회상에 한정한다.

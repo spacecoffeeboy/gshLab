@@ -17,8 +17,8 @@
       "parenting",
       "subway"
     ],
-    "context": "In a personal account shared online, a parent recalled their toddler crying on a subway ride in Korea. An older couple nearby noticed.",
-    "question": "What did the parent say happened next?",
+    "context": "A parent remembers a subway ride in Korea: a crying toddler, an older couple nearby, and a small surprise.",
+    "question": "What happened next?",
     "options": [
       {
         "id": "A",
@@ -32,7 +32,7 @@
     "correctOptionId": null,
     "observedOptionId": "A",
     "revealHeadline": "An unexpected toy break.",
-    "reveal": "According to the parent, the couple took out toys they had with them to help calm the child. No grand gesture—just something small to try on a difficult ride.",
+    "reveal": "The couple took out toys they had with them to help calm the child. A small thing to try when a journey gets difficult.",
     "insight": "Sometimes a little help looks like whatever you happen to have with you.",
     "sources": [
       {
@@ -64,8 +64,8 @@
       "crowds",
       "coastal-town"
     ],
-    "context": "One person described two very different moods in a Korean coastal town: busy restaurants on weekends, then a surprisingly quiet evening.",
-    "question": "Which evening did they remember as the quieter one?",
+    "context": "A Korean coastal town. Packed restaurants on the weekend. Come back another evening, and the mood changes completely.",
+    "question": "Which evening brought the quieter mood?",
     "options": [
       {
         "id": "A",
@@ -79,7 +79,7 @@
     "correctOptionId": null,
     "observedOptionId": "A",
     "revealHeadline": "Same town. Monday mood.",
-    "reveal": "In their account, Monday night felt calm, with hardly anyone in the restaurants. They could not recall the town’s name, but remembered the change of pace.",
+    "reveal": "Monday night: barely anyone in the restaurants, and a much slower pace. The town’s name had slipped from memory; the contrast had not.",
     "insight": "A place on your itinerary might have more than one mood.",
     "sources": [
       {
@@ -116,7 +116,7 @@
       "convenience-stores",
       "city-life"
     ],
-    "context": "In one online account, a night owl described feeling at home in Seoul: a late walk, lights still on, somewhere to go.",
+    "context": "A late walk. Lights still on. Somewhere to go. For one night owl, Seoul felt like home.",
     "question": "Which evening would help you unwind?",
     "options": [
       {
@@ -131,7 +131,7 @@
     "correctOptionId": null,
     "observedOptionId": null,
     "revealHeadline": "Their kind of quiet had the lights on.",
-    "reveal": "For this writer, having places to go late at night felt comforting rather than overwhelming. They liked Seoul’s energy while noting that other big cities could offer something similar.",
+    "reveal": "Places to go late at night felt comforting rather than overwhelming. The appeal was Seoul’s energy—a feeling the writer also recognized could exist in other big cities.",
     "insight": "What feels restful to you: fewer things happening, or more possibilities?",
     "sources": [
       {
@@ -164,7 +164,7 @@
       "neighborhoods",
       "city-atmosphere"
     ],
-    "context": "One visitor shared mixed feelings about Seoul. They enjoyed the food and transport, yet the streets around their accommodation did not feel like their kind of place.",
+    "context": "Great food. Easy transport. And still, Seoul did not quite click for one visitor.",
     "question": "What most shapes whether a city feels right to you?",
     "options": [
       {
@@ -179,7 +179,7 @@
     "correctOptionId": null,
     "observedOptionId": null,
     "revealHeadline": "A good trip can come with mixed feelings.",
-    "reveal": "The visitor recalled a great barbecue meal and an enjoyable mountain outing. They also described feeling hemmed in by the buildings near their accommodation. Both impressions belonged to the same trip.",
+    "reveal": "A great barbecue meal. An enjoyable mountain outing. But around the accommodation, the buildings felt close and confining. Same trip, different feelings.",
     "insight": "You can enjoy parts of a city without falling in love with the whole place.",
     "sources": [
       {
@@ -215,7 +215,7 @@
       "social-expectations",
       "relationships"
     ],
-    "context": "In a personal account, someone returning to Korea after years abroad felt unsure about a wedding invitation. It came from a coworker they barely knew, with bank details for a congratulatory gift.",
+    "context": "Back in Korea after years abroad, someone gets a wedding invitation from a coworker they barely know. Included: bank details for a congratulatory gift.",
     "question": "Which response would feel more natural to you?",
     "options": [
       {
@@ -230,7 +230,7 @@
     "correctOptionId": null,
     "observedOptionId": null,
     "revealHeadline": "An invitation—and a little hesitation.",
-    "reveal": "The writer’s question was about closeness: what would feel right when they barely knew the person? The account does not tell us the coworker’s intention, or what the writer eventually decided.",
+    "reveal": "The awkward part was closeness: what feels right when you barely know each other? The story leaves the coworker’s intention—and the eventual decision—open.",
     "insight": "Where would you draw the line between a friendly gesture and a social obligation?",
     "sources": [
       {
@@ -263,8 +263,8 @@
       "cross-cultural-family",
       "naming"
     ],
-    "context": "An online request asked for a baby name that a family would enjoy using in both Korea and England. A later update shared their pick.",
-    "question": "Which name did the update say they picked?",
+    "context": "A baby name with two places in mind: Korea and England. The family has made a choice.",
+    "question": "Which name did they pick?",
     "options": [
       {
         "id": "A",
@@ -278,7 +278,7 @@
     "correctOptionId": null,
     "observedOptionId": "A",
     "revealHeadline": "Their pick: Anna.",
-    "reveal": "The update said the family chose Anna. One short name, chosen with two places in mind.",
+    "reveal": "Anna. One short name, chosen with two places in mind.",
     "insight": "If a name had to travel between two languages, what would matter most to you?",
     "sources": [
       {
@@ -311,7 +311,7 @@
       "family",
       "food-memories"
     ],
-    "context": "A parent wrote about trying new meals with their son. One breakfast brought together rice, egg, soy sauce, sesame oil and kimchi—with a little butter added.",
+    "context": "A parent and son try something new for breakfast: rice, egg, soy sauce, sesame oil and kimchi—with a little butter.",
     "question": "What would you most want to keep from cooking together?",
     "options": [
       {
@@ -326,7 +326,7 @@
     "correctOptionId": null,
     "observedOptionId": null,
     "revealHeadline": "Breakfast, with something to pass on.",
-    "reveal": "The parent said they were collecting the recipes to pass on to their son one day. Their take on a rice-and-egg breakfast had become part of a much bigger kitchen project.",
+    "reveal": "There was a bigger plan behind the breakfast: collecting the recipes to pass on to the son one day. A kitchen experiment with a future.",
     "insight": "What would you keep from a shared meal: the recipe, the memory, or a bit of both?",
     "sources": [
       {
@@ -359,8 +359,8 @@
       "gaming",
       "travel-plans"
     ],
-    "context": "One visitor shared a travel challenge: spend a full 24 hours at a PC bang, a Korean gaming café. Their account came with an early exit.",
-    "question": "How long did they recall staying?",
+    "context": "The travel plan: 24 hours at a PC bang, a Korean gaming café. The reality: an early exit.",
+    "question": "How long did the session last?",
     "options": [
       {
         "id": "A",
@@ -374,7 +374,7 @@
     "correctOptionId": null,
     "observedOptionId": "A",
     "revealHeadline": "Half the plan. Still a story.",
-    "reveal": "They recalled staying for 12 hours before getting bored. The full-day plan had turned into a half-day story.",
+    "reveal": "Twelve hours, before boredom set in. A full-day plan turned into a half-day story.",
     "insight": "Sometimes the memorable part of a plan is deciding you have had enough.",
     "sources": [
       {

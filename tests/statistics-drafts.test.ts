@@ -1,0 +1,20 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import drafts from '../content/statistics-drafts.json';
+import { parseCollection, publicContent } from '../lib/content';
+test('excerpt quizzes preserve age-group denominators, period limits and unpublished status', () => {
+ const items = parseCollection(drafts);
+ assert.equal(items.length, 7);
+ assert.ok(items.every(i => i.kind === 'quiz' && i.status === 'draft' && i.sourceType !== 'official_statistics'));
+ assert.equal(publicContent(drafts).length, 0);
+ assert.match(items[0].sources[0].population!, /subgroup size/);
+ assert.match(items[0].sources[0].referencePeriod!, /Not stated/);
+ assert.match(items[0].question, /teenage respondents/);
+ assert.match(items[2].sources[0].population!, /All respondents/);
+ assert.equal(items[2].sources[0].referencePeriod, '2026');
+ assert.ok(!items[2].question.includes('teen'));
+ assert.match(items[3].question, /20s/);
+ assert.match(items[4].sources[0].unit!, /purchase count/);
+ assert.match(items[5].sources[0].unit!, /change in estimated purchase count/);
+ assert.ok(items.every(i => !i.sources[0].url && !i.verification));
+});
