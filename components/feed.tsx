@@ -21,6 +21,7 @@ export function Feed({
   const [revealed, setRevealed] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const item = items[index];
+  const personalAccount = item?.kind === "reveal" && item.sourceType === "reddit";
   useEffect(() => {
     heading.current?.focus({ preventScroll: true });
   }, []);
@@ -190,7 +191,9 @@ export function Feed({
                       ? "YOU GOT IT"
                       : "A LITTLE SURPRISE"
                     : item.revealMode === "prediction"
-                      ? "WHAT ACTUALLY HAPPENED"
+                      ? personalAccount
+                        ? "THE STORY AS SHARED"
+                        : "WHAT ACTUALLY HAPPENED"
                       : "THEIR EXPERIENCE"}
                 </div>
                 <h2 ref={resultHeading} tabIndex={-1}>
@@ -210,38 +213,44 @@ export function Feed({
                   <span>THE LITTLE TAKEAWAY</span>
                   <p>{item.insight}</p>
                 </div>
-                <details className="source-details">
-                  <summary>
-                    Take a look at the sources <span aria-hidden="true">→</span>
-                  </summary>
-                  {item.sources.map((source) => (
-                    <div className="source" key={source.sourceId}>
-                      {source.url ? (
-                        <a
-                          href={source.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {source.title || source.organizationOrCommunity} →
-                        </a>
-                      ) : (
-                        <span>
-                          {source.organizationOrCommunity} · Source pending
-                          verification
-                        </span>
-                      )}
-                      <p>
-                        {[
-                          source.referencePeriod,
-                          source.population,
-                          source.unit,
-                        ]
-                          .filter(Boolean)
-                          .join(" · ")}
-                      </p>
-                    </div>
-                  ))}
-                </details>
+                {personalAccount && !item.sources.some((source) => source.url) ? (
+                  <p className="source-details">
+                    Adapted from a personal account shared on Reddit. Experiences vary.
+                  </p>
+                ) : (
+                  <details className="source-details">
+                    <summary>
+                      Take a look at the sources <span aria-hidden="true">→</span>
+                    </summary>
+                    {item.sources.map((source) => (
+                      <div className="source" key={source.sourceId}>
+                        {source.url ? (
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {source.title || source.organizationOrCommunity} →
+                          </a>
+                        ) : (
+                          <span>
+                            {source.organizationOrCommunity} · Source pending
+                            verification
+                          </span>
+                        )}
+                        <p>
+                          {[
+                            source.referencePeriod,
+                            source.population,
+                            source.unit,
+                          ]
+                            .filter(Boolean)
+                            .join(" · ")}
+                        </p>
+                      </div>
+                    ))}
+                  </details>
+                )}
                 <button className="primary next" onClick={next}>
                   {index + 1 === items.length
                     ? "Finish this collection"

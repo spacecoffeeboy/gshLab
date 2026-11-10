@@ -137,3 +137,21 @@ test("topic search is explicitly submitted, intersects topics and clears empty r
   assert.equal((view.getByRole("searchbox") as HTMLInputElement).value, "");
   cleanup();
 });
+
+test("Reddit Reveal attributes the account without claiming verified events or showing missing-source UI", async () => {
+  const { render, fireEvent, cleanup } = await import("@testing-library/react");
+  const { default: drafts } = await import("../content/reddit-drafts.json");
+  const view = render(createElement(Feed, { items: parseCollection([drafts[0]]) }));
+  assert.equal(view.queryByText(/Adapted from a personal account/), null);
+  fireEvent.click(view.getByRole("button", { name: /A Took out toys/ }));
+  assert.equal(view.queryByText(drafts[0].reveal), null);
+  fireEvent.click(view.getByRole("button", { name: /Reveal what happened/ }));
+  assert.ok(view.getByText(drafts[0].reveal));
+  assert.ok(view.getByText("THE STORY AS SHARED"));
+  assert.ok(view.getByText(/Adapted from a personal account shared on Reddit/));
+  assert.equal(view.queryByText("WHAT ACTUALLY HAPPENED"), null);
+  assert.equal(view.queryByText(/Take a look at the sources/), null);
+  assert.equal(view.queryByText(/Source pending/), null);
+  assert.equal(view.queryByText("YOU GOT IT"), null);
+  cleanup();
+});

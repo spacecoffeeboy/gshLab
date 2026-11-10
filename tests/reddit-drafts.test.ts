@@ -8,7 +8,7 @@ import {parseCollection,publicContent} from '../lib/content';
 test('operator material yields eight independently traceable, unscored, unpublished Reveals',()=>{
  const items=parseCollection(drafts);
  assert.equal(items.length,8);
- assert.ok(items.every(i=>i.kind==='reveal'&&i.status==='needs_verification'&&i.options.length===2&&i.correctOptionId===null));
+ assert.ok(items.every(i=>i.kind==='reveal'&&i.status==='draft'&&i.options.length===2&&i.correctOptionId===null));
  assert.equal(items.filter(i=>i.kind==='reveal'&&i.revealMode==='prediction').length,4);
  assert.equal(items.filter(i=>i.kind==='reveal'&&i.revealMode==='reflection').length,4);
  assert.equal(new Set(items.map(i=>i.sources[0].sourceId)).size,8);

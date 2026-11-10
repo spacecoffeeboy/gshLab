@@ -4,11 +4,11 @@
 
 - 사용자가 발췌한 엑셀: Sheet1, 비어 있지 않은 셀 71개, 1열. 하이퍼링크 0개. 71명의 독립된 작성자/71개 독립 경험이라고 간주하지 않았다.
 - 8개 Reveal: prediction 4개 + reflection 4개. 모두 선택지 2개, 정답/점수 없음.
-- 모든 상태는 `needs_verification`. 원문 URL·작성일·접근일·검토자·게시일을 만들지 않았다.
-- 원문 종류/커뮤니티 미확인: source kind `other`, community `Reddit (community unverified)`. 엑셀 셀은 추적 위치이지 공개 출처 링크가 아니다.
+- 모든 상태는 `draft`(문구 검토용 초안). 원문 URL·작성일·접근일·검토자·게시일을 만들지 않았다.
+- 원문 종류/커뮤니티 미확인: source kind `other`, 표시는 `Reddit · personal account`. 엑셀 셀은 추적 위치이지 공개 출처 링크가 아니다.
 - 같은 행의 다른 사건이나 인접 행을 임의로 연결하지 않았다. 이전 kindness 더미를 이번 파일에서 다시 확인한 것처럼 취급하지 않았다.
 - 실제 엑셀과 원문 전문은 Git에 올리지 않았다. JSON에는 공개용 영어 재서술과 내부 검토 메모만 들어 있다.
-- 사용자의 최종 소재 선택·원문 검증·승인 전에 공개하지 않는다.
+- 사용자의 최종 소재 선택·편집 검토·게시 승인 전에 공개하지 않는다. 원문 링크를 공개하거나 확보하는 일을 이번 문구 검토의 전제로 두지 않는다. 경험담 귀속은 독립 검증을 대신하지 않는다.
 
 ## 파일
 
@@ -40,22 +40,22 @@
 
 **Context**
 
-One parent remembered a subway ride home in Korea. Their one-year-old was crying, and an older couple nearby noticed.
+In a personal account shared online, a parent recalled their toddler crying on a subway ride in Korea. An older couple nearby noticed.
 
 **Question**
 
-What did the couple do?
+What did the parent say happened next?
 
 - A. Took out toys to help calm the child.
 - B. Offered a few reassuring words to the parent.
 
-**Reveal — They had toys with them.**
+**Reveal — An unexpected toy break.**
 
-The parent said the older couple took out toys they were carrying to help calm the child. What stayed with the parent was a practical gesture from strangers during a difficult ride.
+According to the parent, the couple took out toys they had with them to help calm the child. No grand gesture—just something small to try on a difficult ride.
 
 **Takeaway**
 
-A public journey can become a personal memory through one small act of help.
+Sometimes a little help looks like whatever you happen to have with you.
 
 **원자료:** Sheet1!A15. **사실 경계:** 장난감을 꺼내 아이를 달래려 한 사실만 확인. 장난감을 선물했다고 하거나 아이가 실제로 울음을 멈췄다고 쓰지 않음. 같은 셀의 식당 사건은 이번 문항에서 제외.
 
@@ -68,22 +68,22 @@ A public journey can become a personal memory through one small act of help.
 
 **Context**
 
-A person who had lived in Korea for almost three years described an east-coast town they visited. On weekends, its restaurants were packed and its car parks overflowed.
+One person described two very different moods in a Korean coastal town: busy restaurants on weekends, then a surprisingly quiet evening.
 
 **Question**
 
-When did the same town feel quiet and relaxed to them?
+Which evening did they remember as the quieter one?
 
 - A. On Monday night.
 - B. On Saturday night.
 
-**Reveal — Monday changed the mood.**
+**Reveal — Same town. Monday mood.**
 
-The writer described Monday night as peaceful, with restaurants almost to themselves. They could not remember the town’s name. Their point was how different one place could feel depending on the day.
+In their account, Monday night felt calm, with hardly anyone in the restaurants. They could not recall the town’s name, but remembered the change of pace.
 
 **Takeaway**
 
-Where you go is only part of a trip. When you go can change the experience, too.
+A place on your itinerary might have more than one mood.
 
 **원자료:** Sheet1!A19. **사실 경계:** 동해안의 이름이 기억나지 않는 한 마을에 대한 개인 관찰. 특정 지명·여행 날짜·항상 월요일이 한산하다는 규칙을 만들지 않음. 모든 해변 마을로 일반화 금지.
 
@@ -96,7 +96,7 @@ Where you go is only part of a trip. When you go can change the experience, too.
 
 **Context**
 
-One writer described feeling at home in Seoul late at night. They liked being able to go for a walk and find convenience stores and places to spend time still open.
+In one online account, a night owl described feeling at home in Seoul: a late walk, lights still on, somewhere to go.
 
 **Question**
 
@@ -105,13 +105,13 @@ Which evening would help you unwind?
 - A. Quiet streets and an early night.
 - B. A late walk with somewhere still open.
 
-**Reveal — For this night owl, activity felt comforting.**
+**Reveal — Their kind of quiet had the lights on.**
 
-The writer found a kind of peace in Seoul’s late-night activity. Having somewhere to go suited their social personality, even amid the lights and bustle. They also acknowledged that a similar experience could be found in other large cities.
+For this writer, having places to go late at night felt comforting rather than overwhelming. They liked Seoul’s energy while noting that other big cities could offer something similar.
 
 **Takeaway**
 
-A relaxing city does not look the same to everyone. For some people, having options is part of the comfort.
+What feels restful to you: fewer things happening, or more possibilities?
 
 **원자료:** Sheet1!A26. **사실 경계:** 작성자 개인의 선호와 체감. 모든 편의시설의 24시간 영업, 야간 안전, 한국만의 고유 현상이라고 주장하지 않음. 국적·거주자격·거주기간 미확인.
 
@@ -124,7 +124,7 @@ A relaxing city does not look the same to everyone. For some people, having opti
 
 **Context**
 
-After five days in Seoul, a first-time visitor to East Asia had mixed feelings. They praised the transport, restaurant meals and helpful people, but the city’s atmosphere did not click for them.
+One visitor shared mixed feelings about Seoul. They enjoyed the food and transport, yet the streets around their accommodation did not feel like their kind of place.
 
 **Question**
 
@@ -133,13 +133,13 @@ What most shapes whether a city feels right to you?
 - A. How convenient it is to explore and eat well.
 - B. How its streets and neighborhoods make me feel.
 
-**Reveal — The good parts did not erase the feeling.**
+**Reveal — A good trip can come with mixed feelings.**
 
-The visitor enjoyed several parts of the trip, including a day in the mountains and a memorable Korean barbecue meal. Yet the packed buildings and the view from their accommodation left them feeling hemmed in. Useful transport and good food were not the whole experience for them.
+The visitor recalled a great barbecue meal and an enjoyable mountain outing. They also described feeling hemmed in by the buildings near their accommodation. Both impressions belonged to the same trip.
 
 **Takeaway**
 
-Enjoying parts of a place and feeling at home there are different things. Both reactions can belong to the same trip.
+You can enjoy parts of a city without falling in love with the whole place.
 
 **원자료:** Sheet1!A28. **사실 경계:** 한 여행자의 감정이며 서울의 객관적 거주성 평가가 아님. 우울증 등 의학적 진단, 시민들이 삶을 즐기지 않는다는 일반화, 재방문 의향을 만들지 않음.
 
@@ -152,7 +152,7 @@ Enjoying parts of a place and feeling at home there are different things. Both r
 
 **Context**
 
-A Korean writer had recently returned after about 16 years abroad. A coworker they had known for roughly two months sent a wedding invitation with bank details for a congratulatory gift. They mostly knew each other from the work shuttle.
+In a personal account, someone returning to Korea after years abroad felt unsure about a wedding invitation. It came from a coworker they barely knew, with bank details for a congratulatory gift.
 
 **Question**
 
@@ -161,13 +161,13 @@ Which response would feel more natural to you?
 - A. Send a small gift as a friendly gesture.
 - B. Offer congratulations without sending money.
 
-**Reveal — The invitation brought a question about closeness.**
+**Reveal — An invitation—and a little hesitation.**
 
-The writer understood that wedding gifts could be part of social etiquette, but felt unsure about giving money to someone they barely knew. They explicitly did not claim that the invitation was sent only to collect money.
+The writer’s question was about closeness: what would feel right when they barely knew the person? The account does not tell us the coworker’s intention, or what the writer eventually decided.
 
 **Takeaway**
 
-Knowing a custom does not always make the personal decision easy. The relationship can matter as much as the occasion.
+Where would you draw the line between a friendly gesture and a social obligation?
 
 **원자료:** Sheet1!A37. **사실 경계:** A37 자체만 사용. A38~A40과 동일 스레드/작성자라는 연결 미확인. 결혼식 당일 초대였다는 A38 내용이나 축의금 5만원을 일반적 의무로 추가하지 않음. 초대자의 금전적 의도 추정 금지.
 
@@ -180,22 +180,22 @@ Knowing a custom does not always make the personal decision easy. The relationsh
 
 **Context**
 
-A writer asked for baby-name ideas for a relative’s daughter. The family wanted a name that would sound nice in both Korea and England. An update later shared their choice.
+An online request asked for a baby name that a family would enjoy using in both Korea and England. A later update shared their pick.
 
 **Question**
 
-Which name did the update say they chose?
+Which name did the update say they picked?
 
 - A. Anna.
 - B. Hanna.
 
-**Reveal — They chose Anna.**
+**Reveal — Their pick: Anna.**
 
-The writer updated the post to say the family had picked Anna. The request began with finding a name that could feel comfortable in two places, rather than choosing a name for only one language.
+The update said the family chose Anna. One short name, chosen with two places in mind.
 
 **Takeaway**
 
-For a family connected to more than one place, even a short name can carry a lot of thought.
+If a name had to travel between two languages, what would matter most to you?
 
 **원자료:** Sheet1!A47. **사실 경계:** A47의 업데이트 Anna만 실제선택으로 확인. Hanna는 같은 셀의 이름 목록에서 가져온 대안. 출생신고 완료·인기순위·원어민 발음 일치·이름의 한국어 의미를 주장하지 않음.
 
@@ -208,7 +208,7 @@ For a family connected to more than one place, even a short name can carry a lot
 
 **Context**
 
-A parent and son were trying Asian-inspired meals together. One breakfast used rice, egg, soy sauce, sesame oil and kimchi, with butter added. The parent asked others about the dish.
+A parent wrote about trying new meals with their son. One breakfast brought together rice, egg, soy sauce, sesame oil and kimchi—with a little butter added.
 
 **Question**
 
@@ -217,13 +217,13 @@ What would you most want to keep from cooking together?
 - A. Reliable recipes to make again.
 - B. Memories of trying something together.
 
-**Reveal — A recipe collection for the next generation.**
+**Reveal — Breakfast, with something to pass on.**
 
-The parent said they were collecting recipes so they could one day pass them to their son, along with the dishes they had made together. Their post was not only about getting breakfast right. It was also about giving those shared meals a future.
+The parent said they were collecting the recipes to pass on to their son one day. Their take on a rice-and-egg breakfast had become part of a much bigger kitchen project.
 
 **Takeaway**
 
-A recipe can keep more than a list of ingredients. It can become a way to return to a shared experience.
+What would you keep from a shared meal: the recipe, the memory, or a bit of both?
 
 **원자료:** Sheet1!A50. **사실 경계:** A50만 사용. A51이 같은 질문에 대한 검증된 답변이라고 연결하지 않음. 이 요리가 대표적인 한국 아침식사라는 주장, 영양·정통성 판단, 아들의 나이·맛평가를 만들지 않음.
 
@@ -236,33 +236,41 @@ A recipe can keep more than a list of ingredients. It can become a way to return
 
 **Context**
 
-A visitor wanted experiences beyond the usual sightseeing stops. One plan was to try a 24-hour session at a PC bang, a Korean gaming café.
+One visitor shared a travel challenge: spend a full 24 hours at a PC bang, a Korean gaming café. Their account came with an early exit.
 
 **Question**
 
-How long did they say they actually lasted?
+How long did they recall staying?
 
 - A. 12 hours.
 - B. The full 24 hours.
 
-**Reveal — Halfway was enough.**
+**Reveal — Half the plan. Still a story.**
 
-The visitor said they lasted 12 hours before getting bored. It was one of several unusual activities they remembered from their visits, but the challenge itself did not need a full day to become a story.
+They recalled staying for 12 hours before getting bored. The full-day plan had turned into a half-day story.
 
 **Takeaway**
 
-An ambitious travel plan can turn into a memorable experience even when you stop earlier than expected.
+Sometimes the memorable part of a plan is deciding you have had enough.
 
 **원자료:** Sheet1!A33. **사실 경계:** A33의 자가보고 게임시간일 뿐 PC방 이용자 평균이나 권장 플레이시간이 아님. 다른 활동들(담배·종교 모임 등)은 이번 문항에 끌어오지 않음. 연속 게임 도전을 권장하지 않음.
 
 
 ## 다음 작업
 
-먼저 운영자가 사용할 소재와 문구를 고른다. 그다음 각 셀에 해당하는 원문 permalink·게시 시점·원문 맥락·재이용/인용 범위를 확인한다. 문항별로 고칠 내용을 검토한 후 승인·게시 여부를 별도로 정한다. 문서를 읽었다고 사용자 승인으로 처리하지 않는다.
-
+이번 개정은 원문 링크 없는 개인 경험담을 익명 재서술하는 방향이다. 운영자가 소재와 문구를 검토한 뒤 게시 여부를 정한다. 원문 확인이 어려운 내용은 사실 Quiz나 통계로 승격하지 않는다. 현재 게시 검증기는 공개 출처 URL을 요구하므로 실제 게시 경로의 정책 변경은 별도 작업이며, 이번 문구 수정으로 검증기를 완화하지 않았다.
 
 ## 원자료 식별
 
 파일명: background_reference_forQuiz.xlsx
 
 SHA-256: `0aaa89013ec120154825a82e32e4b7358710154d936682621dc544afa9f877b4`
+
+## 경험담 편집 기준 (이번 개정)
+
+- Context에서 개인의 온라인 경험담임을 밝히고 Reveal에서 `said` / `recalled` 등으로 귀속한다.
+- 고유 신상, 불필요한 거주 기간·아이 나이·직장 이동 동선을 축약한다. 출처 셀은 내부 추적용으로 남긴다.
+- 실제 정답을 맞히는 사실 Quiz처럼 채점하지 않는다. 반대 선택지는 상상 가능한 대안이며 원문 사건의 일부로 서술하지 않는다.
+- 한국인 전체의 관습·평균·안전성·사람의 의도를 추론하지 않는다. 숫자는 해당 작성자의 회상에 한정한다.
+- 공개 결과에는 링크 없는 경험담 안내 한 줄을 표시한다. 원문 URL과 실명은 만들지 않는다.
+- 통계·의학·법률·역사 등 검증이 필요한 주장은 이 경험담 방식을 근거로 사실화하지 않는다.
