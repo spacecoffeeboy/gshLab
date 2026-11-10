@@ -8,7 +8,8 @@
     "start": "next start --hostname 0.0.0.0",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts tests/*.test.tsx",
-    "validate:content": "node --import tsx lib/validate.ts"
+    "validate:content": "node --import tsx lib/validate.ts",
+    "test:browser": "node tests/browser/readiness.mjs"
   },
   "engines": {
     "node": ">=22"
@@ -29,6 +30,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "jsdom": "26.1.0",
+    "playwright-core": "1.64.1",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
   }

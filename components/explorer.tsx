@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Content } from "@/lib/content";
-import { Feed } from "./feed";
 import { topics, topicLabel, matchesSearch } from "@/lib/discovery";
+import { Feed } from "./feed";
+import { Icon } from "./icon";
 export function shuffled<T>(items: T[], random = Math.random) {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i--) {
@@ -18,125 +19,82 @@ export function Explorer({
   items: Content[];
   preview?: boolean;
 }) {
-  const [tab, setTab] = useState("topics");
+  const [tab, setTab] = useState<"topics" | "random">("topics");
   const [topic, setTopic] = useState("all");
   const [searchInput, setSearchInput] = useState("");
   const [query, setQuery] = useState("");
-  const [saved, setSaved] = useState<string[]>([]);
-  const [ready, setReady] = useState(false);
-  const [notice, setNotice] = useState("");
   const [queue, setQueue] = useState<Content[] | null>(null);
-  const storageKey = preview ? "almengi-preview-saved" : "almengi-saved";
+  const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    try {
-      const value = JSON.parse(localStorage.getItem(storageKey) || "[]");
-      if (Array.isArray(value))
-        setSaved(value.filter((x: unknown) => typeof x === "string"));
-    } catch {
-      setNotice("Saved discoveries are unavailable in this browser.");
-    }
-    setReady(true);
-  }, [storageKey]);
-  useEffect(() => {
-    if (!notice) return;
-    const timer = window.setTimeout(() => setNotice(""), 4000);
-    return () => window.clearTimeout(timer);
-  }, [notice]);
-  function save(id: string) {
-    const updated = saved.includes(id)
-      ? saved.filter((x) => x !== id)
-      : [...saved, id];
-    setSaved(updated);
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(updated));
-      setNotice(
-        updated.includes(id) ? "Saved on this device." : "Removed from saved.",
-      );
-    } catch {
-      setNotice("Saved for this visit only. Browser storage is unavailable.");
-    }
-  }
-  function open(collection: Content[]) {
-    setQueue(collection);
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }
-  const shown = items.filter((item) =>
-    tab === "saved"
-      ? saved.includes(item.id)
-      : (topic === "all" || item.topicIds.includes(topic)) &&
-        matchesSearch(item, query),
+    if (new URLSearchParams(window.location.search).get("feed") === "random")
+      setTab("random");
+  }, []);
+  const shown = items.filter(
+    (item) =>
+      (topic === "all" || item.topicIds.includes(topic)) &&
+      matchesSearch(item, query),
   );
-  const hasFilters = query.length > 0 || topic !== "all";
+  const hasFilters = Boolean(query) || topic !== "all";
   function clearFilters() {
     setSearchInput("");
     setQuery("");
     setTopic("all");
   }
-  useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("feed");
-    if (requested === "random") setTab("random");
-  }, []);
-  const nav = (
-    <nav className="feed-tabs" aria-label="Feed">
-      <button
-        aria-current={tab === "topics" ? "page" : undefined}
-        onClick={() => {
-          setTab("topics");
-          setQueue(null);
-        }}
-      >
-        <span>▦</span> By topic
-      </button>
-      <button
-        aria-current={tab === "random" ? "page" : undefined}
-        onClick={() => {
-          setTab("random");
-          setQueue(null);
-        }}
-      >
-        <span>⤨</span> Random
-      </button>
-      <button
-        aria-current={tab === "saved" ? "page" : undefined}
-        onClick={() => {
-          setTab("saved");
-          setQueue(null);
-        }}
-      >
-        <span>♡</span> Saved{" "}
-        <small>
-          {saved.filter((id) => items.some((i) => i.id === id)).length}
-        </small>
-      </button>
-    </nav>
-  );
+  function focusHub() {
+    requestAnimationFrame(() =>
+      heading.current?.focus({ preventScroll: true }),
+    );
+  }
+  function switchTab(next: "topics" | "random") {
+    setTab(next);
+    setQueue(null);
+    focusHub();
+  }
+  function open(collection: Content[]) {
+    setQueue(collection);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
   return (
     <div className="discovery-app">
       {preview && (
         <div className="preview-strip">
-          DESIGN PREVIEW · Unverified sample content, not for publication
+          Editorial preview · Unverified examples · Not for publication
         </div>
       )}
-      {nav}
-      <div className="toast" role="status">
-        {notice}
-      </div>
+      <nav className="feed-tabs" aria-label="Feed">
+        <button
+          aria-current={tab === "topics" ? "page" : undefined}
+          onClick={() => switchTab("topics")}
+        >
+          <Icon name="topics" />
+          By topic
+        </button>
+        <button
+          aria-current={tab === "random" ? "page" : undefined}
+          onClick={() => switchTab("random")}
+        >
+          <Icon name="shuffle" />
+          Random
+        </button>
+      </nav>
       {queue ? (
         <Feed
           key={queue.map((i) => i.id).join(",")}
           items={queue}
           compact
-          onSave={save}
-          saved={saved}
-          onExit={() => setQueue(null)}
+          onExit={() => {
+            setQueue(null);
+            focusHub();
+          }}
         />
       ) : (
-        <main className="explorer">
-          {tab !== "topics" && <h1 className="sr-only">{tab === "random" ? "Random discoveries" : "Saved discoveries"}</h1>}
-          {tab === "topics" && (
+        <main id="main-content" className="explorer">
+          {tab === "topics" ? (
             <>
               <div className="section-label">
-                <h1>Find your kind of curious</h1>
+                <h1 ref={heading} tabIndex={-1}>
+                  Find your kind of curious
+                </h1>
                 <span>{shown.length} discoveries</span>
               </div>
               <div className="topic-tools">
@@ -169,25 +127,24 @@ export function Explorer({
                   <label className="sr-only" htmlFor="discovery-search-input">
                     Search topics, stories or tags
                   </label>
-                  <div className="search-input-wrap">
-                    <input
-                      id="discovery-search-input"
-                      type="search"
-                      placeholder="Search stories or tags…"
-                      value={searchInput}
-                      onChange={(event) => {
-                        setSearchInput(event.target.value);
-                        if (!event.target.value.trim()) setQuery("");
-                      }}
-                      maxLength={160}
-                    />
-                  </div>
-                  <button type="submit" className="primary">
+                  <input
+                    id="discovery-search-input"
+                    type="search"
+                    placeholder="Search stories or tags…"
+                    value={searchInput}
+                    onChange={(event) => {
+                      setSearchInput(event.target.value);
+                      if (!event.target.value.trim()) setQuery("");
+                    }}
+                    maxLength={160}
+                    enterKeyHint="search"
+                  />
+                  <button className="primary" type="submit">
                     Search
                   </button>
                 </form>
               </div>
-              <div className="search-summary" role="status">
+              <div className="search-summary" role="status" aria-atomic="true">
                 {query && (
                   <>
                     <span>
@@ -197,6 +154,7 @@ export function Explorer({
                       {topic !== "all" ? ` in ${topicLabel(topic)}` : ""}
                     </span>
                     <button
+                      className="text-button"
                       onClick={() => {
                         setQuery("");
                         setSearchInput("");
@@ -207,34 +165,7 @@ export function Explorer({
                   </>
                 )}
               </div>
-            </>
-          )}
-          {tab === "random" ? (
-            <section className="shuffle-panel">
-              <span aria-hidden="true">⤨</span>
-              <h2>
-                A new direction.
-                <br />
-                Every single time.
-              </h2>
-              <p>
-                Quiz or Reveal. Any topic. No repeats until you’ve seen them
-                all.
-              </p>
-              <button
-                className="primary"
-                disabled={!items.length}
-                onClick={() => open(shuffled(items))}
-              >
-                Start random feed →
-              </button>
-              <small>You choose when to move on. No timers, no pressure.</small>
-            </section>
-          ) : (
-            <>
-              {tab === "saved" && !ready ? (
-                <p role="status">Loading your saved discoveries…</p>
-              ) : shown.length ? (
+              {shown.length ? (
                 <div className="discovery-grid">
                   {shown.map((item, n) => (
                     <article
@@ -252,45 +183,30 @@ export function Explorer({
                           {item.kind === "quiz" ? (
                             "⅓"
                           ) : item.tags.includes("rain") ? (
-                            <svg viewBox="0 0 180 140" aria-hidden="true">
+                            <svg viewBox="0 0 180 140">
                               <path
                                 d="M25 70Q90 -15 155 70Q140 55 123 70Q107 55 90 70Q73 55 57 70Q40 55 25 70Z"
                                 fill="currentColor"
                               />
                               <path
                                 d="M90 18V110Q90 135 65 120"
-                                strokeWidth="8"
-                                strokeLinecap="square"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="7"
+                                strokeLinecap="round"
                               />
                             </svg>
                           ) : (
                             "“ ”"
                           )}
                         </span>
-                        <span className="tile-art-note">
-                          {item.kind === "quiz"
-                            ? "A NUMBER WORTH A SECOND LOOK"
-                            : "THERE’S MORE TO THE STORY"}
-                        </span>
-                        <button
-                          className="tile-save"
-                          aria-label={
-                            saved.includes(item.id)
-                              ? `Remove ${item.title} from saved`
-                              : `Save ${item.title}`
-                          }
-                          aria-pressed={saved.includes(item.id)}
-                          onClick={() => save(item.id)}
-                        >
-                          {saved.includes(item.id) ? "♥" : "♡"}
-                        </button>
                       </div>
                       <div className="tile-body">
                         <div className="tile-meta">
                           <span>
                             {item.kind === "quiz"
-                              ? "QUIZ · MAKE A GUESS"
-                              : "REVEAL · EXPLORE A PERSPECTIVE"}
+                              ? "Quiz · Make a guess"
+                              : "Reveal · A different perspective"}
                           </span>
                           <span>1 min</span>
                         </div>
@@ -304,7 +220,7 @@ export function Explorer({
                           }
                         >
                           <h2>{item.title}</h2>
-                          <span aria-hidden="true">→</span>
+                          <Icon name="arrow" />
                         </button>
                         <p>{item.context}</p>
                         {item.tags.length > 0 && (
@@ -323,46 +239,63 @@ export function Explorer({
                 </div>
               ) : (
                 <section className="empty">
-                  <span className="empty-art">
-                    {tab === "saved" ? "♡" : "✦"}
+                  <span className="empty-art" aria-hidden="true">
+                    ✦
                   </span>
                   <h2>
-                    {tab === "saved"
-                      ? "Keep a little curiosity."
-                      : items.length > 0 && hasFilters
-                        ? "No discoveries found."
-                        : "Fresh discoveries are on the way."}
+                    {items.length > 0 && hasFilters
+                      ? "No discoveries found."
+                      : "Fresh discoveries are on the way."}
                   </h2>
                   <p>
-                    {tab === "saved"
-                      ? "Tap Save on a Quiz or Reveal to find it here."
-                      : items.length > 0 && hasFilters
-                        ? "Try another keyword or choose a different topic."
-                        : "We’re checking the sources before sharing our first stories."}
+                    {items.length > 0 && hasFilters
+                      ? "Try another keyword or choose a different topic."
+                      : "We’re checking the sources before sharing our first stories."}
                   </p>
-                  {tab === "topics" && items.length > 0 && hasFilters && (
+                  {items.length > 0 && hasFilters && (
                     <button className="primary" onClick={clearFilters}>
                       Clear filters
-                    </button>
-                  )}
-                  {tab === "saved" && (
-                    <button
-                      className="primary"
-                      onClick={() => setTab("topics")}
-                    >
-                      Explore topics →
                     </button>
                   )}
                 </section>
               )}
             </>
+          ) : (
+            <>
+              <h1 ref={heading} tabIndex={-1} className="sr-only">
+                Random discoveries
+              </h1>
+              <section className="shuffle-panel">
+                <Icon name="shuffle" size={32} />
+                <h2>
+                  A new direction.
+                  <br />
+                  Every single time.
+                </h2>
+                <p>
+                  {items.length
+                    ? "Quiz or Reveal. Any topic. No repeats until you’ve seen them all."
+                    : "Our first discoveries are being checked. Come back soon for a fresh look at Korea."}
+                </p>
+                <button
+                  className="primary"
+                  disabled={!items.length}
+                  onClick={() => open(shuffled(items))}
+                >
+                  Start random feed
+                  <Icon name="arrow" />
+                </button>
+                <small>
+                  You choose when to move on. No timers, no pressure.
+                </small>
+              </section>
+            </>
           )}
           <div className="editorial-note">
-            <span>✦</span>
+            <span aria-hidden="true">✦</span>
             <p>
               Small questions. Thoughtfully selected.
-              <br />
-              <strong>A closer look at the Korea beyond the familiar.</strong>
+              <br />A closer look at the Korea beyond the familiar.
             </p>
           </div>
         </main>

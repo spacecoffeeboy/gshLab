@@ -1,0 +1,54 @@
+{
+  "metrics": [
+    {
+      "width": 320,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    },
+    {
+      "width": 360,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    },
+    {
+      "width": 390,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    },
+    {
+      "width": 768,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    },
+    {
+      "width": 1024,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    },
+    {
+      "width": 1440,
+      "inputHeight": 48,
+      "buttonHeight": 48,
+      "bodyFont": 15,
+      "metaFont": 12,
+      "chipHeight": 44
+    }
+  ],
+  "errors": [],
+  "checks": "six viewports; no Saved/storage; search; keyboard; Quiz/Reveal; random; stress layout; public fixtures isolated"
+}

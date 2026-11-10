@@ -48,36 +48,36 @@ test("empty feed does not leak sample questions", async () => {
   cleanup();
 });
 
-test("hub filters topics and keeps saved discoveries after remount", async () => {
+test("hub exposes only topics/random and has no save controls or storage dependency", async () => {
   const { render, fireEvent, cleanup } = await import("@testing-library/react");
   const { Explorer, shuffled } = await import("../components/explorer");
-  Object.defineProperty(globalThis, "localStorage", {
-    value: dom.window.localStorage,
-    configurable: true,
-  });
-  dom.window.localStorage.clear();
   dom.window.scrollTo = () => {};
-  const props = { items: parseCollection(samples), preview: true };
-  let view = render(createElement(Explorer, props));
+  Object.defineProperty(globalThis, "localStorage", {
+    configurable: true,
+    get() {
+      throw new Error("Storage must not be read");
+    },
+  });
+  const view = render(
+    createElement(Explorer, { items: parseCollection(samples), preview: true }),
+  );
+  assert.equal(
+    view.container.querySelectorAll('nav[aria-label="Feed"] button').length,
+    2,
+  );
+  assert.equal(view.queryByRole("button", { name: /save/i }), null);
   fireEvent.click(view.getByRole("button", { name: "Society" }));
   assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
-  fireEvent.click(
-    view.getByRole("button", { name: `Save ${samples[0].title}` }),
-  );
-  fireEvent.click(view.getByRole("button", { name: /Saved/ }));
-  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
-  cleanup();
-  view = render(createElement(Explorer, props));
-  fireEvent.click(view.getByRole("button", { name: /Saved/ }));
-  assert.equal(view.container.querySelectorAll(".discovery-tile").length, 1);
-  fireEvent.click(
-    view.getByRole("button", { name: `Remove ${samples[0].title} from saved` }),
-  );
-  assert.ok(view.getByText("Keep a little curiosity."));
-  const original = ["a", "b", "c", "d"];
-  const queue = shuffled(original, () => 0);
+  fireEvent.click(view.container.querySelector(".tile-open")!);
+  assert.equal(view.queryByRole("button", { name: /save/i }), null);
+  fireEvent.click(view.getByRole("button", { name: /Back to feed/ }));
+  fireEvent.click(view.getByRole("button", { name: "Random" }));
+  fireEvent.click(view.getByRole("button", { name: /Start random feed/ }));
+  assert.ok(view.container.querySelector(".player-title"));
+  const original = ["a", "b", "c", "d"],
+    queue = shuffled(original, () => 0);
   assert.deepEqual(original, ["a", "b", "c", "d"]);
-  assert.equal(new Set(queue).size, original.length);
+  assert.equal(new Set(queue).size, 4);
   assert.deepEqual([...queue].sort(), original);
   cleanup();
 });
@@ -114,10 +114,7 @@ test("topic search is explicitly submitted, intersects topics and clears empty r
       preview: true,
     }),
   );
-  assert.equal(
-    view.queryByRole("button", { name: "Little kindnesses" }),
-    null,
-  );
+  assert.equal(view.queryByRole("button", { name: "Little kindnesses" }), null);
   fireEvent.change(view.getByRole("searchbox"), {
     target: { value: "kindness" },
   });
