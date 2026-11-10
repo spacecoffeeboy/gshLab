@@ -1,92 +1,37 @@
-# 알맹이 · Almeng-E
+# Almeng-E — Korea test first look
 
-An English-language, mobile-first Korea discovery web app built with Next.js App Router and TypeScript. No external APIs, database, accounts or secrets are required.
+Node.js / Next.js. Deploy target: Vercel. Current user-approved scope: landing → one sample question → explanation and completion.
 
-## Develop
-
-Use Node.js 24 (Vercel: select Node.js 24.x).
+## Run and verify
 
 ```sh
 npm ci
-npm run dev
-```
-
-`/` is the landing page and `/discover` is the public feed. `/preview` is a development-only editorial preview of six **unverified** examples. Production requests to `/preview` return 404. No preview switch or credentials can expose these fixtures in production. The public collection now contains 8 Reveal stories and 7 Quiz items approved for publication from supplied excerpts. The original six fixtures remain unpublished.
-
-```sh
-npm run validate:content
+npm run dev -- --port 3002
 npm test
-npm run typecheck
 npm run build
-npm start
+npm run test:browser
 ```
 
-## Content workflow
+`test:browser` checks the active first-look journey in Chromium at `http://localhost:3002`. Override `BROWSER_BASE_URL` and `CHROMIUM_PATH` as needed. Screenshots are saved in ignored `test-results/`.
 
-- Edit structured files under `content/`; schema and publication rules live in `lib/content.ts`.
-- Keep examples in `samples.json` as `needs_verification`. Never publish them automatically.
-- Record the evidence basis, draft content, check claims against the available source, then mark `approved`. Approval does not publish.
-- To publish, add the reviewed item to `published.json`, set `status` to `published`, and record `verification.reviewedBy`, `verification.reviewedAt` (YYYY-MM-DD), source `url` and `accessedAt` for externally checked sources. Operator-supplied excerpts instead require explicit `evidenceBasis: operator_excerpt` and internal `evidenceText`; this does not claim independent verification. Official-statistics sources cannot use this exception. Statistical quizzes also need period (or an explicit missing-period statement), population, unit and `verification.answerEvidence`.
-- Verification fields record human review; schema validation cannot verify that a URL supports a claim. The operator must do this before publication.
-- IDs/slugs must be unique across all collections. Options: 2–4 unique IDs. Quiz needs one correct ID and feedback for every option. Reveal has no correct answer or score.
-- Run content validation, tests and build; review and deploy. Archive errors or outdated sources. Editorial notes and review records are excluded from public feed props.
+## Routes and copy
 
-## Vercel
+- `/`: **How well do you know Korea?** CTA **Take the Korea test** → `/test`.
+- `/test`: one English ramyeon/kimchi/danmuji dummy. Choose, optionally change the choice, then **See the answer**. No automatic reveal.
+- Explanation: featured kimchi pairing, an alternative danmuji pairing, completion, **Back to home** and **Try this question again**.
+- `/discover`: redirects to `/test` for existing bookmarks.
+- `/preview`: development-only legacy editorial collections. All production preview requests remain blocked.
 
-Import this repository into Vercel, select **Next.js**, use repository root as Root Directory, and select **Node.js 24.x**. Default commands (`npm ci`, `npm run build`) work. No environment variables are required. Review a Vercel preview deployment before promoting production. The in-app editorial `/preview` remains blocked on all production builds, including Vercel preview deployments.
+The sample presents an editorial classic pairing, not a measured popularity ranking. It does not award a level or generate population statistics. The larger placement-test concept is a future product step.
 
-The initial public release contains 15 operator-approved items. Source notes, raw excerpt evidence and editorial review metadata are removed from client-facing content. Original reports were not independently verified; the UI discloses the supplied-excerpt basis.
+## Files and retained content
 
-Source structure: `app/` routes and styles; `components/feed.tsx` interaction; `lib/` schema/validation; `content/` local editorial data; `tests/` publication and interaction checks. Existing `Act/` files are historical and unused by the web app.
+`components/korea-test.tsx` owns in-memory answer/reveal state. `lib/korea-test.ts` is the sample copy. No login, browser storage or external API is required. Refresh resets the sample.
 
-## Discovery journey
+`content/published.json` retains the prior 8 Reveal and 7 statistical Quiz records. These and the previous feed components are preserved for the user's later decision about Believe it or not. They are not linked from the current user journey. Internal evidence stripping and publication checks remain in place.
 
-The landing page `/` has a CTA into `/discover`. The hub has By topic and Random views. Topic filters are generated from the `content/topics.json` registry. Cards open a focused Quiz/Reveal player with Back to feed, result feedback, sources and next navigation. Random uses a shuffled copy of the available collection and never repeats within a run; finishing offers an explicit restart. No timers or automatic advancement.
+`DESIGN.md` is the active white/black/lime design contract. `docs/DESIGN_PRINCIPLES.md` records the numerical rules and their basis. The unboxed question keeps28px/24px headings,15px body,12px minimum metadata,60px options and48px actions. The previous feed browser scripts are historical checks; the active browser check is `tests/browser/first-look.mjs`.
 
-Saved navigation, save buttons and localStorage persistence were removed by product decision. No login or account is required.
+## Deployment
 
-Use development-only `/preview` to inspect the new hub and player with the six unverified fixtures. These fixtures remain excluded from public `/discover`. Mobile uses one card column and horizontally scrolling topic chips; desktop uses two card columns. Both layouts keep the same journey and keyboard-operable controls.
-
-## Kindness Reveal fixtures
-
-`content/kindness.json` contains four independent operator-provided drafts, loaded only in development `/preview`, before legacy fixtures. No hosted database is needed. Each record preserves its own source, two choices and needs_verification status; source URLs and dates remain null.
-
-Reveal supports `revealMode: prediction | reflection`, optional `observedOptionId`, and `revealHeadline`. Observed option IDs must exist and are forbidden on reflection cards. They never award correctness or scores. Choose an option, optionally change it, then press Reveal to see the account and takeaway. Quiz behavior is unchanged. Mobile widths up to 640px use fixed bottom navigation with safe-area spacing; desktop keeps top navigation.
-
-## Design system
-
-`DESIGN.md` describes White & Playful: white canvas, black text and primary buttons, a single lime accent restricted to the AL mark, hero emphasis and selection states. Locally bundled Space Grotesk, Inter and JetBrains Mono are retained. No dark mode, gradients or glass effects are used in the current interface. Content rules and responsive bottom navigation remain unchanged.
-
-## Landing / feed separation
-
-`/` has three concise sections: introduction and Start discovering CTA, Quiz/Reveal explanation, and a random-feed CTA. The main `/discover` topic view starts directly with topic filters and content. `/discover?feed=random` opens the random tab; it does not automatically start a session. Development `/preview` uses the same compact hub with unpublished fixtures. Landing and hub are responsive and retain mobile bottom navigation in the hub.
-
-## Topics and keyword search
-
-Add broad topics to `content/topics.json` with a stable `id` and English `label`; array order is chip order. Existing initial topics are Travel, Daily life, Food, Language, Work and Society. Topics are visible even before they contain published items. Never add narrow keywords as navigation topics.
-
-Each content record uses `topicIds` (one or more registry IDs) and `tags` (fine-grained keywords, e.g. kindness, rain, generosity). Former mixed `topicTags` were migrated to these two fields. Kindness accounts use Travel or Daily life according to context; audience relevance does not establish residency.
-
-By topic search submits with Search or Enter, combines with the selected topic, ignores letter case and treats hyphens as spaces. It matches title, context, question, broad topic labels and tags; it never searches hidden answers, reveals, source notes or editorial notes. Clear search preserves the topic; Clear filters resets both. Random remains independent of topic search. Tags are shown in small type below each card and at the bottom of the player. No external search service is needed.
-
-## Current quantitative UI rules and browser QA
-
-`DESIGN.md` is the active token/interaction contract; `docs/DESIGN_PRINCIPLES.md` records the four operator-provided transcripts, timestamped numerical guidance and our separate implementation choices. Historical alternative themes and repeated overrides have been removed from the stylesheet.
-
-Body copy is 15px, secondary controls 14px, captions/tags 12px; mobile form inputs and adjacent search buttons are 48px high. Card inner padding is 20px top, 24px sides/bottom on mobile. Only By topic and Random remain, with 56px mobile nav targets and safe-area clearance. The compact 10px logo tagline is an explicit branding exception. The approved large type-led landing hero and centered CTA are retained.
-
-With Chromium installed, start `npm run dev -- --port 3002`, then run `npm run test:browser`. Set `CHROMIUM_PATH` if the executable is not `/usr/bin/chromium`, and `BROWSER_BASE_URL` for another local port. Tests exercise keyboard navigation, publication isolation, search, Quiz/Reveal, random completion and viewport metrics; screenshots and metrics are written under ignored `test-results/`. Browser viewport emulation is not a claim of physical-phone testing.
-
-## Operator Reddit material — draft batch 01
-
-`content/reddit-drafts.json` contains eight newly authored Reveal drafts from the operator-provided `background_reference_forQuiz.xlsx` (71 populated cells, no Reddit permalinks). Prediction and reflection each have four drafts. The draft originals remain separate; publication-approved copies are now in `published.json`.
-
-Review text, CSV files, evidence boundaries and a disposition for every source row are in `docs/content-batches/reddit-01/`. The original workbook and full original quotations are not committed. Development `/preview?batch=reddit-01` loads only these eight drafts; default `/preview` still loads the original six fixtures. Every production `/preview` request, including the batch parameter, remains blocked. The public collection includes approved copies of these eight stories alongside seven statistical quizzes.
-
-## Published explanations
-
-Quiz results separate the correct answer, 15px explanation, takeaway and expandable data scope. White/black/lime, 48px actions, 60px options, 12px minimum metadata and reduced-motion behavior remain in force. Sources from supplied excerpts are labeled without fabricated links or access dates. Reddit stories use a short personal-account note. Internal source notes and evidence never enter public props.
-
-## Current-visit progress
-
-The hub keeps completed item IDs and chosen options in React memory for the current page visit. Quiz completion requires an answer; Reveal completion requires explicitly revealing the story. Cards show Explored and a counter. Topic continuation and new random queues avoid explored items. Deliberate card reviews restore the answer; after everything is explored, Review random feed explicitly revisits the collection. Refresh/full-page navigation or tab closure clears progress. Neither localStorage nor sessionStorage is used.
+GitHub main is connected to Vercel. Commit/push to work for review; push to main only when authorized. This iteration was explicitly authorized for main by the user. Do not claim a remote deployment is ready unless the live deployment has been checked.

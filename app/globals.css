@@ -1335,3 +1335,122 @@ details[open] > summary::after {
   line-height: 1.5;
   font-weight: 600;
 }
+
+/* Direct-entry question journey: retain the shared white/black/lime contract. */
+.test-shell {
+  max-width: 748px;
+  padding-block: 32px 64px;
+  min-height: calc(100svh - 168px);
+}
+.test-topline,
+.test-progress-label,
+.test-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.test-topline { margin-bottom: 48px; }
+.test-topline .text-button { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+.test-topline > span,
+.test-progress-label,
+.test-navigation > span,
+.test-visit-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+.test-topline > span { text-align: right; }
+.test-progress-label { margin-bottom: 12px; }
+.test-progress { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.test-progress > span { display: block; height: 100%; background: var(--foreground); }
+.test-question { padding-block: 48px 24px; }
+.test-question .eyebrow { margin: 0 0 16px; }
+.test-question h1,
+.test-explanation h1 { font-size: 28px; line-height: 1.4; letter-spacing: -0.025em; margin: 0 0 32px; }
+.test-question .options { margin-top: 0; }
+.test-question .option { width: 100%; text-align: left; }
+.test-hint { color: var(--muted-foreground); margin: 16px 0 0; font-size: 15px; }
+.test-navigation { padding-top: 24px; border-top: 1px solid var(--border); }
+.test-visit-note { margin: 24px 0 0; }
+.test-shell .secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--input);
+  background: var(--background);
+  border-radius: var(--radius-control);
+  color: var(--foreground);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.test-explanation .eyebrow { margin: 0 0 16px; }
+.test-explanation h1 { margin-bottom: 16px; }
+.test-your-pick { color: var(--muted-foreground); margin: 0 0 24px; }
+.test-explanation-copy { font-size: 15px; line-height: 1.6; margin: 0 0 24px; }
+.test-finish { border-top: 1px solid var(--border); padding-top: 32px; margin-top: 32px; }
+.test-finish h2 { margin: 12px 0; }
+.test-finish > p:not(.eyebrow) { color: var(--muted-foreground); margin: 0 0 24px; }
+.test-result-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+@media(max-width:640px) {
+  .test-shell { padding-block: 16px 48px; }
+  .test-topline { margin-bottom: 32px; }
+  .test-question { padding-top: 32px; }
+  .test-question h1, .test-explanation h1 { font-size: 24px; line-height: 1.4; }
+  .test-navigation { align-items: stretch; flex-direction: column; }
+  .test-navigation .primary { width: 100%; }
+  .test-result-actions { align-items: stretch; flex-direction: column; }
+  .test-result-actions > * { width: 100%; }
+}
+
+/* Small success punctuation, never a full-screen celebration. */
+.success-tick {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--foreground);
+  animation: tick-pop 360ms cubic-bezier(.2,.8,.2,1) both;
+}
+.success-tick .icon { width: 20px; height: 20px; }
+.tick-burst { position: absolute; inset: 0; pointer-events: none; }
+.tick-burst i {
+  position: absolute;
+  left: calc(50% - 1px);
+  top: -6px;
+  width: 2px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--foreground);
+  transform-origin: 1px 22px;
+  animation: tick-spark 420ms ease-out both;
+}
+.tick-burst i:nth-child(2) { rotate: 90deg; }
+.tick-burst i:nth-child(3) { rotate: 180deg; }
+.tick-burst i:nth-child(4) { rotate: 270deg; }
+.sample-result-heading { display: flex; align-items: flex-start; gap: 16px; }
+.sample-result-heading > .success-tick { margin-top: 4px; }
+.sample-result-heading h1 { flex: 1; }
+@keyframes tick-pop {
+  0% { transform: scale(.65); opacity: 0; }
+  65% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes tick-spark {
+  0% { opacity: 0; scale: .7; }
+  25% { opacity: 1; }
+  100% { opacity: 0; scale: 1.4; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .success-tick { animation: none; }
+  .tick-burst { display: none; }
+}

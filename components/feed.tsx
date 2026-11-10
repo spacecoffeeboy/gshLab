@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Content } from "@/lib/content";
 import { topicLabel } from "@/lib/discovery";
 import { Icon } from "./icon";
+import { SuccessTick } from "./success-tick";
 type Item = Content;
 export function Feed({
   items,
@@ -157,14 +158,11 @@ export function Feed({
                     <span className="option-id">{option.id}</span>
                     <span>{option.text}</span>
                     <span className="option-state">
-                      {selected &&
-                        item.kind === "quiz" &&
-                        item.correctOptionId === option.id && (
-                          <span className="answer-label">Correct answer</span>
-                        )}
-                      <span aria-hidden="true">
-                        {selected === option.id ? "●" : "→"}
-                      </span>
+                      {selected && item.kind === "quiz" && item.correctOptionId === option.id ? (
+                        <SuccessTick />
+                      ) : (
+                        <span aria-hidden="true">{selected === option.id ? "●" : "→"}</span>
+                      )}
                     </span>
                   </button>
                 ))}

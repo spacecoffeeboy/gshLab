@@ -1,0 +1,62 @@
+import {chromium} from 'playwright-core';
+import assert from 'node:assert/strict';
+import {mkdir} from 'node:fs/promises';
+const base=process.env.BROWSER_BASE_URL || 'http://localhost:3002';
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium',args:['--no-sandbox']});
+await mkdir('test-results',{recursive:true});
+const page=await browser.newPage();
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.addInitScript(()=>{for(const name of ['localStorage','sessionStorage'])Object.defineProperty(window,name,{get(){throw Error('No persistence in first look');}});});
+async function fits(){assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
+async function capture(name){await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`test-results/${name}.png`,fullPage:true});}
+try{
+ for(const width of [320,360,390,768,1024,1440]){
+  await page.setViewportSize({width,height:900});
+  await page.goto(base);
+  await fits();
+  assert.equal(await page.locator('main > section').count(),3);
+  assert.equal(await page.getByRole('link',{name:/Believe it or not|Discover a little more/}).count(),0);
+  const hero=await page.locator('.type-hero').boundingBox(),cta=await page.locator('.hero-action-group .primary').boundingBox();
+  assert.ok(Math.abs(cta.x+cta.width/2-hero.x-hero.width/2)<2);
+  if([390,1440].includes(width))await capture(`first-look-landing-${width}`);
+  await page.getByRole('link',{name:/Take the Korea test/}).click();
+  await page.waitForURL('**/test');
+  await page.getByRole('heading',{name:/classic sidekick/}).waitFor();
+  assert.equal(await page.locator('.discovery-grid,.feed-tabs').count(),0);
+  assert.equal(await page.locator('.option').count(),2);
+  assert.equal(await page.getByRole('button',{name:/See the answer/}).isDisabled(),true);
+  assert.equal(await page.locator('.success-tick').count(),0);
+  await fits();
+  assert.ok(await page.locator('.option').first().evaluate(e=>e.getBoundingClientRect().height>=60));
+  if([390,1440].includes(width))await capture(`first-look-question-${width}`);
+  await page.getByRole('button',{name:/A Kimchi/}).click();
+  await page.getByRole('button',{name:/B Pickled radish/}).click();
+  assert.equal(await page.locator('.test-explanation').count(),0);
+  await page.getByRole('button',{name:/See the answer/}).click();
+  await page.getByRole('heading',{name:'Ramyeon, meet kimchi.'}).waitFor();
+  assert.equal(await page.locator('.success-tick').count(),0);
+  await page.getByText(/Danmuji has a place at the table/).waitFor();
+  await fits();
+  await page.getByRole('button',{name:'Try this question again'}).click();
+  assert.equal(await page.getByRole('button',{name:/See the answer/}).isDisabled(),true);
+  await page.getByRole('button',{name:/A Kimchi/}).click();
+  await page.getByRole('button',{name:/See the answer/}).click();
+  await page.getByRole('img',{name:'Correct',exact:true}).waitFor();
+  assert.equal(await page.getByText('Correct answer',{exact:true}).count(),0);
+  assert.equal(await page.locator('.test-explanation h1').evaluate(e=>document.activeElement===e),true);
+  await fits();
+  if([390,1440].includes(width))await capture(`first-look-explanation-${width}`);
+  await page.reload();
+  await page.getByRole('heading',{name:/classic sidekick/}).waitFor();
+  assert.equal(await page.getByRole('button',{name:/See the answer/}).isDisabled(),true);
+ }
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.getByRole('button',{name:/A Kimchi/}).click();
+ await page.getByRole('button',{name:/See the answer/}).click();
+ assert.equal(await page.locator('.success-tick').evaluate(e=>getComputedStyle(e).animationName),'none');
+ await page.getByRole('link',{name:/Back to home/}).click();
+ await page.waitForURL(base+'/');
+ await page.goto(base+'/discover');await page.waitForURL('**/test');
+ assert.deepEqual(errors,[]);
+ console.log('PASS: landing → sample question → explanation/completion; both options; tick; retry; reset; 6 widths; reduced motion; legacy redirect; no storage.');
+}finally{await browser.close();}

@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Almeng-E — A little more Korea",
   description:
-    "Discover Korea, one surprise at a time. Short quizzes and real perspectives, thoughtfully curated.",
+    "How well do you know Korea? Start with one little question and discover a little more.",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

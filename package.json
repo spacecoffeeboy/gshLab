@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts tests/*.test.tsx",
     "validate:content": "node --import tsx lib/validate.ts",
-    "test:browser": "node tests/browser/readiness.mjs"
+    "test:browser": "node tests/browser/first-look.mjs"
   },
   "engines": {
     "node": ">=22"

@@ -2,6 +2,11 @@
 
 Current implementation: `app/globals.css`. Rationale, timestamped references to four operator-provided video transcripts, and separation of quoted numerical advice from product-specific decisions: [docs/DESIGN_PRINCIPLES.md](docs/DESIGN_PRINCIPLES.md).
 
+## Active journey
+- `/` landing → `/test` sample question → explanation and completion. `/discover` redirects to `/test`. No feed tabs or content-grid step in this journey.
+- The active first look has one English ramyeon question, two choices, explicit explanation action and a completion section. Do not show a 12-question promise, population statistics, score or earned level for this subjective dummy.
+- Preserve the existing feed components/data for later product decisions; do not link Believe it or not in this first look.
+
 ## Brand
 - White #FFFFFF; text/primary action #111111; secondary text #666666; neutral fill #F6F6F6.
 - One accent: lime #D8F36A. Use it in AL, hero emphasis and subtle selected options; no lavender/glass/dark/gradient theme.
@@ -25,10 +30,10 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 
 ## Approved hero
 - Three-section landing. First section is image-free: large text above the description and a separate centered CTA row.
-- Main: `Korea, here and there` / `A little deeper and closer`.
+- Main: `How well do` / `you know Korea?`.
 - Sub: `Get to know Korea. Have a little fun. Take a little with you.`
-- Outline `here`, lime `deeper`, underline `closer`; 48–88px desktop display,28–40px mobile. This is a marketing exception to app title sizes.
-- CTA `Start discovering` → `/discover`. Bottom landing CTA → `/discover?feed=random`.
+- Lime `Korea?`; 48–88px desktop display,28–40px mobile. This is a marketing exception to app title sizes.
+- CTA `Take the Korea test` → `/test`. Bottom CTA `Try the sample question` → `/test`.
 
 ## Behavior
 - Topic registry and fine-grained searchable tags stay separate. Search uses public pre-answer copy only.
@@ -46,3 +51,12 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 - Keep completed answers in React memory only. Refresh, full-page navigation or tab closure resets them; no browser storage or account persistence.
 - Quiz completes on answer selection; Reveal completes only after explicit reveal. Cards show a 12px lime-neutral `Explored` label and a visit count.
 - Topic queues and random starts exclude completed items, except a card deliberately reopened for review. Restore the chosen answer and explanation when reviewing. Once all items are explored, offer an explicit Review action.
+
+## First-look question UI
+- Main question is unboxed, within the shared 700px reading width. Heading28px desktop /24px mobile, body15px, metadata12px, options60px+, action48px+.
+- Preserve related spacing12–16px and group spacing24–32px. Select with light lime; no correctness color before explicit explanation.
+- Explain the featured pairing, include an alternative/takeaway, then a clear completion section with Home and Retry. Focus moves to the question/explanation heading. Refresh resets the answer.
+
+## Correct-answer punctuation
+- Replace the legacy visible `Correct answer` option label with a 32px lime check mark. The check has an accessible Correct label.
+- On explicit sample explanation, a correct pick gets a360ms pop with a420ms four-ray burst; no confetti overlay or looping animation. Reduced motion removes animation and sparks. Alternative picks get explanation without a success tick.
