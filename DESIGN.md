@@ -37,3 +37,7 @@ Current implementation: `app/globals.css`. Rationale, timestamped references to 
 - Publication filtering is mandatory. Do not publish fixtures to make the interface look full.
 - Keep full reading copy in the player; do not shrink fonts to fit. Allow multiline labels and long source links to wrap.
 - Respect reduced motion. Result and return navigation restore useful keyboard focus.
+
+## Published content explanations
+- Quiz result order: outcome → correct-answer block → evidence explanation → takeaway → collapsed data scope → Next discovery. Answer block uses 16px/20px padding, 10px radius, 15px body and a lime edge; metadata remains at least12px.
+- Supplied-excerpt publications explicitly disclose their basis; never fabricate report URLs, survey dates or independent verification. Internal evidence and editorial notes are stripped from public content. Existing six fixtures remain unpublished.

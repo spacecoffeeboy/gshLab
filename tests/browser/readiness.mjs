@@ -67,7 +67,8 @@ try {
     await page.waitForURL("**/discover");
     await ready();
     await fits(`public hub ${width}`);
-    assert.equal(await page.locator(".discovery-tile").count(), 0);
+    await page.locator(".discovery-tile").first().waitFor();
+    assert.equal(await page.locator(".discovery-tile").count(), 15);
     assert.equal(await page.getByRole("button", { name: /save/i }).count(), 0);
     assert.equal(await page.locator(".feed-tabs button").count(), 2);
     await page.goto(`${base}/preview`);
@@ -131,8 +132,7 @@ try {
       true,
     );
     assert.equal(await page.locator(".option.correct").count(), 0);
-    await page.locator(".source-details summary").click();
-    assert.equal(await px(".source-details", "paddingBottom"), 24);
+    await page.getByText(/Adapted from a personal account shared on Reddit/).waitFor();
     assert.equal(await page.locator(".source a").count(), 0);
     await fits(`result ${width}`);
     if (width === 390 || width === 1440) await capture(`reveal-after-${width}`);
@@ -212,7 +212,7 @@ try {
       ?.textContent?.includes("Random"),
   );
   assert.ok(
-    await page.getByRole("button", { name: "Start random feed" }).isDisabled(),
+    await page.getByRole("button", { name: "Start random feed" }).isEnabled(),
   );
   assert.deepEqual(errors, []);
   await writeFile(

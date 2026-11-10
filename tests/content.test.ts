@@ -78,3 +78,17 @@ test("kindness reveals preserve independent sources and mode rules", async () =>
     parseCollection([{ ...kindness[0], correctOptionId: "B" }]),
   );
 });
+
+test("published excerpt collection is explicit about evidence and strips internal source material", async () => {
+ const { default: published } = await import('../content/published.json');
+ const items = publicContent(published);
+ assert.equal(items.length, 15);
+ assert.equal(items.filter(i => i.kind === 'quiz').length, 7);
+ assert.equal(items.filter(i => i.kind === 'reveal').length, 8);
+ assert.ok(items.every(i => i.sources.every(s => s.evidenceBasis === 'operator_excerpt')));
+ assert.ok(items.every(i => !('editorNotes' in i) && !('verification' in i)));
+ assert.ok(items.every(i => i.sources.every(s => !('notes' in s) && !('evidenceText' in s))));
+ const bad = { ...published[8], sources: [{ ...published[8].sources[0], evidenceText: undefined }] };
+ assert.throws(() => parseCollection([bad]));
+ assert.throws(() => parseCollection([{ ...published[8], sourceType: 'official_statistics' }]));
+});

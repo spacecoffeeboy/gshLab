@@ -204,6 +204,12 @@ export function Feed({
                     : item.revealHeadline ||
                       "There’s more than one way to see it."}
                 </h2>
+                {item.kind === "quiz" && (
+                  <div className="answer-summary">
+                    <span>CORRECT ANSWER</span>
+                    <p><strong>{item.correctOptionId} · {item.options.find((option) => option.id === item.correctOptionId)?.text}</strong></p>
+                  </div>
+                )}
                 <p>
                   {item.kind === "quiz"
                     ? item.feedbackByOption[selected]
@@ -220,7 +226,7 @@ export function Feed({
                 ) : (
                   <details className="source-details">
                     <summary>
-                      Take a look at the sources <span aria-hidden="true">→</span>
+                      {item.kind === "quiz" ? "About the data" : "Take a look at the sources"} <span aria-hidden="true">→</span>
                     </summary>
                     {item.sources.map((source) => (
                       <div className="source" key={source.sourceId}>
@@ -234,8 +240,11 @@ export function Feed({
                           </a>
                         ) : (
                           <span>
-                            {source.organizationOrCommunity} · Source pending
-                            verification
+                            {source.evidenceBasis === "operator_excerpt"
+                              ? source.organizationOrCommunity.startsWith("Publisher not identified")
+                                ? "Supplied report excerpt · Publisher not specified"
+                                : source.organizationOrCommunity
+                              : `${source.organizationOrCommunity} · Source pending verification`}
                           </span>
                         )}
                         <p>
@@ -247,6 +256,9 @@ export function Feed({
                             .filter(Boolean)
                             .join(" · ")}
                         </p>
+                        {source.evidenceBasis === "operator_excerpt" && (
+                          <p>Based on a supplied excerpt. The original report has not been independently checked.</p>
+                        )}
                       </div>
                     ))}
                   </details>

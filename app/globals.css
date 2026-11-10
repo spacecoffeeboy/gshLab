@@ -1296,3 +1296,24 @@ details[open] > summary::after {
   text-align: right;
   color: var(--foreground);
 }
+
+/* Quiz explanations: answer, evidence, takeaway, optional data scope. */
+.answer-summary {
+  margin: 0 0 16px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--lime);
+  background: var(--surface);
+  border-radius: var(--radius-control);
+}
+.answer-summary > span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.answer-summary p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}

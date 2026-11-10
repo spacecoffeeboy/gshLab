@@ -16,5 +16,6 @@ test('operator material yields eight independently traceable, unscored, unpublis
  assert.ok(items.every(i=>!i.verification&&!i.publishedAt));
  assert.equal(publicContent(drafts).length,0);
  assert.throws(()=>parseCollection(drafts.map(i=>({...i,status:'published'}))));
- parseCollection([...published,...samples,...kindness,...drafts]);
+ parseCollection(published);
+ parseCollection([...samples,...kindness,...drafts]);
 });

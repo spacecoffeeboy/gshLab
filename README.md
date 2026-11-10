@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-`/` is the landing page and `/discover` is the public feed. `/preview` is a development-only editorial preview of six **unverified** examples. Production requests to `/preview` return 404. No preview switch or credentials can expose these fixtures in production. The public collection starts empty until an editor checks and publishes real content.
+`/` is the landing page and `/discover` is the public feed. `/preview` is a development-only editorial preview of six **unverified** examples. Production requests to `/preview` return 404. No preview switch or credentials can expose these fixtures in production. The public collection now contains 8 Reveal stories and 7 Quiz items approved for publication from supplied excerpts. The original six fixtures remain unpublished.
 
 ```sh
 npm run validate:content
@@ -25,8 +25,8 @@ npm start
 
 - Edit structured files under `content/`; schema and publication rules live in `lib/content.ts`.
 - Keep examples in `samples.json` as `needs_verification`. Never publish them automatically.
-- Collect original URLs and metadata, draft content, verify against originals, then manually mark `approved`. Approval does not publish.
-- To publish, add the reviewed item to `published.json`, set `status` to `published`, and record `verification.reviewedBy`, `verification.reviewedAt` (YYYY-MM-DD), source `url` and `accessedAt`. Official-statistics quizzes also need period, population, unit and `verification.answerEvidence`.
+- Record the evidence basis, draft content, check claims against the available source, then mark `approved`. Approval does not publish.
+- To publish, add the reviewed item to `published.json`, set `status` to `published`, and record `verification.reviewedBy`, `verification.reviewedAt` (YYYY-MM-DD), source `url` and `accessedAt` for externally checked sources. Operator-supplied excerpts instead require explicit `evidenceBasis: operator_excerpt` and internal `evidenceText`; this does not claim independent verification. Official-statistics sources cannot use this exception. Statistical quizzes also need period (or an explicit missing-period statement), population, unit and `verification.answerEvidence`.
 - Verification fields record human review; schema validation cannot verify that a URL supports a claim. The operator must do this before publication.
 - IDs/slugs must be unique across all collections. Options: 2–4 unique IDs. Quiz needs one correct ID and feedback for every option. Reveal has no correct answer or score.
 - Run content validation, tests and build; review and deploy. Archive errors or outdated sources. Editorial notes and review records are excluded from public feed props.
@@ -35,7 +35,7 @@ npm start
 
 Import this repository into Vercel, select **Next.js**, use repository root as Root Directory, and select **Node.js 24.x**. Default commands (`npm ci`, `npm run build`) work. No environment variables are required. Review a Vercel preview deployment before promoting production. The in-app editorial `/preview` remains blocked on all production builds, including Vercel preview deployments.
 
-An empty public feed is intentional until verified content is provided. Initial content count is not fixed. Public release still requires verified/approved content, a Vercel project connection and real mobile/browser QA.
+The initial public release contains 15 operator-approved items. Source notes, raw excerpt evidence and editorial review metadata are removed from client-facing content. Original reports were not independently verified; the UI discloses the supplied-excerpt basis.
 
 Source structure: `app/` routes and styles; `components/feed.tsx` interaction; `lib/` schema/validation; `content/` local editorial data; `tests/` publication and interaction checks. Existing `Act/` files are historical and unused by the web app.
 
@@ -79,6 +79,10 @@ With Chromium installed, start `npm run dev -- --port 3002`, then run `npm run t
 
 ## Operator Reddit material — draft batch 01
 
-`content/reddit-drafts.json` contains eight newly authored Reveal drafts from the operator-provided `background_reference_forQuiz.xlsx` (71 populated cells, no Reddit permalinks). Prediction and reflection each have four drafts. These are not published or approved.
+`content/reddit-drafts.json` contains eight newly authored Reveal drafts from the operator-provided `background_reference_forQuiz.xlsx` (71 populated cells, no Reddit permalinks). Prediction and reflection each have four drafts. The draft originals remain separate; publication-approved copies are now in `published.json`.
 
-Review text, CSV files, evidence boundaries and a disposition for every source row are in `docs/content-batches/reddit-01/`. The original workbook and full original quotations are not committed. Development `/preview?batch=reddit-01` loads only these eight drafts; default `/preview` still loads the original six fixtures. Every production `/preview` request, including the batch parameter, remains blocked. The public collection is unchanged.
+Review text, CSV files, evidence boundaries and a disposition for every source row are in `docs/content-batches/reddit-01/`. The original workbook and full original quotations are not committed. Development `/preview?batch=reddit-01` loads only these eight drafts; default `/preview` still loads the original six fixtures. Every production `/preview` request, including the batch parameter, remains blocked. The public collection includes approved copies of these eight stories alongside seven statistical quizzes.
+
+## Published explanations
+
+Quiz results separate the correct answer, 15px explanation, takeaway and expandable data scope. White/black/lime, 48px actions, 60px options, 12px minimum metadata and reduced-motion behavior remain in force. Sources from supplied excerpts are labeled without fabricated links or access dates. Reddit stories use a short personal-account note. Internal source notes and evidence never enter public props.

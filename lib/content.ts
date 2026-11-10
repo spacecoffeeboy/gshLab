@@ -22,6 +22,8 @@ const source = z.object({
   population: text.nullable().optional(),
   unit: text.nullable().optional(),
   notes: z.string().optional(),
+  evidenceBasis: z.enum(["external", "operator_excerpt"]).default("external"),
+  evidenceText: text.optional(),
 });
 const base = z.object({
   id: text,
@@ -108,12 +110,16 @@ export const contentSchema = z
     }
     if (item.status === "published") {
       if (!item.verification)
-        fail("Publication requires a recorded human review");
+        fail("Publication requires a recorded editorial review");
       if (
         !item.sources.length ||
-        item.sources.some((s) => !s.url || !s.accessedAt)
+        item.sources.some((s) =>
+          s.evidenceBasis === "operator_excerpt"
+            ? !s.evidenceText || item.sourceType === "official_statistics"
+            : !s.url || !s.accessedAt,
+        )
       )
-        fail("Publication requires checked source URLs and access dates");
+        fail("Publication requires checked URLs and dates or explicit supplied-excerpt evidence");
       if (item.kind === "quiz" && item.sourceType !== "reddit") {
         const official = item.sources.filter(
           (s) => s.kind === "official_report" || s.kind === "statistical_table",
@@ -142,5 +148,8 @@ export function parseCollection(input: unknown): Content[] {
 export function publicContent(input: unknown) {
   return parseCollection(input)
     .filter((i) => i.status === "published")
-    .map(({ editorNotes, verification, ...item }) => item);
+    .map(({ editorNotes, verification, ...item }) => ({
+      ...item,
+      sources: item.sources.map(({ notes, evidenceText, ...source }) => source),
+    }));
 }
