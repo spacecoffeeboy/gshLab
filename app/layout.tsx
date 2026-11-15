@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { QuizSessionProvider } from "@/components/quiz-session";
 export const metadata: Metadata = {
   title: "Almeng-E — A little more Korea",
   description:
@@ -23,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </span>
           </a>
         </header>
-        {children}
+        <QuizSessionProvider>{children}</QuizSessionProvider>
         <footer>
           <span>Curiosity looks good on you.</span>
           <span>

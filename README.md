@@ -1,6 +1,29 @@
-# Almeng-E — Korea test first look
+# Almeng-E — a little more Korea
 
-Node.js / Next.js. Deploy target: Vercel. Current user-approved scope: landing → one sample question → explanation and completion.
+Node.js / Next.js. Vercel production follows GitHub main.
+
+## Current journey
+
+`/` landing → `/start` bridge → `/test` questions → `/report` personal results. `/discover` redirects to the bridge. Production `/preview` stays blocked.
+
+- Choose **beginner / intermediate / advanced**, Korean question language, and Standard or **TIME ATTACK**.
+- Korean questions only. English is explicitly marked coming soon; no automatic translation.
+- Only questions from the selected level. Beginner28 / intermediate35 / advanced7 in the current bank. Draw15 for beginner/intermediate and all7 for advanced, without repeating a question inside the test.
+- Standard has no timer. TIME ATTACK has300 seconds for the whole test, including explanation reading, with automatic timeout submission. Missing responses remain unanswered and count against the actual question denominator.
+- Select once for an immediate answer check and a small success tick. Open the explanation below the question. Results show the selected level, raw score/actual total, category results, response counts, elapsed time and answer review. Different levels are not treated as the same ability scale.
+- No DB, account, external API, demographics collection, cookies for quiz state, localStorage or sessionStorage. Attempt data exists only in React memory; refresh/tab closure clears it. Direct result access shows an empty-state prompt.
+
+## Content workflow
+
+The reviewed source is `content/editorial/quiz-review-v2.csv` (82 rows). User-approved source copy is retained. Run:
+
+```sh
+npm run import:quiz
+```
+
+This produces `content/quiz-bank.json` and `content/quiz-bank-manifest.json`, selecting only70 reviewed rows. The9 unconfirmed and3 held entries stay excluded. Type/placeholder normalization does not rewrite questions or distractors. Add/edit the reviewed source and import again to extend the bank. Difficulty/interpretation is editorial, not a statistically calibrated certification.
+
+The former15 Reveal/statistical stories and old sample components are preserved, but are not part of the test bank or linked from this journey.
 
 ## Run and verify
 
@@ -9,29 +32,15 @@ npm ci
 npm run dev -- --port 3002
 npm test
 npm run build
-npm run test:browser
+BROWSER_BASE_URL=http://localhost:3002 npm run test:browser
 ```
 
-`test:browser` checks the active first-look journey in Chromium at `http://localhost:3002`. Override `BROWSER_BASE_URL` and `CHROMIUM_PATH` as needed. Screenshots are saved in ignored `test-results/`.
+The browser suite is `tests/browser/level-test.mjs`. Override `CHROMIUM_PATH` if Chromium is elsewhere. It covers six widths, all three selected-level pools, immediate checks/inline explanations, result interpretation, time expiry, restart, empty reports, keyboard navigation and storage-free operation. Screenshots go to ignored `test-results/`.
 
-## Routes and copy
+`DESIGN.md` is the active white/black/lime and numerical UI contract; `docs/DESIGN_PRINCIPLES.md` retains the video-based rationale.
 
-- `/`: **How well do you know Korea?** CTA **Take the Korea test** → `/test`.
-- `/test`: one English ramyeon/kimchi/danmuji dummy. Choose once to immediately check the answer. Then **View explanation** expands the explanation below the question without navigation.
-- Inline explanation: kimchi pairing, an alternative danmuji pairing, completion, **Back to home** and **Try this question again**.
-- `/discover`: redirects to `/test` for existing bookmarks.
-- `/preview`: development-only legacy editorial collections. All production preview requests remain blocked.
+## Future DB preparation only
 
-The sample presents an editorial classic pairing, not a measured popularity ranking. It does not award a level or generate population statistics. The larger placement-test concept is a future product step.
+`db/schema-draft.sql` is an unexecuted PostgreSQL design, not a deployed database. There is no DB SDK, connection string or setup hook. See `docs/data/STATIC_BANK_AND_FUTURE_DB.md` for data/score invariants and migration work still required. `docs/data/OPTIONAL_DEMOGRAPHICS_PLAN.md` describes optional consent after the report, without collecting anything now.
 
-## Files and retained content
-
-`components/korea-test.tsx` owns in-memory answer/reveal state. `lib/korea-test.ts` is the sample copy. No login, browser storage or external API is required. Refresh resets the sample.
-
-`content/published.json` retains the prior 8 Reveal and 7 statistical Quiz records. These and the previous feed components are preserved for the user's later decision about Believe it or not. They are not linked from the current user journey. Internal evidence stripping and publication checks remain in place.
-
-`DESIGN.md` is the active white/black/lime design contract. `docs/DESIGN_PRINCIPLES.md` records the numerical rules and their basis. The unboxed question keeps28px/24px headings,15px body,12px minimum metadata,60px options and48px actions. The previous feed browser scripts are historical checks; the active browser check is `tests/browser/first-look.mjs`.
-
-## Deployment
-
-GitHub main is connected to Vercel. Commit/push to work for review; push to main only when authorized. This iteration was explicitly authorized for main by the user. Do not claim a remote deployment is ready unless the live deployment has been checked.
+The static quiz bundle contains answer keys, so it is suitable for a casual portfolio quiz, not a tamper-resistant official exam. No real participant averages or percentiles are shown.

@@ -1,62 +1,37 @@
-# Almeng-E — White & Playful / Active UI Contract
+# Almeng-E — active white / black / lime UI contract
 
-Current implementation: `app/globals.css`. Rationale, timestamped references to four operator-provided video transcripts, and separation of quoted numerical advice from product-specific decisions: [docs/DESIGN_PRINCIPLES.md](docs/DESIGN_PRINCIPLES.md).
+Rationale and source video timestamps: [docs/DESIGN_PRINCIPLES.md](docs/DESIGN_PRINCIPLES.md). Current implementation: `app/globals.css`.
 
 ## Active journey
-- `/` landing → `/test` sample question → explanation and completion. `/discover` redirects to `/test`. No feed tabs or content-grid step in this journey.
-- The active first look has one English ramyeon question, two choices, immediate answer check, inline explanation toggle and a completion section. Do not show a 12-question promise, population statistics, score or earned level for this subjective dummy.
-- Preserve the existing feed components/data for later product decisions; do not link Believe it or not in this first look.
 
-## Brand
-- White #FFFFFF; text/primary action #111111; secondary text #666666; neutral fill #F6F6F6.
-- One accent: lime #D8F36A. Use it in AL, hero emphasis and subtle selected options; no lavender/glass/dark/gradient theme.
-- Rounded AL vector on a black square. Wordmark `Almeng-E`; `A little more Korea` left-aligned below with natural word spacing. Compact 10px tagline is the only small-type branding exception.
-- Rounded AL favicon: SVG + multi-size ICO. Master: `public/brand/almengi-al.svg`.
+Landing `/` → bridge `/start` → questions `/test` → report `/report`. No topic/card-feed step or bottom feed navigation in this journey. `/discover` redirects to `/start`.
 
-## Type and hierarchy
-- Space Grotesk 500/600 headings, Inter 400/500/600 body, JetBrains Mono 400/500 indexes; fonts locally bundled.
-- Body/choices/feedback: 15px, line-height1.6. Questions:18px/1.4/600.
-- Main mobile/card/result titles24px/1.2/600; desktop page/player28px/1.2.
-- Secondary controls14px. Tags, source metadata, navigation captions and previews12px minimum. Essential instructions are not caption-sized.
-- White text on black actions; secondary text at least4.5:1 contrast. Focus2px black with4px offset.
+- Landing headline: **How well do / you know Korea?** Lime emphasis on Korea. CTA **Take the Korea test** and **Find my starting point** lead to the bridge.
+- Bridge: select one level, Korean language (English disabled/coming soon), Standard or TIME ATTACK. Selected level alone determines question pool; no adaptive difficulty or sublevels.
+- Beginner/intermediate:15 questions; advanced:7 available questions, clearly stated before starting and in the report. Do not duplicate items to reach15.
+- Question selection immediately checks the answer. Correct choices receive a short tick pop; incorrect choices show the correct option with a static tick. First answer is locked. Explanations expand below; they do not navigate or force-scroll.
+- TIME ATTACK:300 seconds total, including explanations. Timer changes by actual elapsed time and auto-submits; unanswered questions remain visible in the report. Standard is untimed.
+- Report: selected level + raw score/actual denominator first, then interpretation, correct/incorrect/unanswered/time, category counts and expandable review. No invented participant averages, rank, demographic statistics or cross-level ability equivalence.
+- React memory only. No DB or personal profile collection. Refresh or tab closure resets. Empty report guides the user back to the bridge.
 
-## Layout and controls
-- 4/8/12/16/20/24/32/48/64 spacing scale. Container1160px, hub1120px, player700px.
-- Outer gutter24px desktop,20px mobile,16px at320px. Card padding20px top,24px sides/bottom; card gap24px.
-- Buttons/inputs48px high, 10px corner radius; topic chips44px; choices60px minimum,12px apart. Card radius16px.
-- Mobile two-item bottom nav (By topic / Random),56px targets and safe-area clearance. Saved, save buttons and storage persistence are removed.
-- Keep related text12–16px apart and separate groups24–32px. Expanded sources start near their title and end with24px space.
-- Shared SVG icons20px/1.75px. Do not add decorative icon backgrounds or repeated dividers without a grouping purpose.
+## Brand and type
 
-## Approved hero
-- Three-section landing. First section is image-free: large text above the description and a separate centered CTA row.
-- Main: `How well do` / `you know Korea?`.
-- Sub: `Get to know Korea. Have a little fun. Take a little with you.`
-- Lime `Korea?`; 48–88px desktop display,28–40px mobile. This is a marketing exception to app title sizes.
-- CTA `Take the Korea test` → `/test`. Bottom CTA `Try the sample question` → `/test`.
+- White #FFFFFF, text/primary action #111111, secondary #666666, neutral #F6F6F6. One accent lime #D8F36A; no lavender, gradients, glass or dark theme.
+- Rounded lime AL on black square; Almeng-E with left-aligned A little more Korea below. Keep the existing favicon. Compact10px logo tagline is the sole small-branding exception.
+- Space Grotesk headings, Inter body, JetBrains Mono indexes/timer; local fonts with system fallback for Korean. Mark Korean content with `lang=ko`.
+- Body/choices/explanations15px /1.6. App main headings28px desktop,24px mobile /1.4. Group headings18px, subheadings24px. Secondary controls14px; metadata/tags12px minimum.
+- Marketing display48–88px desktop /28–40px mobile. Report score numeral80px desktop /64px mobile is a numeric data-display exception, not body copy.
+- Text contrast4.5:1+, control outlines3:1+. Focus2px black with4px offset. Preserve keyboard skip link and useful question/report heading focus.
 
-## Behavior
-- Topic registry and fine-grained searchable tags stay separate. Search uses public pre-answer copy only.
-- Quiz: one correct answer and per-option feedback. Reveal: prediction/reflection, select then explicitly reveal, never scored.
-- No forced timers, automatic advancement, login or localStorage dependency. Random does not repeat until the collection ends.
-- Publication filtering is mandatory. Do not publish fixtures to make the interface look full.
-- Keep full reading copy in the player; do not shrink fonts to fit. Allow multiline labels and long source links to wrap.
-- Respect reduced motion. Result and return navigation restore useful keyboard focus.
+## Layout and interaction
 
-## Published content explanations
-- Quiz result order: outcome → correct-answer block → evidence explanation → takeaway → collapsed data scope → Next discovery. Answer block uses 16px/20px padding, 10px radius, 15px body and a lime edge; metadata remains at least12px.
-- Supplied-excerpt publications explicitly disclose their basis; never fabricate report URLs, survey dates or independent verification. Internal evidence and editorial notes are stripped from public content. Existing six fixtures remain unpublished.
+- Spacing4/8/12/16/20/24/32/48/64. Outer gutter24px desktop,20px mobile,16px at320px. Main reading area around700px; bridge960px; report800px outer width.
+- Controls48px+, options60px+ with12px gaps, radius10px. Display cards radius16px. Related text12–16px apart; sections24–48px apart. No typography shrinking to force a fit.
+- Bridge level choices: three columns on desktop, one column on mobile. Two mode cards collapse on mobile. Report stats four columns desktop/two mobile; category rows two/one. Long labels and explanations wrap.
+- Shared icons20px /1.75 stroke. Do not add unrelated decorative backgrounds. Meter colors are decorative; numeric values remain readable.
+- Tick32px lime circle,360ms pop and420ms four-ray burst once. Reduced motion removes animation and sparks. No confetti overlay, looping celebration or flashing timer.
+- Result actions and review summaries keep48px targets. Inline explanations do not replace the question.
 
-## Current-visit progress
-- Keep completed answers in React memory only. Refresh, full-page navigation or tab closure resets them; no browser storage or account persistence.
-- Quiz completes on answer selection; Reveal completes only after explicit reveal. Cards show a 12px lime-neutral `Explored` label and a visit count.
-- Topic queues and random starts exclude completed items, except a card deliberately reopened for review. Restore the chosen answer and explanation when reviewing. Once all items are explored, offer an explicit Review action.
+## Legacy content
 
-## First-look question UI
-- Main question is unboxed, within the shared 700px reading width. Heading28px desktop /24px mobile, body15px, metadata12px, options60px+, action48px+.
-- Preserve related spacing12–16px and group spacing24–32px. Select once to immediately show a lime tick on the featured answer; only a correct choice gets a brief pop.
-- Explain the featured pairing, include an alternative/takeaway, then a clear completion section with Home and Retry. Opening the explanation retains the question and button focus; no route change or forced scroll. Retry restores question focus. Refresh resets the answer.
-
-## Correct-answer punctuation
-- Replace the legacy visible `Correct answer` option label with a 32px lime check mark. The check has an accessible Correct label.
-- On immediate sample answer selection, a correct pick gets a360ms pop with a420ms four-ray burst; no confetti overlay or looping animation. Reduced motion removes animation and sparks. Alternative picks get explanation without a success tick.
+Existing Explorer/Feed and development-only previews remain for editorial work, with their saved-free two-tab behavior. They are not the main test journey. No Saved controls or browser-storage dependency is reintroduced.

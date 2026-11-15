@@ -1,2 +1,2 @@
 import { redirect } from "next/navigation";
-export default function Discover() { redirect("/test"); }
+export default function Discover() { redirect("/start"); }

@@ -11,10 +11,10 @@ export default function Home() {
      </h1>
     </div>
     <div className="type-hero-bottom">
-     <p className="welcome-description">Beyond the familiar. Into the little details.<br/>Start with a small question. Take a little more Korea with you.</p>
+     <p className="welcome-description">Beyond the familiar. Into the little details.<br/>Find your starting point. Take a little more Korea with you.</p>
      <div className="hero-action-group">
-      <Link className="primary" href="/test">Take the Korea test <span aria-hidden="true">→</span></Link>
-      <span className="welcome-caption">1 sample question · No account needed</span>
+      <Link className="primary" href="/start">Take the Korea test <span aria-hidden="true">→</span></Link>
+      <span className="welcome-caption">Up to 15 questions · About 5 minutes · No account needed</span>
      </div>
     </div>
    </section>
@@ -24,13 +24,13 @@ export default function Home() {
      <h2 id="formats-title">Know a little.<br/>Discover a little more.</h2>
     </div>
     <div className="welcome-format-grid">
-     <article><span className="format-label">01 / TAKE YOUR PICK</span><h3>One little question.<br/>Your kind of answer.</h3><p>Start with a familiar bowl of ramyeon. Choose your sidekick, then discover the little story behind the pairing.</p><span className="format-footnote">No timer. No pressure.</span></article>
-     <article><span className="format-label">02 / TAKE SOMETHING WITH YOU</span><h3>A familiar pairing.<br/>A little more to discover.</h3><p>See the explanation after your pick. This first look is just one question; the full Korea test is still to come.</p><span className="format-footnote">A first taste of what’s next.</span></article>
+     <article><span className="format-label">01 / TAKE YOUR PICK</span><h3>Your level.<br/>Your kind of challenge.</h3><p>Choose your level and take the test in Korean. Go at your own pace, or take on a five-minute Time Attack.</p><span className="format-footnote">Beginner · Intermediate · Advanced</span></article>
+     <article><span className="format-label">02 / TAKE SOMETHING WITH YOU</span><h3>A clearer picture.<br/>A little more to discover.</h3><p>Get a report for your chosen level. See your score, explore your strongest areas, and revisit every answer.</p><span className="format-footnote">Your score, in context.</span></article>
     </div>
    </section>
    <section className="welcome-start" aria-labelledby="start-title">
     <div><span className="eyebrow">CURIOUS WHERE YOU STAND?</span><h2 id="start-title">Your next discovery starts here.</h2><p>Bring what you know. Leave with a little more.</p></div>
-    <Link className="primary" href="/test">Try the sample question <span aria-hidden="true">→</span></Link>
+    <Link className="primary" href="/start">Find my starting point <span aria-hidden="true">→</span></Link>
    </section>
   </main>
  );

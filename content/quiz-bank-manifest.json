@@ -1,0 +1,61 @@
+{
+  "source": "content/editorial/quiz-review-v2.csv",
+  "version": "59a8be87740790c5",
+  "sourceRows": 82,
+  "includedRows": 70,
+  "levels": {
+    "beginner": 28,
+    "intermediate": 35,
+    "advanced": 7
+  },
+  "excluded": [
+    {
+      "sourceNumber": 13,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 16,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 22,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 25,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 26,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 31,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 36,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 37,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 41,
+      "status": "확인필요"
+    },
+    {
+      "sourceNumber": 55,
+      "status": "보류"
+    },
+    {
+      "sourceNumber": 56,
+      "status": "보류"
+    },
+    {
+      "sourceNumber": 62,
+      "status": "보류"
+    }
+  ]
+}

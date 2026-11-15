@@ -1,3 +1,4 @@
+import { quizBank, levelPool } from "./quiz-bank";
 import published from "../content/published.json";
 import samples from "../content/samples.json";
 import kindness from "../content/kindness.json";
@@ -9,3 +10,5 @@ parseCollection([...samples, ...kindness, ...redditDrafts, ...statisticsDrafts])
 console.log(
   `Content valid: ${publicContent(published).length} published, ${samples.length + kindness.length + redditDrafts.length + statisticsDrafts.length} unpublished samples`,
 );
+
+console.log(`Static test bank valid: ${quizBank.length} questions (${levelPool("beginner").length}/${levelPool("intermediate").length}/${levelPool("advanced").length})`);
