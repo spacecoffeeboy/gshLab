@@ -45,7 +45,7 @@ CREATE TABLE quiz_attempts (
  expires_at timestamptz NOT NULL,
  UNIQUE(attempt_id,selected_level),
  CHECK((mode='standard' AND deadline_at IS NULL) OR
-       (mode='time-attack' AND deadline_at=started_at+interval '5 minutes'))
+       (mode='time-attack' AND deadline_at=started_at+interval '3 minutes'))
 );
 CREATE TABLE attempt_questions (
  attempt_id uuid NOT NULL,

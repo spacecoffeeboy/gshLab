@@ -24,7 +24,7 @@ export default function Home() {
      <h2 id="formats-title">Know a little.<br/>Discover a little more.</h2>
     </div>
     <div className="welcome-format-grid">
-     <article><span className="format-label">01 / TAKE YOUR PICK</span><h3>Your level.<br/>Your kind of challenge.</h3><p>Choose your level and take the test in Korean. Go at your own pace, or take on a five-minute Time Attack.</p><span className="format-footnote">Beginner · Intermediate · Advanced</span></article>
+     <article><span className="format-label">01 / TAKE YOUR PICK</span><h3>Your level.<br/>Your kind of challenge.</h3><p>Choose your level and take the test in Korean. Go at your own pace, or take on a three-minute Time Attack.</p><span className="format-footnote">Beginner · Intermediate · Advanced</span></article>
      <article><span className="format-label">02 / TAKE SOMETHING WITH YOU</span><h3>A clearer picture.<br/>A little more to discover.</h3><p>Get a report for your chosen level. See your score, explore your strongest areas, and revisit every answer.</p><span className="format-footnote">Your score, in context.</span></article>
     </div>
    </section>

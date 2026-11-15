@@ -1,0 +1,598 @@
+{
+  "sourceVersion": "59a8be87740790c5",
+  "version": "6e40c32d09240283",
+  "language": "en",
+  "questions": {
+    "almeng-001": {
+      "prompt": "Mugunghwa, the rose of Sharon, is widely recognized as South Korea’s national flower.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Mugunghwa (무궁화), the rose of Sharon, is widely recognized as Korea’s national flower. This question is about cultural recognition, which is separate from legal designation."
+    },
+    "almeng-002": {
+      "prompt": "Which amount is NOT a standard South Korean banknote denomination?",
+      "options": {
+        "A": "1,000 won",
+        "B": "10,000 won",
+        "C": "20,000 won"
+      },
+      "explanation": "Standard notes come in 1,000, 5,000, 10,000 and 50,000 won. There is no standard 20,000-won note."
+    },
+    "almeng-003": {
+      "prompt": "Some restaurants in Korea stay open 24 hours.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Some do. Opening hours vary by location and can change, though—not every restaurant stays open all night."
+    },
+    "almeng-004": {
+      "prompt": "In Korea, food waste and general waste can simply go into the same disposal bag.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Food waste is generally separated from general waste. Bones and hard shells may belong in general waste instead, so follow the local sorting rules."
+    },
+    "almeng-005": {
+      "prompt": "Paid wedding-guest gigs exist in Korea.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "People can be paid to attend a wedding as a guest. That does not mean paid guests are a routine part of every Korean wedding."
+    },
+    "almeng-006": {
+      "prompt": "Which Korean abbreviation is matched with the WRONG meaning?",
+      "options": {
+        "A": "A-a (아아) → iced Americano",
+        "B": "Honbap (혼밥) → food tastes better after being scolded",
+        "C": "Kkilkkippappa (낄끼빠빠) → know when to join in and when to step back"
+      },
+      "explanation": "Honbap (혼밥) means eating alone. A-a (아아) is short for iced Americano, while kkilkkippappa (낄끼빠빠) means knowing when to join in and when to step back."
+    },
+    "almeng-007": {
+      "prompt": "A restaurant sign says “mureun selpeu-imnida” (물은 셀프입니다). What does it mean?",
+      "options": {
+        "A": "Get your own drinking water",
+        "B": "Water costs extra"
+      },
+      "explanation": "Water is self-service. Look for cups and a water dispenser or jug rather than waiting for someone to bring it. Selpeu (셀프) comes from “self.”"
+    },
+    "almeng-008": {
+      "prompt": "On Korea’s college entrance exam day, aircraft takeoffs and landings are temporarily restricted during the English listening test.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Temporary restrictions help reduce aircraft noise during the English listening section of the Suneung (수능), Korea’s college entrance exam. Flights do not stop for the entire day."
+    },
+    "almeng-009": {
+      "prompt": "Someone says this month has lots of “ppalgan nal” (빨간 날), or “red days.” What do they usually mean?",
+      "options": {
+        "A": "Unlucky days",
+        "B": "Sundays or public holidays marked red on the calendar",
+        "C": "Traditionally lucky days for moving house"
+      },
+      "explanation": "Ppalgan nal (빨간 날) refers to dates printed in red on calendars, such as Sundays and public holidays. It is different from son eomneun nal (손 없는 날), traditionally considered favorable for moving."
+    },
+    "almeng-010": {
+      "prompt": "What does a doljanchi (돌잔치) celebrate?",
+      "options": {
+        "A": "A festival showcasing local stones",
+        "B": "A Korean term for an idol fan-signing event",
+        "C": "A child’s first birthday"
+      },
+      "explanation": "A doljanchi (돌잔치) celebrates a child’s first birthday. It may include doljabi (돌잡이), where the child chooses an object from a selection."
+    },
+    "almeng-011": {
+      "prompt": "The “fist” in jumeokbap means you eat it by punching the rice.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Jumeokbap (주먹밥) is rice pressed into a compact, fist-like shape. Jumeok (주먹) means fist; the name is about the shape, not a punching technique for lunch."
+    },
+    "almeng-012": {
+      "prompt": "Gimbap must be made with seaweed that has already been seasoned with salt and oil.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Plain gim (김), or dried seaweed, is commonly used for gimbap (김밥). The rice can be seasoned and sesame oil brushed on the roll. Pre-seasoned seaweed is not essential."
+    },
+    "almeng-014": {
+      "prompt": "In Korean shopping slang, what is an “open run” (오픈런)?",
+      "options": {
+        "A": "A recreational running group",
+        "B": "Arriving at a store around opening time"
+      },
+      "explanation": "An open run (오픈런) means arriving around opening time, often to get a sought-after item. You do not have to be running, and it is not a running club."
+    },
+    "almeng-015": {
+      "prompt": "Because kimchi fried rice already contains kimchi, it is never served with kimchi on the side.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Kimchi bokkeumbap (김치볶음밥), or kimchi fried rice, can still come with kimchi on the side. Cooked kimchi and a separate side of kimchi can bring different flavors and textures."
+    },
+    "almeng-017": {
+      "prompt": "On the Seoul subway, you tap your transit card when entering but not when leaving.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "You tap at both entry and exit. The journey information helps the system calculate the fare and any relevant transfers."
+    },
+    "almeng-018": {
+      "prompt": "A restaurant brings an extra dish and says “seobiseuyeyo” (서비스예요). What does that usually mean?",
+      "options": {
+        "A": "You must order an extra serving",
+        "B": "An extra charge is automatically added",
+        "C": "That extra item is complimentary"
+      },
+      "explanation": "Here, seobiseu (서비스), from “service,” means the extra item is on the house. It is a gesture from the restaurant, not something every meal must include."
+    },
+    "almeng-019": {
+      "prompt": "Which expression has a DIFFERENT meaning?",
+      "options": {
+        "A": "N-ppang (n빵)",
+        "B": "Ppumppai (뿜빠이)",
+        "C": "Hyeonta (현타)"
+      },
+      "explanation": "N-ppang (n빵) and ppumppai (뿜빠이) can mean splitting a bill or cost. Hyeonta (현타) is a reality-check moment, often with a feeling of deflation."
+    },
+    "almeng-020": {
+      "prompt": "At a typical Korean multiplex, when does the main film usually begin relative to the listed screening time?",
+      "options": {
+        "A": "Right on time",
+        "B": "About 5 minutes later",
+        "C": "About 10 minutes later"
+      },
+      "explanation": "This question uses the common multiplex format where ads and announcements play from the listed screening time and the main film starts about 10 minutes later."
+    },
+    "almeng-021": {
+      "prompt": "Eating miyeokguk, or seaweed soup, is a Korean birthday tradition.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Miyeokguk (미역국) is associated with birthdays in Korea. It is a tradition, not a requirement for every birthday meal."
+    },
+    "almeng-023": {
+      "prompt": "Every side dish at every Korean restaurant comes with unlimited free refills.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Some restaurants refill basic banchan (반찬), or side dishes, for free. Policies and dishes vary, so do not assume every extra serving is included."
+    },
+    "almeng-024": {
+      "prompt": "At a coin noraebang, you can only pay with coins.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Despite the name, some coin noraebang (코인노래방), or coin-operated karaoke venues, accept banknotes, cards or other payment methods. Check the machine or venue."
+    },
+    "almeng-027": {
+      "prompt": "What does the delivery instruction “mun ape nwa juseyo” (문 앞에 놔 주세요) mean?",
+      "options": {
+        "A": "Leave it at the door",
+        "B": "Make sure to ring the doorbell",
+        "C": "Wait until I can receive it in person"
+      },
+      "explanation": "It asks for the delivery to be left at the door. It does not automatically ask the driver to ring the bell or wait for a handover."
+    },
+    "almeng-028": {
+      "prompt": "Cars in South Korea drive on the left side of the road.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Traffic keeps to the right in South Korea. The driver’s seat being on the left is a different thing from driving on the left side of the road."
+    },
+    "almeng-029": {
+      "prompt": "KTX trains have no backward-facing seats.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Some KTX trains have backward-facing seats. Seat layouts vary by train, so check the direction shown when booking."
+    },
+    "almeng-030": {
+      "prompt": "“Eonni” can only be used between biological sisters.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Eonni (언니) can be used by a woman for an older woman she is close to, even if they are not sisters. It is not an automatic way to address every older stranger."
+    },
+    "almeng-032": {
+      "prompt": "Which neighborhood is in a DIFFERENT city from the other two?",
+      "options": {
+        "A": "Seongsu (성수)",
+        "B": "Sangsu (상수)",
+        "C": "Sasang (사상)"
+      },
+      "explanation": "Seongsu (성수) and Sangsu (상수) are in Seoul. Sasang (사상) is in Busan."
+    },
+    "almeng-033": {
+      "prompt": "At work, someone says there is a “hoesik” (회식) tonight. What do they usually mean?",
+      "options": {
+        "A": "A group meal with coworkers",
+        "B": "An evening work-training session",
+        "C": "An overtime shift"
+      },
+      "explanation": "A hoesik (회식) is a group meal, often with coworkers in a workplace context. The word itself does not mean everyone has to drink alcohol or work overtime."
+    },
+    "almeng-034": {
+      "prompt": "Which Korean word has a DIFFERENT meaning?",
+      "options": {
+        "A": "Geumil (금일)",
+        "B": "Oneul (오늘)",
+        "C": "Geumyoil (금요일)"
+      },
+      "explanation": "Geumil (금일) and oneul (오늘) both mean today. Geumyoil (금요일) means Friday."
+    },
+    "almeng-035": {
+      "prompt": "Which Korean word means “the day after tomorrow”?",
+      "options": {
+        "A": "More (모레)",
+        "B": "Morae (모래)"
+      },
+      "explanation": "More (모레, roughly “mo-reh”) means the day after tomorrow. Morae (모래) means sand. One vowel makes a very different answer."
+    },
+    "almeng-038": {
+      "prompt": "Which word fits both blanks: ___ station and ___ breakup (___역 / ___이별)?",
+      "options": {
+        "A": "Hwanseung (환승)",
+        "B": "Jamsu (잠수)"
+      },
+      "explanation": "Hwanseung (환승) means transfer: a hwanseung-yeok (환승역) is a transfer station. Hwanseung ibyeol (환승 이별) uses that idea for leaving one romantic relationship for another."
+    },
+    "almeng-039": {
+      "prompt": "Which word completes both names: “Ibyeol ___” and “Kakao ___” (이별___ / 카카오___)?",
+      "options": {
+        "A": "Taeksi (택시)",
+        "B": "Baengkeu (뱅크)"
+      },
+      "explanation": "Taeksi (택시) means taxi. Ibyeol Taxi (이별택시, “Breakup Taxi”) is a song title, and KakaoTaxi (카카오택시) was the taxi-hailing service name associated with what is now Kakao T."
+    },
+    "almeng-040": {
+      "prompt": "“Sseom,” as in “sseom tada,” comes from the English word “something.”",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Sseom (썸) describes mutual romantic interest before a relationship becomes official. It is understood to come from “something.” Sseom tada (썸 타다) means being in that in-between stage."
+    },
+    "almeng-042": {
+      "prompt": "The elevator buttons go 3, F, 5. Which floor does F stand for here?",
+      "options": {
+        "A": "The basement",
+        "B": "The fourth floor",
+        "C": "The rooftop"
+      },
+      "explanation": "In this sequence, F stands for the fourth floor. Some buildings use the first letter of “four” because of a superstition surrounding the number 4."
+    },
+    "almeng-043": {
+      "prompt": "Regular luggage carts at Incheon Airport are free to use.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Regular luggage carts at Incheon Airport are free to use. They are different from separately paid baggage-handling services."
+    },
+    "almeng-044": {
+      "prompt": "What is a “baedal zone” (배달존) in a Hangang park?",
+      "options": {
+        "A": "A delivery-motorbike racing area",
+        "B": "A designated place to meet your food delivery",
+        "C": "A place where the driver eats your order for you"
+      },
+      "explanation": "A baedal zone (배달존), or delivery zone, is a designated pickup point. Check the location when ordering rather than assuming the driver will find your exact picnic blanket."
+    },
+    "almeng-045": {
+      "prompt": "What usually happens when you press the call button on a restaurant table?",
+      "options": {
+        "A": "A staff member comes to your table",
+        "B": "Your food moves ahead in the cooking queue"
+      },
+      "explanation": "It calls a staff member over for an order or request. It does not automatically make food you have already ordered arrive sooner."
+    },
+    "almeng-046": {
+      "prompt": "Drivers in Korea sometimes briefly flash their hazard lights to say thank you.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Some drivers briefly flash the hazard lights after another driver lets them in. Hazard lights also have other uses, so a flash does not always mean thanks."
+    },
+    "almeng-047": {
+      "prompt": "Which word do people in Korea commonly call out to get a smile for a photo?",
+      "options": {
+        "A": "Kimchi (김치)",
+        "B": "Gimbap (김밥)",
+        "C": "Chicken (치킨)"
+      },
+      "explanation": "Kimchi (김치) can be a photo cue to get people smiling. In this setting, nobody is ordering a side dish."
+    },
+    "almeng-048": {
+      "prompt": "Someone you know asks “bap meogeosseo?” (밥 먹었어?). What might they mean?",
+      "options": {
+        "A": "An invitation to a meal is definitely confirmed",
+        "B": "They may simply be checking how you are",
+        "C": "They want to settle a previous restaurant bill"
+      },
+      "explanation": "Literally, bap meogeosseo? (밥 먹었어?) asks whether you have eaten. It can also be a friendly check-in. It is not automatically an invitation or a request to pay."
+    },
+    "almeng-049": {
+      "prompt": "What is the street-food snack beondegi (번데기)?",
+      "options": {
+        "A": "Silkworm pupae",
+        "B": "Small dried beans",
+        "C": "Mushrooms shaped into little balls"
+      },
+      "explanation": "Beondegi (번데기) are silkworm pupae served as a snack. The name refers to the ingredient, not to beans or mushrooms shaped to look like it."
+    },
+    "almeng-050": {
+      "prompt": "In Korea, you cannot be friends with someone who is a different age.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "People of different ages can be close friends. Chingu (친구) can refer more narrowly to a peer, but that use of the word does not prevent friendships across ages."
+    },
+    "almeng-051": {
+      "prompt": "Under traditional Korean counting age, everyone gets a year older at the New Year, even before their birthday.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Under seneun-nai (세는나이), or traditional counting age, a baby starts at one and everyone adds a year at the New Year. Separately, the international-age standard in civil and administrative matters took effect on June 28, 2023, during the Yoon administration. Specific laws can have exceptions."
+    },
+    "almeng-052": {
+      "prompt": "Someone brings toilet paper as a housewarming gift. What wish does it commonly carry?",
+      "options": {
+        "A": "You should always spend less in your new home",
+        "B": "I plan to inspect how clean your home is",
+        "C": "May things work out smoothly"
+      },
+      "explanation": "A roll of toilet paper unwinds smoothly, which is linked to wishing that life and plans will unfold smoothly too. It is one possible jipdeuri (집들이), or housewarming, gift—not a requirement."
+    },
+    "almeng-053": {
+      "prompt": "There is a custom of avoiding writing a living person’s name in red ink.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Some people find writing a living person’s name in red ink unlucky or inappropriate. This is about the existence of a custom, not proof that red ink causes bad luck."
+    },
+    "almeng-054": {
+      "prompt": "At a Korean restaurant, you must always add a 10% tip to the food bill.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "A compulsory 10% tip is not the usual practice at ordinary Korean restaurants. Menu prices or separately stated charges are different from a tip."
+    },
+    "almeng-057": {
+      "prompt": "A Korean restaurant table has a small drawer built into its side. What is commonly inside?",
+      "options": {
+        "A": "Spoons and chopsticks",
+        "B": "Menus and order forms",
+        "C": "Call buttons and vibrating pagers"
+      },
+      "explanation": "Some restaurants keep utensils in a drawer beside or underneath the tabletop. If there are no utensils on top, there may be a drawer to check."
+    },
+    "almeng-058": {
+      "prompt": "You need directions in Korea. Which pair contains TWO map apps?",
+      "options": {
+        "A": "Naver Map and KakaoTalk",
+        "B": "Naver Map and KakaoMap",
+        "C": "KakaoMap and Kakao T"
+      },
+      "explanation": "Naver Map and KakaoMap are map apps. KakaoTalk is a messenger, while Kakao T provides transport services such as taxi booking."
+    },
+    "almeng-059": {
+      "prompt": "You buy a data-only eSIM for Korea. What should you NOT assume comes with it?",
+      "options": {
+        "A": "A mobile internet connection",
+        "B": "Data you can use with map apps",
+        "C": "A Korean phone number for calls and texts"
+      },
+      "explanation": "A data-only eSIM is for mobile data. A Korean number for calls and texts is not automatically included; check the features of the particular plan."
+    },
+    "almeng-060": {
+      "prompt": "A menu lists haemul pajeon (해물파전). What does haemul mean here?",
+      "options": {
+        "A": "Seaweed",
+        "B": "Seafood"
+      },
+      "explanation": "Haemul (해물) means seafood, not just seaweed. Haemul pajeon (해물파전) is a savory pancake that may include ingredients such as squid or shellfish."
+    },
+    "almeng-061": {
+      "prompt": "What two drinks make somaek (소맥)?",
+      "options": {
+        "A": "Soju and makgeolli",
+        "B": "Soju and plum wine",
+        "C": "Soju and beer"
+      },
+      "explanation": "Somaek (소맥) is a mixture of soju (소주) and maekju (맥주), meaning beer. The name takes a part from each word."
+    },
+    "almeng-063": {
+      "prompt": "What does haejangsul (해장술) mean?",
+      "options": {
+        "A": "Alcohol drunk before a night out to prevent a hangover",
+        "B": "Alcohol drunk afterward in the hope of easing a hangover"
+      },
+      "explanation": "Haejangsul (해장술) means drinking alcohol again with the idea of easing a hangover. It describes the intention; the name does not mean it actually treats a hangover."
+    },
+    "almeng-064": {
+      "prompt": "What does jiokcheol (지옥철) mean?",
+      "options": {
+        "A": "A subway that is extremely hot inside",
+        "B": "An extremely crowded subway",
+        "C": "The last subway train of the day"
+      },
+      "explanation": "Jiokcheol (지옥철) is a nickname for a painfully crowded subway. Jiok (지옥) means hell, and cheol (철) comes from the word for subway. It is not about the temperature or the last train."
+    },
+    "almeng-065": {
+      "prompt": "In “jihacheori manwon-iya” (지하철이 만원이야), manwon means the subway fare is 10,000 won.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Here, manwon (만원) means full or packed with people. It is different from man won (만 원), meaning 10,000 won. Same sound, very different commute."
+    },
+    "almeng-066": {
+      "prompt": "During a conversation about marriage, someone says “mihon-ieyo” (미혼이에요). What do they mean?",
+      "options": {
+        "A": "They have not married",
+        "B": "They got married in America",
+        "C": "They are married but have no children"
+      },
+      "explanation": "Mihon (미혼) means not yet married. It does not mean married in America or married without children."
+    },
+    "almeng-067": {
+      "prompt": "Someone wearing a New York Yankees cap must be a fan of the team.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "A cap can be a fashion choice as well as a fan item. Brands such as MLB sell team-logo fashion in Korea, so the logo alone does not tell you who someone supports."
+    },
+    "almeng-068": {
+      "prompt": "Which country did the Paris Baguette brand start in?",
+      "options": {
+        "A": "South Korea",
+        "B": "France",
+        "C": "Japan"
+      },
+      "explanation": "Paris is in the name, but Paris Baguette started in South Korea. A brand’s name does not always tell you where it began."
+    },
+    "almeng-069": {
+      "prompt": "A home listing mentions seusegwon (스세권). What is nearby?",
+      "options": {
+        "A": "A ski resort",
+        "B": "Starbucks",
+        "C": "An indoor golf simulator venue"
+      },
+      "explanation": "Seusegwon (스세권, roughly “seu-se-gwon”) means an area with convenient access to Starbucks. It playfully blends Starbucks with yeoksegwon (역세권), a term for an area near a station."
+    },
+    "almeng-070": {
+      "prompt": "In “long padding” (롱패딩), what is long?",
+      "options": {
+        "A": "How long the warmth lasts",
+        "B": "How many seasons you can wear it",
+        "C": "The length of the coat"
+      },
+      "explanation": "Long padding (롱패딩) means a long padded coat. The name is about the coat’s length, not how many seasons you can wear it."
+    },
+    "almeng-071": {
+      "prompt": "Someone on the subway has a hair roller in their bangs. What are they doing?",
+      "options": {
+        "A": "They have just left a hair salon",
+        "B": "Adding shape or curl to their bangs"
+      },
+      "explanation": "A hair roller can add shape, curl or volume to bangs. Wearing one does not tell you whether the person has just left a salon."
+    },
+    "almeng-072": {
+      "prompt": "The person beside you moves to the end seat on the subway. In this scenario, why?",
+      "options": {
+        "A": "They want something to lean against",
+        "B": "They are about to get off"
+      },
+      "explanation": "End seats may have a wall or partition to lean against. This question describes someone moving over for that support; it is not a rule for interpreting every seat change."
+    },
+    "almeng-073": {
+      "prompt": "You order teugyang (특양), a beef dish. What does yang refer to here?",
+      "options": {
+        "A": "Lamb",
+        "B": "The amount of food",
+        "C": "A cow’s stomach"
+      },
+      "explanation": "Here, yang (양) refers to a cow’s stomach. Teugyang (특양) uses a prepared cut of it; it is not meat from a sheep, even though yang can also mean sheep."
+    },
+    "almeng-074": {
+      "prompt": "Which part of a chicken is dakttongjip (닭똥집)?",
+      "options": {
+        "A": "The intestines",
+        "B": "The gizzard",
+        "C": "The liver"
+      },
+      "explanation": "Dakttongjip (닭똥집) is the gizzard, a muscular part of the digestive system. Despite the misleading name, it is not the intestines or droppings."
+    },
+    "almeng-075": {
+      "prompt": "Boneless chicken feet come from chickens born without bones in their feet.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Muppyeo dakbal (무뼈닭발) means chicken feet with the bones removed. It does not refer to a separate breed born with boneless feet."
+    },
+    "almeng-076": {
+      "prompt": "Pepero Day is an official public holiday designated by the government.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Pepero Day (빼빼로데이) is on November 11 and is associated with exchanging snack sticks. It is not an official public holiday."
+    },
+    "almeng-077": {
+      "prompt": "Wedding congratulatory gifts in Korea are often given as money.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "Chuguigeum (축의금) is money given to congratulate someone on an occasion such as a wedding. People may give cash in an envelope or transfer it. There is no one amount for every relationship."
+    },
+    "almeng-078": {
+      "prompt": "If a couple walks along the Deoksugung stone-wall road together, they will break up.",
+      "options": {
+        "A": "O · True",
+        "B": "X · False"
+      },
+      "explanation": "There is a superstition about couples breaking up after walking along the Deoksugung stone-wall road (덕수궁 돌담길). A superstition is not a rule that the walk causes a breakup, so the answer is false."
+    },
+    "almeng-079": {
+      "prompt": "What are the light-blue foam blocks on some car doors mainly for?",
+      "options": {
+        "A": "Reducing impact when the door touches something",
+        "B": "Officially marking the car as brand new"
+      },
+      "explanation": "The blocks cushion contact when a door touches another object. You may notice them on new cars, but they are not an official new-car certification."
+    },
+    "almeng-080": {
+      "prompt": "What does kaltoe (칼퇴) mean?",
+      "options": {
+        "A": "Leaving because you have quit your job",
+        "B": "Leaving right at the scheduled end of the workday",
+        "C": "Finishing quickly and leaving before the scheduled end of the workday"
+      },
+      "explanation": "Kaltoe (칼퇴, roughly “kal-tweh”) means leaving right on time. It is different from joetoe (조퇴), leaving early, or toesa (퇴사), leaving the company."
+    },
+    "almeng-081": {
+      "prompt": "What does wolgeup rupang (월급루팡) mean?",
+      "options": {
+        "A": "Someone who spends their whole salary as soon as it arrives",
+        "B": "Someone who secretly checks other people’s salaries",
+        "C": "A teasing term for someone getting paid while doing little work"
+      },
+      "explanation": "Wolgeup (월급) means salary, and rupang (루팡) is the Korean name for the fictional thief Lupin. The expression jokes about collecting a salary without doing much work—not literally stealing someone’s pay."
+    },
+    "almeng-082": {
+      "prompt": "Someone says they have decided to “sonjeol” (손절) a friend. What do they mean?",
+      "options": {
+        "A": "They have cut ties with that person",
+        "B": "They shook hands and made up",
+        "C": "They only stopped lending that person money"
+      },
+      "explanation": "In this context, sonjeol (손절, roughly “son-juhl”) means cutting off a relationship. It expanded from an investing term for cutting losses, rather than literally cutting a hand."
+    }
+  }
+}
