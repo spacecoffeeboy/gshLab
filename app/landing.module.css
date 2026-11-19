@@ -1,0 +1,19 @@
+.landing {
+  --landing-canvas: #e3e6ea;
+  --landing-text-primary: #343b45;
+  --landing-text-secondary: #505a67;
+  --landing-accent: #3659c9;
+  --landing-action: #343b45;
+  --landing-action-hover: #414b59;
+  --landing-on-action: #ffffff;
+  --landing-divider: #cbd0d7;
+  max-width: none;
+  padding-inline: max(20px, calc((100% - 1112px) / 2));
+  background: var(--landing-canvas);
+  color: var(--landing-text-primary);
+}
+.landing :is(a, button):focus-visible {
+  outline: 3px solid var(--landing-accent);
+  outline-offset: 5px;
+}
+.landing ::selection { background: #cbd6fa; color: #343b45; }

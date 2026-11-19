@@ -1,0 +1,23 @@
+/* Provisional landing palette. Existing test UI is intentionally untouched. */
+.stories { --story-blue: var(--landing-accent); --story-tint: var(--landing-canvas); padding: 72px 0 80px; border-top: 1px solid var(--landing-divider); }
+.intro { text-align: center; margin-bottom: 64px; }
+.intro h2 { font-family: 'Inter', sans-serif; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -.045em; margin: 12px 0 20px; }
+.intro > p:last-child { color: var(--landing-text-secondary); }
+.eyebrow { color: var(--story-blue); font-size: 11px; font-weight: 600; letter-spacing: .09em; }
+.row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 7vw, 100px); padding: 48px 0; }
+.art { display: flex; align-items: center; justify-content: center; min-height: 320px; background: var(--story-tint); border-radius: 16px; }
+.gari { width: min(70%, 260px); }
+.roro { width: min(85%, 340px); }
+.copy h3 { font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.8vw, 44px); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; margin: 16px 0 24px; }
+.copy > p:not(.eyebrow) { max-width: 44ch; font-size: 16px; line-height: 1.75; color: var(--landing-text-secondary); }
+.copy .note { padding-top: 12px; color: var(--landing-text-primary); font-weight: 500; }
+@media (max-width: 600px) {
+  .stories { padding-block: 48px; }
+  .intro { margin-bottom: 20px; }
+  .row { grid-template-columns: 1fr; gap: 24px; padding-block: 28px; }
+  .art { min-height: 240px; }
+  .gari { width: 180px; }
+  .roro { width: 250px; }
+  .reverse .art { grid-row: 1; }
+  .copy h3 { margin-block: 12px 16px; }
+}

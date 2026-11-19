@@ -1,5 +1,7 @@
 # Almeng-E — active white / black / lime UI contract
 
+> Interim rebranding: read [docs/CODEX_REBRANDING_HANDOFF.md](docs/CODEX_REBRANDING_HANDOFF.md) before new UI work. Its latest user-approved screenshot direction takes precedence within the specifically requested region. The rules below describe the existing implementation; preserve them elsewhere until a scoped change is requested. Pastel-blue values and the complete new design system remain provisional.
+
 Rationale and source video timestamps: [docs/DESIGN_PRINCIPLES.md](docs/DESIGN_PRINCIPLES.md). Current implementation: `app/globals.css`.
 
 ## Active journey

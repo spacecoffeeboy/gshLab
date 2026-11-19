@@ -15,7 +15,7 @@ async function init(page){
 }
 async function begin(page,label,mode='standard',language='en'){
  await page.goto(base);
- await page.getByRole('link',{name:'Take the Korea test'}).click();await page.waitForURL('**/start');
+ await page.getByRole('link',{name:'START QUIZ'}).click();await page.waitForURL('**/start');
  await page.getByRole('heading',{name:/Where does your/}).waitFor();
  assert.equal(await page.getByRole('button',{name:/Start my test/}).isDisabled(),true);
  assert.equal(await page.getByRole('button',{name:/^English/}).getAttribute('aria-pressed'),'true');
